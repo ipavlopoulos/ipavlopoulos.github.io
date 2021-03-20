@@ -1,2 +1,1 @@
-# ipavlopoulos.github.io
-John Pavlopoulos
+Website of John Pavlopoulos
