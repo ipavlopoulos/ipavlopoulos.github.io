@@ -1,6 +1,9 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+title: Home
+layout: page
 
-layout: home
 ---
+
+Senior Lecturer (fixed-term), [Stockholm University](https://dsv.su.se/en/) and Adjunct Professor, [Athens University of Economics and Business](https://aueb.gr/en). My research interests focus on Machine/Deep Learning for NLP and NLP applications for social good.
+
+<!--- {% twitter https://twitter.com/itpavlopoulos maxwidth=500 limit=5 %} --->

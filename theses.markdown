@@ -1,0 +1,10 @@
+---
+title: Theses
+layout: default
+---
+
+Marina Thalassinou-Lislevand, 2020. “Emotion Classification on Greek Tweets“, MSc Thesis, Data Science ([pdf](/files/lislevand.pdf)).
+
+Stroumbouli Eleytheria, 2020. “Error Detection in English and Greek texts written by foreign learners“, MSc Thesis, Digital Methods for the Humanities ([pdf](/files/stroumbouli.pdf))
+
+Korre Katerina, 2020. “Using Predictive Text for Grammatical Error Correction in Second Language Learning”. MSc Thesis, Digital Methods for the Humanities ([pdf](/files/korre.pdf), [slides](/files/korre.slides.pdf))
