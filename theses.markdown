@@ -1,6 +1,7 @@
 ---
 title: Theses
 layout: default
+permalink: /theses/
 ---
 
 Marina Thalassinou-Lislevand, 2020. “Emotion Classification on Greek Tweets“, MSc Thesis, Data Science ([pdf](/files/lislevand.pdf)).

@@ -1,6 +1,7 @@
 ---
 title: Projects
 layout: default
+permalink: /projects/
 ---
 
 [Automatic grading](https://datascience.dsv.su.se/projects/autograding.html) and assessment of electonic exams (present).
