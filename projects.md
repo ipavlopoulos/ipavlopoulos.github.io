@@ -4,6 +4,8 @@ layout: default
 permalink: /projects/
 ---
 
+* Natural Language Processing for a Geospatial Exploration of Japanese Ukiyo-e Prints (present). 
+
 * [Automatic grading](https://datascience.dsv.su.se/projects/autograding.html) and assessment of electonic exams (present).
 
 * Cost model development for the moderation of user posts on online platforms. Project with the European Commision. Principal Investigator; 2020. 
