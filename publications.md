@@ -8,13 +8,23 @@ permalink: /publications/
 
 ## publications in peer-reviewed conference proceedings
 
-* Pavlopoulos, J., Laugier L., Sorensen, J., Androutsopoulos, I. (2021). Task 5 at SemEval-2021: Toxic Spans Detection. In SemEval (to appear).
+* Miliou, I., Pavlopoulos, J., Papapetrou, P. (2021). Sentiment Nowcasting During the COVID-19 Pandemic. In International Conference on Discovery Science, pp. 218-228.
 
-* Kouyia V., Pavlopoulos J., Papapetrou P. (2021). RTEx: A novel framework for Ranking, Tagging, and Explanatory diagnostic captioning of radiography exams. Journal of the American Medical Informatics Association (accepted).
+* Ljungman, J. and Lislevand, V. and Pavlopoulos, J. and Farazouli, A. and Lee, Z. and Papapetrou, P. and Fors, U. (2021). Automated Grading of Exam Responses: An Extensive Classification Benchmark. In International Conference on Discovery Science, pp. 3-18.
 
-* Pavlopoulos J., Papapetrou P. (2021). Customized Neural Predictive Medical Text: A Use-Case on Caregivers. Proceedings of the 19th International Conference on Artificial Intelligence in Medicine Online (to appear).
+* Kougia, V. and Pavlopoulos, J. (2021). Multimodal or Text? Retrieval or BERT? Benchmarking Classifiers for the Shared Task on Hateful Memes. In the 5th Workshop on Online Abuse and Harms (WOAH 2021), pp. 220-225
 
-* Laughier L., Pavlopoulos J., Sorensen J., Dixon L. (2021). Civil Rephrases Of Toxic Texts With Self-Supervised Transformers. EACL (to appear).
+* Xenos, A. and Pavlopoulos, J. and Androutsopoulos, I. (2021). Context sensitivity estimation in toxicity detection. In the 5th Workshop on Online Abuse and Harms (WOAH 2021), pp. 140-145.
+
+* Pavlopoulos, J. and Laugier, L. and Sorensen, J. and Androutsopoulos, I. (2021). Task 5 at SemEval-2021: Toxic Spans Detection. In SemEval (to appear).
+
+* Kouyia, V. and Pavlopoulos, J. and Papapetrou, P. (2021). RTEx: A novel framework for Ranking, Tagging, and Explanatory diagnostic captioning of radiography exams. Journal of the American Medical Informatics Association (accepted).
+
+* Pavlopoulos J. and Papapetrou P. (2021). Customized Neural Predictive Medical Text: A Use-Case on Caregivers. Proceedings of the 19th International Conference on Artificial Intelligence in Medicine Online (to appear).
+
+* Laughier L. and Pavlopoulos J. and Sorensen J. and Dixon L. (2021). Civil Rephrases Of Toxic Texts With Self-Supervised Transformers. EACL (to appear).
+
+* Korre, K. and Chatzipanagiotou, M. and Pavlopoulos, J. (2021). ELERRANT: Automatic Grammatical Error Type Classification for Greek. In RANLP, pp. 708-717.
 
 * Korre, K. and Pavlopoulos, J. (2020). ERRANT: Assessing and Improving Grammatical Error TypeClassification. In LaTeCH-CLfL.
 
