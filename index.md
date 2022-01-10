@@ -4,7 +4,7 @@ layout: page
 permalink: /
 ---
 
-<img src="docs/assets/logo.jpeg" align="left" width="200px" style=""padding:10px;"/>
+<img src="docs/assets/logo.jpeg" align="left" width="200px" style="padding:10px;"/>
 
 Visiting scholar at [Ca'Foscari](https://www.unive.it/) and an affiliated researcher at the [Art Research Center, Ritsumeikan University](https://www.arc.ritsumei.ac.jp/) and at [Stockholm University](https://dsv.su.se/en/), where I have also served as a fixed-term senior lecturer.
 
