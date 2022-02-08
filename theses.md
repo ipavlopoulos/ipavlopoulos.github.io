@@ -4,9 +4,9 @@ layout: default
 permalink: /theses/
 ---
 
-Jimenéz Enrique Javier Cobo and Rigobello Ronaldo Soares, 2021. "Explainability Techniques to Locate and Correct Grammatical Errors", Department of Computer and Systems Sciences, Stockholm University ([pdf](files/jimenez_rigobello_2021.pdf))
+Jimenéz Enrique Javier Cobo and Rigobello Ronaldo Soares, 2021. "Explainability Techniques to Locate and Correct Grammatical Errors", Degree project at the master level, Department of Computer and Systems Sciences, Stockholm University ([pdf](files/jimenez_rigobello_2021.pdf)).
 
-Sjöstedt Nadia, 2021. "Explaining the Predictions of Text Toxicity Classifiers", Department of Computer and Systems Sciences, Stockholm University ([pdf](files/sjostedt_2021.pdf))
+Sjöstedt Nadia, 2021. "Explaining the Predictions of Text Toxicity Classifiers", Degree project at the master level, Department of Computer and Systems Sciences, Stockholm University ([pdf](files/sjostedt_2021.pdf)).
 
 Paparrigopoulou Asimina, 2021. "Chronological Attribution of Papyri Using Machine Learning", MS Thesis, Digital Methods for The Humanities, Athens University of Economics and Business ([pdf](files/paparrigopoulou_2021.pdf)).
 
