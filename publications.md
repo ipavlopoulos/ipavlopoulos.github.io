@@ -7,6 +7,9 @@ permalink: /publications/
 (find me in [scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en&oi=ao">Scholar</a>))
 
 ## publications in peer-reviewed conference proceedings
+* Pavlopoulos, J., Laugier, L., Xenos, A., Sorensen, J., Androutsopoulos, I. (2022). From the Detection of Toxic Spans in Online Discussions to the Analysis of Toxic-to-Civil Transfer. In Proceedings of the Association for Computational Linguistics (to be presented as a long paper).
+
+* Ljungman, J., Lislevand, V., Pavlopoulos, J., Farazouli, A., Lee, Z., Papapetrou, P., Fors, U. (2021). Automated Grading of Exam Responses: An Extensive Classification Benchmark. In International Conference on Discovery Science. Springer, Cham. pp. 3-18.
 
 * Miliou, I., Pavlopoulos, J., Papapetrou, P. (2021). Sentiment Nowcasting During the COVID-19 Pandemic. In International Conference on Discovery Science, pp. 218-228.
 
@@ -66,11 +69,17 @@ permalink: /publications/
 
 ## journals
 
-* G. Tsatsaronis, G., Balikas, G., Malakasiotis, P., Partalas, I., Zschunke, M., Alvers, M., Weissenborn, D., Krithara, A., Petridis, S., Polychronopoulos, D., Almirantis, Y., Pavlopoulos, J., Baskiotis, N., Gallinari, P., Artieres, T., Ngomo, A.-C., Heino, N., Gaussier, E.; Barrio-Alvers, L., Schroeder, M., Androutsopoulos, I. and Paliouras, G. (2015). An overview of the bioasq large-scale biomedical semantic indexing and question answering competition. BMC Bioinformatics 16(1).
+* Assael, Y., Sommerschield, T., Shillingford, B., Bordbar, M., Pavlopoulos, J., Chatzipanagiotou, M., Androutsopoulos, I., Prag, J., de Freitas., N. (2022). Restoring and attributing ancient texts with deep neural networks. In Nature.
 
-* P. Alexopoulos, J. Pavlopoulos and P. Mylonas, “A Semantic Framework for Harvesting Vague Enterprise Knowledge from Microposts”. International Journal on Artificial Intelligence Tools 23(02), 2014.
+* Olczak J., Pavlopoulos J., Prijs J., Ijpma F. F. A., Doornberg J. N., Lundstrom C., Hedlund J., and Gordon M. (2021). Presenting artificial intelligence, deep learning, and machine learning studies to clinicians and healthcare stakeholders: an introductory reference with a guideline and a Clinical AI Research (CAIR) checklist proposal. Acta Orthopaedica.  
 
-* J. Vrettaros, J. Pavlopoulos, A. S. Drigas and K. Hrissagis, “GPNN techniques in learning assessment systems”. In International Journal of Technology Enhanced Learning. Inderscience Publishers, pp. 415—429, 3(4), 2011.
+* Kougia V., Pavlopoulos J., Papapetrou P. (2021). RTEx: A novel framework for Ranking, Tagging, and Explanatory diagnostic captioning of radiography exams. Journal of the American Medical Informatics Association.
+
+* Tsatsaronis G., Balikas G., Malakasiotis P., Partalas I., Zschunke, M., Alvers, M., Weissenborn, D., Krithara, A., Petridis, S., Polychronopoulos, D., Almirantis, Y., Pavlopoulos, J., Baskiotis, N., Gallinari, P., Artieres, T., Ngomo, A.-C., Heino, N., Gaussier, E.; Barrio-Alvers, L., Schroeder, M., Androutsopoulos, I. and Paliouras, G. (2015). An overview of the bioasq large-scale biomedical semantic indexing and question answering competition. BMC Bioinformatics 16(1).
+
+* Alexopoulos P., Pavlopoulos J. and Mylonas P., “A Semantic Framework for Harvesting Vague Enterprise Knowledge from Microposts”. International Journal on Artificial Intelligence Tools 23(02), 2014.
+
+* Vrettaros J., Pavlopoulos J., Drigas A. S. and Hrissagis K., “GPNN techniques in learning assessment systems”. In International Journal of Technology Enhanced Learning. Inderscience Publishers, pp. 415—429, 3(4), 2011.
 
 ## monographs
 
