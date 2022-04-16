@@ -7,7 +7,17 @@ permalink: /publications/
 (find me in [scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en&oi=ao">Scholar</a>))
 
 ## publications in peer-reviewed conference proceedings
-* Pavlopoulos, J., Laugier, L., Xenos, A., Sorensen, J., Androutsopoulos, I. (2022). From the Detection of Toxic Spans in Online Discussions to the Analysis of Toxic-to-Civil Transfer. In Proceedings of the Association for Computational Linguistics (to be presented as a long paper).
+* Platanou, V., Pavlopoulos, J., Papaioannou, G. (2022). Handwritten Paleographic Greek Text Recognition: a Century-Based Approach. In Proceedings of the Language Resources and Evaluation Conference (LREC). To be held in Marseille and online, June 2022.
+
+* Pavlopoulos, J., Xenos, A., Picca, A. (2022). Annotating the Sentiment of Homeric Text. In Proceedings of the Language Resources and Evaluation Conference (LREC). To be held in Marseille and online, June 2022.
+
+* Liagkou, K., Pavlopoulos, J., Machotka, E. (2022). A Study of Distant Viewing of ukiyo-e prints. In Proceedings of the Language Resources and Evaluation Conference (LREC). To be held in Marseille and online, June 2022.
+
+* Chatzipanagiotou, M., Machotka, E., Pavlopoulos, J. (2021). Automated recognition of geographical named entities in titles of Ukiyo-e prints. In Digital Humanities Workshop (DHW 2021). Association for Computing Machinery, New York, NY, USA, 70–77. DOI:https://doi.org/10.1145/3526242.3526254
+
+* Fasoi, M., Pavlopoulos, J., Konstantinidou, M. (2021). Computational Authorship Analysis of Homeric Language. In Digital Humanities Workshop (DHW 2021). Association for Computing Machinery, New York, NY, USA, 78–88. DOI:https://doi.org/10.1145/3526242.3526256
+
+* Pavlopoulos, J., Laugier, L., Xenos, A., Sorensen, J., Androutsopoulos, I. (2022). From the Detection of Toxic Spans in Online Discussions to the Analysis of Toxic-to-Civil Transfer. In Proceedings of the Association for Computational Linguistics. To be held in Dublin, Ireland, U.K. and online, May 2022.
 
 * Ljungman, J., Lislevand, V., Pavlopoulos, J., Farazouli, A., Lee, Z., Papapetrou, P., Fors, U. (2021). Automated Grading of Exam Responses: An Extensive Classification Benchmark. In International Conference on Discovery Science. Springer, Cham. pp. 3-18.
 
@@ -68,6 +78,10 @@ permalink: /publications/
 * Vrettaros, J., Pavlopoulos, J., Vouros, G. and Drigas, S. (2008). The development of a self-assessment system for the learners answers with the use of GPNN. In Proceedings of the World Summit on Knowledge Society (WSKS), Athens, Greece, pp.332—340. 
 
 ## journals
+
+* Pavlopoulos, J., Kougia, V., Androutsopoulos, I., Papamichail, D. (2022). Diagnostic Captioning: A Survey. In KAIS. To appear.
+
+* Xenos, A., Pavlopoulos, J., Androutsopoulos, I., Dixon, L., Sorensen, J., Laugier, L. (2022). Toxicity Detection can be Sensitive to the Conversational Context. In First Monday. To appear. 
 
 * Assael, Y., Sommerschield, T., Shillingford, B., Bordbar, M., Pavlopoulos, J., Chatzipanagiotou, M., Androutsopoulos, I., Prag, J., de Freitas., N. (2022). Restoring and attributing ancient texts with deep neural networks. In Nature.
 
