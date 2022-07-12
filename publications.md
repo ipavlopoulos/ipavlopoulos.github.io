@@ -79,7 +79,7 @@ permalink: /publications/
 
 ## journals
 
-* Pavlopoulos, J., Kougia, V., Androutsopoulos, I., Papamichail, D. (2022). Diagnostic Captioning: A Survey. In KAIS. To appear.
+* Pavlopoulos, J., Kougia, V., Androutsopoulos, I., Papamichail, D. (2022). Diagnostic Captioning: a Survey. Knowledge and Information Systems, 1-32. https://doi.org/10.1007/s10115-022-01684-7.
 
 * Xenos, A., Pavlopoulos, J., Androutsopoulos, I., Dixon, L., Sorensen, J., Laugier, L. (2022). Toxicity Detection can be Sensitive to the Conversational Context. In First Monday. To appear. 
 
