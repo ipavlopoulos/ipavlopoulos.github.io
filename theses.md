@@ -4,6 +4,14 @@ layout: default
 permalink: /theses/
 ---
 
+Anagnostopoulos Theodors, 2021. "Toxicity detection on Greek tweets". MSc Thesis, Data Science ([link](http://www.pyxida.aueb.gr/index.php?op=view_object&object_id=9122)).
+
+Papadatos Emmanouil, 2021. "Text classification to automatically detect hazards in foods from official announcements and social media". MSc thesis, Data Science ([link](http://www.pyxida.aueb.gr/index.php?op=view_object&object_id=9155)) 
+
+Liagkou Konstantina, 2021. "Brand cannibalisation". MSc Thesis, Data Science ([link](http://www.pyxida.aueb.gr/index.php?op=view_object&object_id=8985)).
+
+Ormyliotou Georgia, 2021. "Brand-based sentiment analysis". MSc Thesis, Data Science ([link](http://www.pyxida.aueb.gr/index.php?op=view_object&object_id=8997)).
+
 Jimenéz Enrique Javier Cobo and Rigobello Ronaldo Soares, 2021. "Explainability Techniques to Locate and Correct Grammatical Errors", Degree project at the master level, Department of Computer and Systems Sciences, Stockholm University ([pdf](files/jimenez_rigobello_2021.pdf)).
 
 Sjöstedt Nadia, 2021. "Explaining the Predictions of Text Toxicity Classifiers", Degree project at the master level, Department of Computer and Systems Sciences, Stockholm University ([pdf](files/sjostedt_2021.pdf)).
