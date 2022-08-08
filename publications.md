@@ -7,8 +7,6 @@ permalink: /publications/
 (find me in [scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en&oi=ao">Scholar</a>))
 
 ## publications in peer-reviewed conference proceedings
-* Pavlopoulos, J., Konstantinidou, M. (2022). Computational authorship analysis of the homeric poems. International Journal of Digital Humanities, 1-20.
-
 * Platanou, V., Pavlopoulos, J., Papaioannou, G. (2022). Handwritten Paleographic Greek Text Recognition: a Century-Based Approach. In Proceedings of the Language Resources and Evaluation Conference (LREC). To be held in Marseille and online, June 2022.
 
 * Pavlopoulos, J., Xenos, A., Picca, A. (2022). Annotating the Sentiment of Homeric Text. In Proceedings of the Language Resources and Evaluation Conference (LREC). To be held in Marseille and online, June 2022.
@@ -80,6 +78,8 @@ permalink: /publications/
 * Vrettaros, J., Pavlopoulos, J., Vouros, G. and Drigas, S. (2008). The development of a self-assessment system for the learners answers with the use of GPNN. In Proceedings of the World Summit on Knowledge Society (WSKS), Athens, Greece, pp.332—340. 
 
 ## journals
+
+* Pavlopoulos, J., Konstantinidou, M. (2022). Computational authorship analysis of the homeric poems. International Journal of Digital Humanities, 1-20.
 
 * Pavlopoulos, J., Kougia, V., Androutsopoulos, I., Papamichail, D. (2022). Diagnostic Captioning: a Survey. Knowledge and Information Systems, 1-32. https://doi.org/10.1007/s10115-022-01684-7.
 
