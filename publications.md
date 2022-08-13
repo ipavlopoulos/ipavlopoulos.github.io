@@ -21,7 +21,7 @@ permalink: /publications/
 
 * Ljungman, J., Lislevand, V., Pavlopoulos, J., Farazouli, A., Lee, Z., Papapetrou, P., Fors, U. (2021). Automated Grading of Exam Responses: An Extensive Classification Benchmark. In International Conference on Discovery Science. Springer, Cham. pp. 3-18.
 
-* Miliou, I., Pavlopoulos, J., Papapetrou, P. (2021). Sentiment Nowcasting During the COVID-19 Pandemic. In International Conference on Discovery Science, pp. 218-228.
+* Miliou, I., Pavlopoulos, J., Papapetrou, P. (2021). Sentiment Nowcasting During the COVID-19 Pandemic. In International Conference on Discovery Science, pp. 218-228 ([link](/files/miliou_et_al_2021.pdf)).
 
 * Ljungman, J. and Lislevand, V. and Pavlopoulos, J. and Farazouli, A. and Lee, Z. and Papapetrou, P. and Fors, U. (2021). Automated Grading of Exam Responses: An Extensive Classification Benchmark. In International Conference on Discovery Science, pp. 3-18.
 
