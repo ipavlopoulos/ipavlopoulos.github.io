@@ -83,7 +83,7 @@ permalink: /publications/
 
 * Pavlopoulos, J., Kougia, V., Androutsopoulos, I., Papamichail, D. (2022). Diagnostic Captioning: a Survey. Knowledge and Information Systems, 1-32. https://doi.org/10.1007/s10115-022-01684-7.
 
-* Xenos, A., Pavlopoulos, J., Androutsopoulos, I., Dixon, L., Sorensen, J., Laugier, L. (2022). Toxicity Detection can be Sensitive to the Conversational Context. In First Monday. To appear. 
+* Xenos, A., Pavlopoulos, J., Androutsopoulos, I., Dixon, L., Sorensen, J., Laugier, L. (2022). Toxicity Detection can be Sensitive to the Conversational Context. First Monday, 27(9), 2022. https://doi.org/10.5210/fm.v27i5.12285. 
 
 * Assael, Y., Sommerschield, T., Shillingford, B., Bordbar, M., Pavlopoulos, J., Chatzipanagiotou, M., Androutsopoulos, I., Prag, J., de Freitas., N. (2022). Restoring and attributing ancient texts with deep neural networks. In Nature.
 
