@@ -7,11 +7,15 @@ permalink: /publications/
 (find me in [scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en&oi=ao">Scholar</a>))
 
 ## publications in peer-reviewed conference proceedings
-* Platanou, V., Pavlopoulos, J., Papaioannou, G. (2022). Handwritten Paleographic Greek Text Recognition: a Century-Based Approach. In Proceedings of the Language Resources and Evaluation Conference (LREC). To be held in Marseille and online, June 2022.
+* Dritsa, K. Dritsa, Thoma, K., Pavlopoulos, J., Louridas, P. A Greek Parliament Proceedings Dataset for Computational Linguistics and Political Analysis. In NIPS 2022 Datasets and Benchmarks Track (to be presented). 
 
-* Pavlopoulos, J., Xenos, A., Picca, A. (2022). Annotating the Sentiment of Homeric Text. In Proceedings of the Language Resources and Evaluation Conference (LREC). To be held in Marseille and online, June 2022.
+* Zonios, C., Pavlopoulos, J., Likas, A. Transformer-Based Music Language Modelling and Transcription. In Proceedings of the 12th Hellenic Conference on Artificial Intelligence (SETN '22). https://doi.org/10.1145/3549737.3549754.
 
-* Liagkou, K., Pavlopoulos, J., Machotka, E. (2022). A Study of Distant Viewing of ukiyo-e prints. In Proceedings of the Language Resources and Evaluation Conference (LREC). To be held in Marseille and online, June 2022.
+* Platanou, V., Pavlopoulos, J., Papaioannou, G. (2022). Handwritten Paleographic Greek Text Recognition: a Century-Based Approach. In Proceedings of the Language Resources and Evaluation Conference (LREC). Marseille, France and online, June 2022.
+
+* Pavlopoulos, J., Xenos, A., Picca, A. (2022). Annotating the Sentiment of Homeric Text. In Proceedings of the Language Resources and Evaluation Conference (LREC). Marseille, France and online, June 2022.
+
+* Liagkou, K., Pavlopoulos, J., Machotka, E. (2022). A Study of Distant Viewing of ukiyo-e prints. In Proceedings of the Language Resources and Evaluation Conference (LREC). Marseille, France and online, June 2022.
 
 * Chatzipanagiotou, M., Machotka, E., Pavlopoulos, J. (2021). Automated recognition of geographical named entities in titles of Ukiyo-e prints. In Digital Humanities Workshop (DHW 2021). Association for Computing Machinery, New York, NY, USA, 70–77. DOI:https://doi.org/10.1145/3526242.3526254
 
