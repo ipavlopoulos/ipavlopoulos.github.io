@@ -7,7 +7,7 @@ permalink: /publications/
 (find me in [scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en&oi=ao">Scholar</a>))
 
 ## publications in peer-reviewed conference proceedings
-* Dritsa, K. Dritsa, Thoma, K., Pavlopoulos, J., Louridas, P. A Greek Parliament Proceedings Dataset for Computational Linguistics and Political Analysis. In NIPS 2022 Datasets and Benchmarks Track (to be presented). 
+* Dritsa, K., Thoma, K., Pavlopoulos, J., Louridas, P. A Greek Parliament Proceedings Dataset for Computational Linguistics and Political Analysis. In NIPS 2022 Datasets and Benchmarks Track (to be presented). 
 
 * Zonios, C., Pavlopoulos, J., Likas, A. Transformer-Based Music Language Modelling and Transcription. In Proceedings of the 12th Hellenic Conference on Artificial Intelligence (SETN '22). https://doi.org/10.1145/3549737.3549754.
 
