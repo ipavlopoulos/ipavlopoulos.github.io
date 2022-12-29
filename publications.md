@@ -82,6 +82,7 @@ permalink: /publications/
 * Vrettaros, J., Pavlopoulos, J., Vouros, G. and Drigas, S. (2008). The development of a self-assessment system for the learners answers with the use of GPNN. In Proceedings of the World Summit on Knowledge Society (WSKS), Athens, Greece, pp.332—340. 
 
 ## journals
+* Pavlopoulos, J., Likas, A. (2022). Distance from Unimodality for the Assessment of Opinion Polarization. Cognitive Computation. https://doi.org/10.1007/s12559-022-10088-2
 
 * Pavlopoulos, J., Konstantinidou, M. (2022). Computational authorship analysis of the homeric poems. International Journal of Digital Humanities, 1-20.
 
