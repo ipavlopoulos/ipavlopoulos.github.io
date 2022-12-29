@@ -10,7 +10,7 @@ permalink: /projects/
 
 * [Automatic grading](https://datascience.dsv.su.se/projects/autograding.html) and assessment of electonic exams, Senior Researcher (2021).
 
-* Cost model development for the moderation of user posts on online platforms. Project with the European Commision, Principal Investigator (2020). 
+* Cost model development for the moderation of user posts on online platforms. Project with the Joint Research Center, European Commission, Principal Investigator (2020). 
 
 * [EXTREMUM:Explainable and Ethical Machine Learning for Knowledge Discovery from Medical Data Sources](https://dsv.su.se/en/research/research-areas/datascience/extremum-explainable-and-ethical-machine-learning-for-knowledge-discovery-from-medical-data-sources-1.442728). Data Science Group, Department of Computer and System Sciences, Stockholm University; Researcher (2019/2020).
 
