@@ -7,6 +7,7 @@ permalink: /publications/
 (find me in [scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en&oi=ao">Scholar</a>))
 
 ## publications in peer-reviewed conference proceedings
+
 * Pavlopoulos, J., Konstantinidou, M., Marthot-Santaniello, I., Essler, H., & Paparigopoulou, A., 2023. Dating Greek Papyri with Text Regression. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 10001-10013.
 
 * Dritsa, K., Thoma, A., Pavlopoulos, I. and Louridas, P., 2022. A Greek Parliament Proceedings Dataset for Computational Linguistics and Political Analysis. Advances in Neural Information Processing Systems, 35, pp.28874-28888. 
