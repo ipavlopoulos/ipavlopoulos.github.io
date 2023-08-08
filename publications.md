@@ -7,96 +7,102 @@ permalink: /publications/
 (find me in [scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en&oi=ao">Scholar</a>))
 
 ## publications in peer-reviewed conference proceedings
-* Dritsa, K., Thoma, K., Pavlopoulos, J., Louridas, P. (2022). A Greek Parliament Proceedings Dataset for Computational Linguistics and Political Analysis. In NIPS 2022 Datasets and Benchmarks Track (to be presented). 
+* Pavlopoulos, J., Konstantinidou, M., Marthot-Santaniello, I., Essler, H., & Paparigopoulou, A., 2023. Dating Greek Papyri with Text Regression. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 10001-10013.
 
-* Zonios, C., Pavlopoulos, J., Likas, A. (2022). Transformer-Based Music Language Modelling and Transcription. In Proceedings of the 12th Hellenic Conference on Artificial Intelligence (SETN '22). https://doi.org/10.1145/3549737.3549754.
+* Dritsa, K., Thoma, A., Pavlopoulos, I. and Louridas, P., 2022. A Greek Parliament Proceedings Dataset for Computational Linguistics and Political Analysis. Advances in Neural Information Processing Systems, 35, pp.28874-28888. 
 
-* Platanou, V., Pavlopoulos, J., Papaioannou, G. (2022). Handwritten Paleographic Greek Text Recognition: a Century-Based Approach. In Proceedings of the Language Resources and Evaluation Conference (LREC). Marseille, France and online, June 2022.
+* Zonios, C., Pavlopoulos, J., Likas, A., 2022. Transformer-Based Music Language Modelling and Transcription. In Proceedings of the 12th Hellenic Conference on Artificial Intelligence (SETN '22). https://doi.org/10.1145/3549737.3549754.
 
-* Pavlopoulos, J., Xenos, A., Picca, A. (2022). Annotating the Sentiment of Homeric Text. In Proceedings of the Language Resources and Evaluation Conference (LREC). Marseille, France and online, June 2022.
+* Platanou, V., Pavlopoulos, J., Papaioannou, G., 2022. Handwritten Paleographic Greek Text Recognition: a Century-Based Approach. In Proceedings of the Language Resources and Evaluation Conference (LREC). Marseille, France and online, June 2022.
 
-* Liagkou, K., Pavlopoulos, J., Machotka, E. (2022). A Study of Distant Viewing of ukiyo-e prints. In Proceedings of the Language Resources and Evaluation Conference (LREC). Marseille, France and online, June 2022.
+* Pavlopoulos, J., Xenos, A., Picca, A., 2022. Annotating the Sentiment of Homeric Text. In Proceedings of the Language Resources and Evaluation Conference (LREC). Marseille, France and online, June 2022.
 
-* Chatzipanagiotou, M., Machotka, E., Pavlopoulos, J. (2021). Automated recognition of geographical named entities in titles of Ukiyo-e prints. In Digital Humanities Workshop (DHW 2021). Association for Computing Machinery, New York, NY, USA, 70–77. DOI:https://doi.org/10.1145/3526242.3526254
+* Liagkou, K., Pavlopoulos, J., Machotka, E., 2022. A Study of Distant Viewing of ukiyo-e prints. In Proceedings of the Language Resources and Evaluation Conference (LREC). Marseille, France and online, June 2022.
 
-* Fasoi, M., Pavlopoulos, J., Konstantinidou, M. (2021). Computational Authorship Analysis of Homeric Language. In Digital Humanities Workshop (DHW 2021). Association for Computing Machinery, New York, NY, USA, 78–88. DOI:https://doi.org/10.1145/3526242.3526256
+* Chatzipanagiotou, M., Machotka, E., Pavlopoulos, J., 2021. Automated recognition of geographical named entities in titles of Ukiyo-e prints. In Digital Humanities Workshop (DHW 2021). Association for Computing Machinery, New York, NY, USA, 70–77. DOI:https://doi.org/10.1145/3526242.3526254
 
-* Pavlopoulos, J., Laugier, L., Xenos, A., Sorensen, J., Androutsopoulos, I. (2022). From the Detection of Toxic Spans in Online Discussions to the Analysis of Toxic-to-Civil Transfer. In Proceedings of the Association for Computational Linguistics. To be held in Dublin, Ireland, U.K. and online, May 2022.
+* Fasoi, M., Pavlopoulos, J., Konstantinidou, M., 2021. Computational Authorship Analysis of Homeric Language. In Digital Humanities Workshop (DHW 2021). Association for Computing Machinery, New York, NY, USA, 78–88. DOI:https://doi.org/10.1145/3526242.3526256
 
-* Ljungman, J., Lislevand, V., Pavlopoulos, J., Farazouli, A., Lee, Z., Papapetrou, P., Fors, U. (2021). Automated Grading of Exam Responses: An Extensive Classification Benchmark. In International Conference on Discovery Science. Springer, Cham. pp. 3-18.
+* Pavlopoulos, J., Laugier, L., Xenos, A., Sorensen, J., Androutsopoulos, I., 2022. From the Detection of Toxic Spans in Online Discussions to the Analysis of Toxic-to-Civil Transfer. In Proceedings of the Association for Computational Linguistics. To be held in Dublin, Ireland, U.K. and online, May 2022.
 
-* Miliou, I., Pavlopoulos, J., Papapetrou, P. (2021). Sentiment Nowcasting During the COVID-19 Pandemic. In International Conference on Discovery Science, pp. 218-228 ([link](/files/miliou_et_al_2021.pdf)).
+* Ljungman, J., Lislevand, V., Pavlopoulos, J., Farazouli, A., Lee, Z., Papapetrou, P., Fors, U., 2021. Automated Grading of Exam Responses: An Extensive Classification Benchmark. In International Conference on Discovery Science. Springer, Cham. pp. 3-18.
 
-* Ljungman, J. and Lislevand, V. and Pavlopoulos, J. and Farazouli, A. and Lee, Z. and Papapetrou, P. and Fors, U. (2021). Automated Grading of Exam Responses: An Extensive Classification Benchmark. In International Conference on Discovery Science, pp. 3-18.
+* Miliou, I., Pavlopoulos, J., Papapetrou, P., 2021. Sentiment Nowcasting During the COVID-19 Pandemic. In International Conference on Discovery Science, pp. 218-228 ([link](/files/miliou_et_al_2021.pdf)).
 
-* Kougia, V. and Pavlopoulos, J. (2021). Multimodal or Text? Retrieval or BERT? Benchmarking Classifiers for the Shared Task on Hateful Memes. In the 5th Workshop on Online Abuse and Harms (WOAH 2021), pp. 220-225
+* Ljungman, J. and Lislevand, V. and Pavlopoulos, J. and Farazouli, A. and Lee, Z. and Papapetrou, P. and Fors, U., 2021. Automated Grading of Exam Responses: An Extensive Classification Benchmark. In International Conference on Discovery Science, pp. 3-18.
 
-* Xenos, A. and Pavlopoulos, J. and Androutsopoulos, I. (2021). Context sensitivity estimation in toxicity detection. In the 5th Workshop on Online Abuse and Harms (WOAH 2021), pp. 140-145.
+* Kougia, V. and Pavlopoulos, J., 2021. Multimodal or Text? Retrieval or BERT? Benchmarking Classifiers for the Shared Task on Hateful Memes. In the 5th Workshop on Online Abuse and Harms (WOAH 2021), pp. 220-225
 
-* Pavlopoulos, J. and Laugier, L. and Sorensen, J. and Androutsopoulos, I. (2021). Task 5 at SemEval-2021: Toxic Spans Detection. In SemEval (to appear).
+* Xenos, A. and Pavlopoulos, J. and Androutsopoulos, I., 2021. Context sensitivity estimation in toxicity detection. In the 5th Workshop on Online Abuse and Harms (WOAH 2021), pp. 140-145.
 
-* Kouyia, V. and Pavlopoulos, J. and Papapetrou, P. (2021). RTEx: A novel framework for Ranking, Tagging, and Explanatory diagnostic captioning of radiography exams. Journal of the American Medical Informatics Association (accepted).
+* Pavlopoulos, J., Sorensen, J., Laugier, L. and Androutsopoulos, I., 2021, August. SemEval-2021 task 5: Toxic spans detection. In Proceedings of the 15th international workshop on semantic evaluation (SemEval-2021) (pp. 59-69).
 
-* Pavlopoulos J. and Papapetrou P. (2021). Customized Neural Predictive Medical Text: A Use-Case on Caregivers. Proceedings of the 19th International Conference on Artificial Intelligence in Medicine Online (to appear).
+* Kougia, V., Pavlopoulos, J., Papapetrou, P. and Gordon, M., 2021. RTEX: A novel framework for ranking, tagging, and explanatory diagnostic captioning of radiography exams. Journal of the American Medical Informatics Association, 28(8), pp.1651-1659.
 
-* Laughier L. and Pavlopoulos J. and Sorensen J. and Dixon L. (2021). Civil Rephrases Of Toxic Texts With Self-Supervised Transformers. EACL (to appear).
+* Pavlopoulos, J. and Papapetrou, P., 2021. Customized Neural Predictive Medical Text: A Use-Case on Caregivers. In Artificial Intelligence in Medicine: 19th International Conference on Artificial Intelligence in Medicine, AIME 2021, Virtual Event, June 15–18, 2021, Proceedings (pp. 438-443). Springer International Publishing.
 
-* Korre, K. and Chatzipanagiotou, M. and Pavlopoulos, J. (2021). ELERRANT: Automatic Grammatical Error Type Classification for Greek. In RANLP, pp. 708-717.
+* Laugier, L., Pavlopoulos, J., Sorensen, J. and Dixon, L., 2021. Civil rephrases of toxic texts with self-supervised transformers. arXiv preprint arXiv:2102.05456.
 
-* Korre, K. and Pavlopoulos, J. (2020). ERRANT: Assessing and Improving Grammatical Error TypeClassification. In LaTeCH-CLfL.
+* Korre, K. and Chatzipanagiotou, M. and Pavlopoulos, J., 2021. ELERRANT: Automatic Grammatical Error Type Classification for Greek. In RANLP, pp. 708-717.
 
-* Pavlopoulos, J. and Papapetrou P. (2020). Clinical Predictive Keyboard using Statistical and Neural Language Modeling. In CBMS. 
+* Korre, K. and Pavlopoulos, J., 2020. ERRANT: Assessing and Improving Grammatical Error TypeClassification. In LaTeCH-CLfL.
 
-* Pavlopoulos, J. and Sorensen, J. and Dixon, L. and Thain, N. and Androutsopoulos, I. (2020). Toxicity Detection: Does Context Really Matter? In ACL.
+* Pavlopoulos, J. and Papapetrou P., 2020. Clinical Predictive Keyboard using Statistical and Neural Language Modeling. In CBMS. 
 
-* Kouyia V., Pavlopoulos, J. and Androutsopoulos, I. (2020). Medical Image Tagging with Neural Retrieval and Deep Learning. In LNCS.
+* Pavlopoulos, J. and Sorensen, J. and Dixon, L. and Thain, N. and Androutsopoulos, I., 2020. Toxicity Detection: Does Context Really Matter? In ACL.
 
-* Kouyia V., Pavlopoulos, J. and Androutsopoulos, I. (2019). AUEB NLP Group at ImageCLEFmed Caption 2019. In the International Conference and Labs of the Evaluation Forum for European Languages.
+* Kouyia V., Pavlopoulos, J. and Androutsopoulos, I., 2020. Medical Image Tagging with Neural Retrieval and Deep Learning. In LNCS.
 
-* Kouyia, V., Pavlopoulos, J. and Androutsopoulos, I. (2019). A Survey of Biomedical Image Captioning. In Proceedings of the Shortcomings in Vision and Language NAACL Workshop, Minneapolis, MN, USA.
+* Kouyia V., Pavlopoulos, J. and Androutsopoulos, I., 2019. AUEB NLP Group at ImageCLEFmed Caption 2019. In the International Conference and Labs of the Evaluation Forum for European Languages.
 
-* Pavlopoulos, J., Malakasiotis, P., Bakagianni, J. and Androutsopoulos, I. (2017). Improved Abusive Comment Moderation with User Embeddings. In Proceedings of the Natural Language Processing meets Journalism Workshop in EMNLP, Copenhagen, Denmark, pp. 51—55.
+* Kouyia, V., Pavlopoulos, J. and Androutsopoulos, I., 2019. A Survey of Biomedical Image Captioning. In Proceedings of the Shortcomings in Vision and Language NAACL Workshop, Minneapolis, MN, USA.
 
-* Pavlopoulos, J., Malakasiotis, P. and Androutsopoulos, I. (2017). Deep Learning for User Comment Moderation. In Proceedings of the 1st Abusive Language Workshop in ACL, Vancouver, BC, Canada, pp. 25—35.
+* Pavlopoulos, J., Malakasiotis, P., Bakagianni, J. and Androutsopoulos, I., 2017. Improved Abusive Comment Moderation with User Embeddings. In Proceedings of the Natural Language Processing meets Journalism Workshop in EMNLP, Copenhagen, Denmark, pp. 51—55.
 
-* Pavlopoulos, J., Malakasiotis, P. and Androutsopoulos, I. (2017). Deeper Attention to abusive user comment moderation. In EMNLP, Copenhagen, Denmark, pp. 1125—1135.
+* Pavlopoulos, J., Malakasiotis, P. and Androutsopoulos, I., 2017. Deep Learning for User Comment Moderation. In Proceedings of the 1st Abusive Language Workshop in ACL, Vancouver, BC, Canada, pp. 25—35.
 
-* Giorgis, S., Rousas, A., Pavlopoulos, J., Malakasiotis, P. and Androutsopoulos, I. (2016). Aueb.twitter.sentiment at SemEval-2016 Task 4: A weighted ensemble of SVMs for Twitter sentiment analysis. In Proceedings of SemEval in NAACL:HLT, San Diego, California, USA, pp. 96—99.
+* Pavlopoulos, J., Malakasiotis, P. and Androutsopoulos, I., 2017. Deeper Attention to abusive user comment moderation. In EMNLP, Copenhagen, Denmark, pp. 1125—1135.
 
-* Xenos, D., Theodorakakos, P., Pavlopoulos, J., Malakasiotis, P. and Androutsopoulos, I. (2016). Aueb-absa at semeval-2016 task 5: Ensembles of classifiers and embeddings for aspect based sentiment analysis. In Proceedings of SemEval in NAACL:HLT, San Diego, California, USA, pp. 312—317.
+* Giorgis, S., Rousas, A., Pavlopoulos, J., Malakasiotis, P. and Androutsopoulos, I., 2016. Aueb.twitter.sentiment at SemEval-2016 Task 4: A weighted ensemble of SVMs for Twitter sentiment analysis. In Proceedings of SemEval in NAACL:HLT, San Diego, California, USA, pp. 96—99.
 
-* Pontiki, M., Galanis, D., Pavlopoulos, J., Papageorgiou, H., Androutsopoulos, I. and Manandhar, S. (2014). Semeval-2014 task 4: Aspect based sentiment analysis. In Proceedings of SemEval in EACL, Dublin, Ireland, pp. 27—35.
+* Xenos, D., Theodorakakos, P., Pavlopoulos, J., Malakasiotis, P. and Androutsopoulos, I., 2016. Aueb-absa at semeval-2016 task 5: Ensembles of classifiers and embeddings for aspect based sentiment analysis. In Proceedings of SemEval in NAACL:HLT, San Diego, California, USA, pp. 312—317.
 
-* Pavlopoulos, J. and Androutsopoulos, I. (2014). Aspect term extraction for sentiment analysis: New datasets, new evaluation measures and an improved unsupervised method. In Proceedings of the 5th Workshop on Language Analysis for Social Media in EACL, Gothenburg, Sweden, pp. 44—52.
+* Pontiki, M., Galanis, D., Pavlopoulos, J., Papageorgiou, H., Androutsopoulos, I. and Manandhar, S., 2014. Semeval-2014 task 4: Aspect based sentiment analysis. In Proceedings of SemEval in EACL, Dublin, Ireland, pp. 27—35.
 
-* Karampatsis, R. M., Pavlopoulos, J. and Malakasiotis, P. (2014). AUEB: Two stage sentiment analysis of social network messages. In Proceedings of SemEval in ACL, Dublin, Ireland, pp. 114—118.
+* Pavlopoulos, J. and Androutsopoulos, I., 2014. Aspect term extraction for sentiment analysis: New datasets, new evaluation measures and an improved unsupervised method. In Proceedings of the 5th Workshop on Language Analysis for Social Media in EACL, Gothenburg, Sweden, pp. 44—52.
 
-* Pavlopoulos, J. and Androutsopoulos, I. (2014). Multi-granular aspect aggregation in aspect-based sentiment analysis. In EACL,  Gothenburg, Sweden, pp.78–87.
+* Karampatsis, R. M., Pavlopoulos, J. and Malakasiotis, P., 2014. AUEB: Two stage sentiment analysis of social network messages. In Proceedings of SemEval in ACL, Dublin, Ireland, pp. 114—118.
 
-* Alexopoulos, P., Pavlopoulos, J. and Mylonas, P. (2012). Learning vague knowledge from socially generated content in an enterprise framework. In IFIP Advances in Information and Communication Technology, Artificial Intelligence Applications and Innovations, Halkidiki, Greece, pp. 510–519. 
+* Pavlopoulos, J. and Androutsopoulos, I., 2014. Multi-granular aspect aggregation in aspect-based sentiment analysis. In EACL,  Gothenburg, Sweden, pp.78–87.
 
-* Alexopoulos, P., Pavlopoulos, J., Wallace, M. and Kafentzis, K. (2011). Exploiting ontological relations for automatic semantic tag recommendation. In Proceedings of the 7th International Conference on Semantic Systems, Graz, Austria, pp. 105—110.
+* Alexopoulos, P., Pavlopoulos, J. and Mylonas, P., 2012. Learning vague knowledge from socially generated content in an enterprise framework. In IFIP Advances in Information and Communication Technology, Artificial Intelligence Applications and Innovations, Halkidiki, Greece, pp. 510–519. 
 
-* Voudigari, E., Pavlopoulos, J. and Vazirgiannis, M. (2011). A Framework for Web Page Rank Prediction. In Proceedings of Engineering Applications of Neural Networks / Artificial Intelligence Applications and Innovations, Corfu, Greece, pp. 240—249.
+* Alexopoulos, P., Pavlopoulos, J., Wallace, M. and Kafentzis, K., 2011. Exploiting ontological relations for automatic semantic tag recommendation. In Proceedings of the 7th International Conference on Semantic Systems, Graz, Austria, pp. 105—110.
 
-* Vrettaros, J., Pavlopoulos, J., Vouros, G. and Drigas, S. (2008). The development of a self-assessment system for the learners answers with the use of GPNN. In Proceedings of the World Summit on Knowledge Society (WSKS), Athens, Greece, pp.332—340. 
+* Voudigari, E., Pavlopoulos, J. and Vazirgiannis, M., 2011. A Framework for Web Page Rank Prediction. In Proceedings of Engineering Applications of Neural Networks / Artificial Intelligence Applications and Innovations, Corfu, Greece, pp. 240—249.
+
+* Vrettaros, J., Pavlopoulos, J., Vouros, G. and Drigas, S., 2008. The development of a self-assessment system for the learners answers with the use of GPNN. In Proceedings of the World Summit on Knowledge Society (WSKS), Athens, Greece, pp.332—340. 
 
 ## journals
-* Pavlopoulos, J., Likas, A. (2022). Distance from Unimodality for the Assessment of Opinion Polarization. Cognitive Computation. https://doi.org/10.1007/s12559-022-10088-2
+* Sommerschield, T., Assael, Y., Pavlopoulos, J., Stefanak, V., Senior, A., Dyer, C., Bodel, J., Prag, J., Androutsopoulos, I. and de Freitas, N., 2023. Machine Learning for Ancient Languages: A Survey. Computational Linguistics, pp.1-44. https://doi.org/10.1162/coli_a_00481
 
-* Pavlopoulos, J., Konstantinidou, M. (2022). Computational authorship analysis of the homeric poems. International Journal of Digital Humanities, 1-20.
+* Boulieris, P., Pavlopoulos, J., Xenos, A., & Vassalos, V., 2023. Fraud detection with natural language processing. Machine Learning, 1-22. https://doi.org/10.1007/s10994-023-06354-5
 
-* Pavlopoulos, J., Kougia, V., Androutsopoulos, I., Papamichail, D. (2022). Diagnostic Captioning: a Survey. Knowledge and Information Systems, 1-32. https://doi.org/10.1007/s10115-022-01684-7.
+* Pavlopoulos, J., Likas, A., 2022. Distance from Unimodality for the Assessment of Opinion Polarization. Cognitive Computation. https://doi.org/10.1007/s12559-022-10088-2
 
-* Xenos, A., Pavlopoulos, J., Androutsopoulos, I., Dixon, L., Sorensen, J., Laugier, L. (2022). Toxicity Detection can be Sensitive to the Conversational Context. First Monday, 27(9), 2022. https://doi.org/10.5210/fm.v27i5.12285. 
+* Pavlopoulos, J., Konstantinidou, M., 2022. Computational authorship analysis of the homeric poems. International Journal of Digital Humanities, 1-20.
 
-* Assael, Y., Sommerschield, T., Shillingford, B., Bordbar, M., Pavlopoulos, J., Chatzipanagiotou, M., Androutsopoulos, I., Prag, J., de Freitas., N. (2022). Restoring and attributing ancient texts with deep neural networks. In Nature.
+* Pavlopoulos, J., Kougia, V., Androutsopoulos, I., Papamichail, D., 2022. Diagnostic Captioning: a Survey. Knowledge and Information Systems, 1-32. https://doi.org/10.1007/s10115-022-01684-7.
 
-* Olczak J., Pavlopoulos J., Prijs J., Ijpma F. F. A., Doornberg J. N., Lundstrom C., Hedlund J., and Gordon M. (2021). Presenting artificial intelligence, deep learning, and machine learning studies to clinicians and healthcare stakeholders: an introductory reference with a guideline and a Clinical AI Research (CAIR) checklist proposal. Acta Orthopaedica.  
+* Xenos, A., Pavlopoulos, J., Androutsopoulos, I., Dixon, L., Sorensen, J., Laugier, L., 2022. Toxicity Detection can be Sensitive to the Conversational Context. First Monday, 27(9), 2022. https://doi.org/10.5210/fm.v27i5.12285. 
 
-* Kougia V., Pavlopoulos J., Papapetrou P. (2021). RTEx: A novel framework for Ranking, Tagging, and Explanatory diagnostic captioning of radiography exams. Journal of the American Medical Informatics Association.
+* Assael, Y., Sommerschield, T., Shillingford, B., Bordbar, M., Pavlopoulos, J., Chatzipanagiotou, M., Androutsopoulos, I., Prag, J., de Freitas., N., 2022. Restoring and attributing ancient texts with deep neural networks. In Nature.
 
-* Tsatsaronis G., Balikas G., Malakasiotis P., Partalas I., Zschunke, M., Alvers, M., Weissenborn, D., Krithara, A., Petridis, S., Polychronopoulos, D., Almirantis, Y., Pavlopoulos, J., Baskiotis, N., Gallinari, P., Artieres, T., Ngomo, A.-C., Heino, N., Gaussier, E.; Barrio-Alvers, L., Schroeder, M., Androutsopoulos, I. and Paliouras, G. (2015). An overview of the bioasq large-scale biomedical semantic indexing and question answering competition. BMC Bioinformatics 16(1).
+* Olczak J., Pavlopoulos J., Prijs J., Ijpma F. F. A., Doornberg J. N., Lundstrom C., Hedlund J., and Gordon M., 2021. Presenting artificial intelligence, deep learning, and machine learning studies to clinicians and healthcare stakeholders: an introductory reference with a guideline and a Clinical AI Research (CAIR) checklist proposal. Acta Orthopaedica.  
+
+* Kougia V., Pavlopoulos J., Papapetrou P., 2021. RTEx: A novel framework for Ranking, Tagging, and Explanatory diagnostic captioning of radiography exams. Journal of the American Medical Informatics Association.
+
+* Tsatsaronis G., Balikas G., Malakasiotis P., Partalas I., Zschunke, M., Alvers, M., Weissenborn, D., Krithara, A., Petridis, S., Polychronopoulos, D., Almirantis, Y., Pavlopoulos, J., Baskiotis, N., Gallinari, P., Artieres, T., Ngomo, A.-C., Heino, N., Gaussier, E.; Barrio-Alvers, L., Schroeder, M., Androutsopoulos, I. and Paliouras, G., 2015. An overview of the bioasq large-scale biomedical semantic indexing and question answering competition. BMC Bioinformatics 16(1).
 
 * Alexopoulos P., Pavlopoulos J. and Mylonas P., “A Semantic Framework for Harvesting Vague Enterprise Knowledge from Microposts”. International Journal on Artificial Intelligence Tools 23(02), 2014.
 
@@ -104,6 +110,6 @@ permalink: /publications/
 
 ## monographs
 
-* Pavlopoulos, J. (2014). Aspect Based Sentiment Analysis. PhD Thesis, University of Athens Economics and Business, Department of Informatics, Greece, Supervisor: Professor Ion Androutsopoulos.
+* Pavlopoulos, J., 2014. Aspect Based Sentiment Analysis. PhD Thesis, University of Athens Economics and Business, Department of Informatics, Greece, Supervisor: Professor Ion Androutsopoulos.
 
-* Pavlopoulos, J. (2009). Implementation and Comparison of models addressing Automatic Text Illustration, MSc Dissertation, University of Edinburgh, School of Informatics, U.K., Supervisor: Professor Mirella Lapata.
+* Pavlopoulos, J., 2009. Implementation and Comparison of models addressing Automatic Text Illustration, MSc Dissertation, University of Edinburgh, School of Informatics, U.K., Supervisor: Professor Mirella Lapata.
