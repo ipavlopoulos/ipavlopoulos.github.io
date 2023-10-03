@@ -4,11 +4,13 @@ layout: default
 permalink: /projects/
 ---
 
+* [EFRA](https://efraproject.eu/): AI-enabled food risk prevention. EU-funded project (2023-2026).
+
 * Studying toxicity classifiers. Project funded by Google (unrestricted research support), Senior Researcher (2022-2023).
 
 * [Natural Language Processing for Digital Art History](https://www.su.se/english/research/research-projects/natural-language-processing-for-digital-art-history), Project Manager (2021-2022). 
 
-* [Automatic grading](https://datascience.dsv.su.se/projects/autograding.html) and assessment of electonic exams, Senior Researcher (2021).
+* [Automatic grading](https://datascience.dsv.su.se/projects/autograding.html) and assessment of electronic exams, Senior Researcher (2021).
 
 * Cost model development for the moderation of user posts on online platforms. Project with the Joint Research Center, European Commission, Principal Investigator (2020). 
 
