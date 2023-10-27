@@ -7,9 +7,11 @@ permalink: /publications/
 (find me in [scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en&oi=ao">Scholar</a>))
 
 ## publications in peer-reviewed conference proceedings
-* Liagkou K., Pavlopoulos J., Machotka E. 2023. Leveraging the Spatiotemporal Analysis of Meisho-e Landscapes. In Proceedings of the 26th International Conference of Discovery Science. Porto, Portugal (to appear; [accepted manuscript](/files/liagkou_et_al_2023_ukiyo-e.pdf))
+* Pavlopoulos J., Kougia V., Platanou P. and Essler H., 2023. Detecting Erroneous Handwritten Byzantine Text Recognition. In Findings of the Conference on Empirical Methods in Natural Language Processing  (EMNLP 2023), Singapore (to appear; [accepted manuscript](files/pavlopoulos_etal_2023_htrec.pdf))
 
-* Pavlopoulos J., Konstantinidou M., Vardakas G., Marthot-Santaniello I., Perdiki E., Koutsianos D., Likas A., Essler H., 2023. Explaining the Chronological Attribution of Greek Papyri Images. In Proceedings of the 26th International Conference of Discovery Science. Porto, Portugal (to appear; [accepted manuscript](/files/pavlopoulos_et_al_2023_papyri.pdf)). 
+* Liagkou K., Pavlopoulos J., Machotka E. 2023. Leveraging the Spatiotemporal Analysis of Meisho-e Landscapes. In Proceedings of the 26th International Conference of Discovery Science. Porto, Portugal ([accepted manuscript](/files/liagkou_et_al_2023_ukiyo-e.pdf))
+
+* Pavlopoulos J., Konstantinidou M., Vardakas G., Marthot-Santaniello I., Perdiki E., Koutsianos D., Likas A., Essler H., 2023. Explaining the Chronological Attribution of Greek Papyri Images. In Proceedings of the 26th International Conference of Discovery Science. Porto, Portugal ([accepted manuscript](/files/pavlopoulos_et_al_2023_papyri.pdf)). 
 
 * Pavlopoulos, J., Konstantinidou, M., Marthot-Santaniello, I., Essler, H., & Paparigopoulou, A., 2023. Dating Greek Papyri with Text Regression. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 10001-10013.
 
