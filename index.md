@@ -6,9 +6,11 @@ permalink: /
 
 <img src="docs/assets/logo.jpeg" align="left" width="200px" style="padding:10px;"/>
 
-Associate professor (elected) at the Department of Informatics of [Athens University of Economics and Business](https://aueb.gr/en) and affiliated with [Stockholm University](https://dsv.su.se/en/). 
-Before that, I was a visiting scholar at Ca' Foscari University of Venice ([Venice Centre for Digital and Public Humanities](https://vedph.github.io/)) and a senior lecturer (fixed-term) at [Stockholm University](https://dsv.su.se/en/).
+Assistant Professor (elected) at the Department of Informatics of [Athens University of Economics and Business](https://aueb.gr/en) and affiliated with [Stockholm University](https://dsv.su.se/en/). 
+I have previously served as a Senior Lecturer (fixed-term) in NLP and Data Science at the Department of Computer and Systems Sciences of [Stockholm University](https://dsv.su.se/en/), and was a visiting scholar at the [Venice Centre for Digital and Public Humanities](https://vedph.github.io/), Ca' Foscari University of Venice.
 
-My research is focused on machine learning for natural language processing, and recently published studies regard [opinion polarization](https://doi.org/10.1007/s12559-022-10088-2), [toxic language detection and mitigation](https://aclanthology.org/2022.acl-long.259/), [diagnostic captioning](https://doi.org/10.1007/s10115-022-01684-7), [computational authorship analysis](https://link.springer.com/article/10.1007/s42803-022-00046-7), [text restoration and attribution](https://www.nature.com/articles/s41586-022-04448-z).
+My research is focused on Machine Learning for NLP. 
+Applications of my work lie mainly in the domain of Digital Humanities, 
+and I am also a member of the Editorial Board of the [magazén International Journal for Digital and Public Humanities.](https://edizionicafoscari.unive.it/en/edizioni4/riviste/magazen/info)
 
-I am teaching Language Technology ([MSc Digital Methods for the Humanities](https://www.dept.aueb.gr/en/dmh)) and Practical Data Science ([MSc Data Science](https://datascience.aueb.gr)).
+I teach the course of Language Technology at the [MSc in Digital Methods for the Humanities](https://www.dept.aueb.gr/en/dmh) and the course of Practical Data Science at the [MSc in Data Science](https://datascience.aueb.gr).
