@@ -7,7 +7,7 @@ permalink: /publications/
 (find me in [scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en&oi=ao">Scholar</a>))
 
 ## publications in peer-reviewed conference proceedings
-* Pavlopoulos J., Kougia V., Platanou P. and Essler H., 2023. Detecting Erroneous Handwritten Byzantine Text Recognition. In Findings of the Conference on Empirical Methods in Natural Language Processing  (EMNLP 2023), Singapore (to appear; [accepted manuscript](files/pavlopoulos_etal_2023_htrec.pdf))
+* Pavlopoulos J., Kougia V., Platanou P. and Essler H., 2023. Detecting Erroneous Handwritten Byzantine Text Recognition. In Findings of the Conference on Empirical Methods in Natural Language Processing  (EMNLP 2023), Singapore ([slides](files/pavlopoulos_EMNLP23.pdf); [accepted manuscript](files/pavlopoulos_etal_2023_htrec.pdf))
 
 * Liagkou K., Pavlopoulos J., Machotka E. 2023. Leveraging the Spatiotemporal Analysis of Meisho-e Landscapes. In Proceedings of the 26th International Conference of Discovery Science. Porto, Portugal ([accepted manuscript](/files/liagkou_et_al_2023_ukiyo-e.pdf))
 
