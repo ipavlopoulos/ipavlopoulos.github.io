@@ -7,6 +7,8 @@ permalink: /publications/
 (find me in [scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en&oi=ao">Scholar</a>))
 
 ## publications in peer-reviewed conference proceedings
+* Pavlopoulos J. and Likas A., 2024. Polarized Opinion Detection Improves the Detection of Toxic Language. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), Malta, pp. 1946–1958. https://aclanthology.org/2024.eacl-long.117. ([poster](https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-02-25/c133o9g/nDFU-poster.pdf); [video](https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-02-25/0123olf/nDFU-talk.mp4))
+
 * Pavlopoulos J., Kougia V., Platanou P. and Essler H., 2023. Detecting Erroneous Handwritten Byzantine Text Recognition. In Findings of the Conference on Empirical Methods in Natural Language Processing  (EMNLP 2023), Singapore ([slides](files/pavlopoulos_EMNLP23.pdf); [accepted manuscript](files/pavlopoulos_etal_2023_htrec.pdf))
 
 * Liagkou K., Pavlopoulos J., Machotka E. 2023. Leveraging the Spatiotemporal Analysis of Meisho-e Landscapes. In Proceedings of the 26th International Conference of Discovery Science. Porto, Portugal ([accepted manuscript](/files/liagkou_et_al_2023_ukiyo-e.pdf))
