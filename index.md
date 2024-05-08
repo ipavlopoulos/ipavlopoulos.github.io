@@ -29,7 +29,7 @@ Currently, I teach the course of Natural Language Processing at the [MSc in Digi
 </div>
 
 <div style="max-width: 430px;">
-    <h4>Machine Learning for Ancient Languages</h4>
+    <h4>Machine learning for ancient languages</h4>
     <div>Following the study of <a src="https://ithaca.deepmind.com">ithaca.deepmind.com</a>, this is an overview of machine learning for ancient languages in the context of an invited talk at the University of Vienna (<a src="https://dm.cs.univie.ac.at/teaching/machines-that-understand">machines that understand</a>) and related to the <a src="https://www.ml4al.com/">ML4AL ACL 2024 workshop</a>.</div>
     <video src="https://www.youtube.com/watch?v=ChZdDGXY4BU" controls="controls" style="max-width: 430px;">
     </video>
