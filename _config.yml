@@ -21,10 +21,10 @@
 title: John Pavlopoulos
 email: annis@aueb.gr
 description: >- # this means to ignore newlines until "baseurl:"
-  NLP Researcher
+  Machine Learning in Information Retrieval and Data Mining for Large Document Collections
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: itpavlopoulos
+#twitter_username: itpavlopoulos
 github_username:  ipavlopoulos
 
 # Build settings

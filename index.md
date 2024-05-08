@@ -13,7 +13,7 @@ My research is dedicated to Machine Learning for NLP, with a keen focus on appli
 Currently, I teach the course of Natural Language Processing at the [MSc in Digital Methods for the Humanities](https://www.dept.aueb.gr/en/dmh) and the course of Practical Data Science at the [MSc in Data Science](https://datascience.aueb.gr).
 
 ---
-<h3>Highlights</h3>
+<h2>Highlights</h2>
 <div style="max-width: 430px;">
     <h4>Polarized Opinion Detection</h4>
     <div>Improved text toxicity detection by focusing on polarized texts. In other words, an item doesn't have to be black/white nor gray. One group of people may see it as black while another as white.</div>
