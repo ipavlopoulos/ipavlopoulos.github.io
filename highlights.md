@@ -1,6 +1,6 @@
 ---
 title: Talks
-layout: page
+layout: default
 permalink: /talks/
 ---
 
