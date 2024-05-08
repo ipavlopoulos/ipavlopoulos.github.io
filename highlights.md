@@ -1,7 +1,7 @@
 ---
-title: Highlights
+title: Talks
 layout: page
-permalink: /
+permalink: /talks/
 ---
 
 <div style="max-width: 430px;">
