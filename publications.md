@@ -7,6 +7,7 @@ permalink: /publications/
 (find me in [scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en&oi=ao">Scholar</a>))
 
 ## publications in peer-reviewed conference proceedings
+
 * Pavlopoulos J. and Likas A., 2024. Polarized Opinion Detection Improves the Detection of Toxic Language. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), Malta, pp. 1946–1958. [https://aclanthology.org/2024.eacl-long.117](https://aclanthology.org/2024.eacl-long.117) ([poster](https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-02-25/c133o9g/nDFU-poster.pdf) and [video](https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-02-25/0123olf/nDFU-talk.mp4))
 
 * Pavlopoulos J., Kougia V., Platanou P. and Essler H., 2023. Detecting Erroneous Handwritten Byzantine Text Recognition. In Findings of the Conference on Empirical Methods in Natural Language Processing  (EMNLP 2023), Singapore ([slides](files/pavlopoulos_EMNLP23.pdf); [accepted manuscript](files/pavlopoulos_etal_2023_htrec.pdf))
@@ -92,6 +93,8 @@ permalink: /publications/
 * Vrettaros, J., Pavlopoulos, J., Vouros, G. and Drigas, S., 2008. The development of a self-assessment system for the learners answers with the use of GPNN. In Proceedings of the World Summit on Knowledge Society (WSKS), Athens, Greece, pp.332—340. 
 
 ## journals
+* Barmpounis E.-K., Pavlopoulos, J., Louridas, P., Dritsa, K., 2024. Recognition and Analysis of the Proceedings of the Greek Parliament after WWII. DHQ 18(1). https://www.digitalhumanities.org/dhq/vol/18/1/000736/000736.html (data at: https://zenodo.org/records/8302990; [Transkribus model](https://app.transkribus.org/training/gallery) under the name "Greek Parliamentary Proceedings 1946")
+
 * Pavlopoulos J., Romell A., Curman J., Steinert O., Lindgren T., Borg M., and Randl K., 2023. Automotive Fault Nowcasting with Machine Learning and Natural Language Processing. Machine Learning. https://doi.org/10.1007/s10994-023-06398-7
 
 * Sommerschield, T., Assael, Y., Pavlopoulos, J., Stefanak, V., Senior, A., Dyer, C., Bodel, J., Prag, J., Androutsopoulos, I. and de Freitas, N., 2023. Machine Learning for Ancient Languages: A Survey. Computational Linguistics, pp.1-44. https://doi.org/10.1162/coli_a_00481
@@ -118,7 +121,7 @@ permalink: /publications/
 
 * Vrettaros J., Pavlopoulos J., Drigas A. S. and Hrissagis K., “GPNN techniques in learning assessment systems”. In International Journal of Technology Enhanced Learning. Inderscience Publishers, pp. 415—429, 3(4), 2011.
 
-## monographs
+## theses
 
 * Pavlopoulos, J., 2014. Aspect Based Sentiment Analysis. PhD Thesis, University of Athens Economics and Business, Department of Informatics, Greece, Supervisor: Professor Ion Androutsopoulos.
 
