@@ -16,7 +16,7 @@ permalink: /publications/
 
 * Pavlopoulos J., Konstantinidou M., Vardakas G., Marthot-Santaniello I., Perdiki E., Koutsianos D., Likas A., Essler H., 2023. Explaining the Chronological Attribution of Greek Papyri Images. In Proceedings of the 26th International Conference of Discovery Science. Porto, Portugal ([accepted manuscript](/files/pavlopoulos_et_al_2023_papyri.pdf)). 
 
-* Pavlopoulos, J., Konstantinidou, M., Marthot-Santaniello, I., Essler, H., & Paparigopoulou, A., 2023. Dating Greek Papyri with Text Regression. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 10001-10013.
+* Pavlopoulos, J., Konstantinidou, M., Marthot-Santaniello, I., Essler, H., & Paparigopoulou, A., 2023. Dating Greek Papyri with Text Regression. In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 10001-10013. [https://aclanthology.org/2023.acl-long.556](https://aclanthology.org/2023.acl-long.556) ([video](https://aclanthology.org/2023.acl-long.556.mp4)).
 
 * Dritsa, K., Thoma, A., Pavlopoulos, I. and Louridas, P., 2022. A Greek Parliament Proceedings Dataset for Computational Linguistics and Political Analysis. Advances in Neural Information Processing Systems, 35, pp.28874-28888. 
 
