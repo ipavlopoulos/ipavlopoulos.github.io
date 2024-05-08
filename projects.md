@@ -3,6 +3,7 @@ title: Projects
 layout: default
 permalink: /projects/
 ---
+* [LLM3](https://sites.google.com/view/llm3): Improving online discussions and deliberations with large language models.
 
 * [EFRA](https://efraproject.eu/): AI-enabled food risk prevention. EU-funded project (2023-2026).
 
