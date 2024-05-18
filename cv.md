@@ -1,7 +1,7 @@
 ---
-title: CV (short)
+title: CV
 layout: default
-permalink: /cv_short/
+permalink: /cv/
 ---
 
 
@@ -14,3 +14,4 @@ His research focuses on Machine Learning for Natural Language Processing (NLP), 
 John is a member of the Editorial Board for the magazén International Journal for Digital and Public Humanities. 
 He currently teaches the courses of Natural Language Processing (MSc in Digital Methods for the Humanities) and Practical Data Science (MSc in Data Science).
 
+More details may be found in his analytical resume, available in [Greek](files/cv_gr.pdf) and [English](files/cv_en.pdf).
