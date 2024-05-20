@@ -4,7 +4,9 @@ layout: default
 permalink: /cv/
 ---
 
+<a href="ipavlopoulos.github.io/files/CV.pdf" target="_blank">CV</a>
 
+<!--
 John Pavlopoulos is an Assistant Professor specializing in Machine Learning for Information Retrieval and Data Mining of large document collections at the Department of Informatics, Athens University of Economics and Business, Greece. He also holds affiliations with Archimedes/Athena RC, Greece, and Stockholm University, Sweden.
 
 Previously, he served as a Senior Lecturer (fixed-term) in NLP and Data Science at the Department of Computer and Systems Sciences, Stockholm University, Sweden, and was a visiting scholar at the Venice Centre for Digital and Public Humanities, Ca’ Foscari University of Venice, Italy.
@@ -15,3 +17,4 @@ John is a member of the Editorial Board for the magazén International Journal f
 He currently teaches the courses of Natural Language Processing (MSc in Digital Methods for the Humanities) and Practical Data Science (MSc in Data Science).
 
 More details may be found in his analytical resume, available in [Greek](files/cv_gr.pdf) and [English](files/cv_en.pdf).
+-->
