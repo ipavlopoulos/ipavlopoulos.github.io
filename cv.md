@@ -13,5 +13,10 @@ His research focuses on Machine Learning for Natural Language Processing (NLP), 
 John is a member of the Editorial Board for the magazén International Journal for Digital and Public Humanities. 
 He currently teaches the courses of Natural Language Processing (MSc in Digital Methods for the Humanities) and Practical Data Science (MSc in Data Science).
 
-More information may be found in [his resume](files/CV.pdf).
-Extended versions of his CV can be found in [Greek](files/cv_gr.pdf) and in [English](files/cv_en.pdf).
+More information may be found in [his resume](files/CV.pdf) or its extended versions in [Greek](files/cv_gr.pdf) and [English](files/cv_en.pdf).
+
+--- 
+* E-mail: ipavlopoulos@aueb.gr
+* Office Address: Antoniadou Wing, 3rd Floor, Patision 76, Athina 104 34
+* Phone: +30 210 82 03 130
+* Office hours: Every Friday 10am EEST [virtually](https://stockholmuniversity.zoom.us/j/65619504238)
