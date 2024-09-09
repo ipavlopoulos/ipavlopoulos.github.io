@@ -18,5 +18,5 @@ More information may be found in [his resume](files/CV.pdf) or its extended vers
 --- 
 * E-mail: ipavlopoulos@aueb.gr
 * Office Address: Antoniadou Wing, 3rd Floor, Patision 76, Athina 104 34
-* Phone: +30 210 82 03 130
-* Office hours: Every Friday 10am EEST [virtually](https://stockholmuniversity.zoom.us/j/65619504238)
+* Phone: +30 210 82 03 133
+* Office hours: Friday, 9am EEST ([virtually](https://stockholmuniversity.zoom.us/j/65619504238): 10am EEST)
