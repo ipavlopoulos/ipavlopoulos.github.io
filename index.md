@@ -6,10 +6,13 @@ permalink: /
 
 <img src="docs/assets/logo.jpeg" align="left" width="200px" style="padding:10px;"/>
 
-I am honoured to serve as an Assistant Professor at the Department of Informatics of [Athens University of Economics and Business](https://aueb.gr/en), with affiliations at [Archimedes/Athena RC](https://www.athenarc.gr/en/archimedes) and [Stockholm University](https://dsv.su.se/en/). 
+I serve as an Assistant Professor at the Department of Informatics of [Athens University of Economics and Business](https://aueb.gr/en) and I am affiliated with [Archimedes/Athena RC](https://www.athenarc.gr/en/archimedes) and [Stockholm University](https://dsv.su.se/en/). 
 Previously, I held the position of Senior Lecturer (fixed-term) in NLP and Data Science at the Department of Computer and Systems Sciences of [Stockholm University](https://dsv.su.se/en/), and had the privilege of being a visiting scholar at the [Venice Centre for Digital and Public Humanities](https://vedph.github.io/), Ca' Foscari University of Venice.
+My research is dedicated to Machine Learning for NLP, with a keen focus on applications in Social Sciences, the Humanities, and Healthcare.
 
-My research is dedicated to Machine Learning for NLP, with a keen focus on applications in Digital Humanities, Healthcare, and Sentiment Analysis. I am also proud to contribute as a member of the Editorial Board of the esteemed [magazén International Journal for Digital and Public Humanities.](https://edizionicafoscari.unive.it/en/edizioni4/riviste/magazen/info)
-Currently, I teach the course of Natural Language Processing at the [MSc in Digital Methods for the Humanities](https://www.dept.aueb.gr/en/dmh) and the course of Practical Data Science at the [MSc in Data Science](https://datascience.aueb.gr).
+--- 
 
-
+* E-mail: ipavlopoulos (or annis) at aueb dot gr
+* Office Address: Antoniadou Wing, 3rd Floor (A308), Patision 76, Athina 104 34
+* Office hours: Thursday and Friday, 9-10am EEST
+* Phone: +30 210 82 03 133
