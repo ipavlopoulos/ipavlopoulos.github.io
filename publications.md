@@ -9,7 +9,7 @@ permalink: /publications/
 ## publications in proceedings of peer-reviewed venues
 
 * Pavlopoulos, J., Vardakas, G., Likas, A. (2024). Revisiting Silhouette Aggregation. In the 27th International Conference on
-Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/ds2024_best_paper.jpeg); a preprint of the submitted version is here: [arXiv:2401.05831](https://arxiv.org/abs/2401.05831)).
+Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/ds2024_best_paper.jpeg), a preprint is present: [arXiv:2401.05831](https://arxiv.org/abs/2401.05831)).
 
 * Pavlopoulos, J., Louridas, P., & Filos, P. (2024). Towards a Greek Proverb Atlas: A Computational Spatial Exploration and Attribution of Greek Proverbs. (To appear) In the Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing  (EMNLP 2024), Miami, USA. Related preprint: https://www.researchsquare.com/article/rs-3360387/v4
 
