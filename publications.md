@@ -8,13 +8,16 @@ permalink: /publications/
 
 ## publications in proceedings of peer-reviewed venues
 
+* Pavlopoulos, J., Vardakas, G., Likas, A. (2024). Revisiting Silhouette Aggregation. In the 27th International Conference on
+Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best_paper_pisa2024.jpg); a preprint of the submitted version is here: [arXiv:2401.05831](https://arxiv.org/abs/2401.05831)).
+
 * Pavlopoulos, J., Louridas, P., & Filos, P. (2024). Towards a Greek Proverb Atlas: A Computational Spatial Exploration and Attribution of Greek Proverbs. (To appear) In the Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing  (EMNLP 2024), Miami, USA. Related preprint: https://www.researchsquare.com/article/rs-3360387/v4
 
 * Randl, K., Pavlopoulos, J., Henriksson, A., & Lindgren, T. (2024). Evaluating the Reliability of Self-Explanations in Large Language Models. In International Conference on Discovery Science (to appear). Cham: Springer Nature Switzerland. Related preprint: arXiv preprint arXiv:2407.14487.
 
 * De Gregorio, G., Ferretti, L., Pena, R. C., Marthot-Santaniello, I., Konstantinidou, M., & Pavlopoulos, J. (2024, August). A New Framework for Error Analysis in Computational Paleographic Dating of Greek Papyri. In International Conference on Document Analysis and Recognition (pp. 102-118). Cham: Springer Nature Switzerland.
 
-* Pavlopoulos, J., Kougia, V., Arias, E.G., Platanou, P., Shabalin, S., Liagkou, K., Papadatos, E., Essler, H., Camps, J.B. and Fischer, F., 2024. Challenging Error Correction in Recognised Byzantine Greek. In Proceedings of the 1st Workshop on Machine Learning for Ancient Languages (ML4AL 2024) (pp. 1-12). [BEST PAPER AWARD](files/ml4al2024_best.jpeg)
+* Pavlopoulos, J., Kougia, V., Arias, E.G., Platanou, P., Shabalin, S., Liagkou, K., Papadatos, E., Essler, H., Camps, J.B. and Fischer, F., 2024. Challenging Error Correction in Recognised Byzantine Greek. In Proceedings of the 1st Workshop on Machine Learning for Ancient Languages (ML4AL 2024) (pp. 1-12). ([BEST PAPER](files/ml4al2024_best.jpeg))
 
 * Konstantinidou, M., Pavlopoulos, J., & Barker, E. (2024, August). Exploring intertextuality across the Homeric poems through language models. In Proceedings of the 1st Workshop on Machine Learning for Ancient Languages (ML4AL 2024) (pp. 260-268).
 
