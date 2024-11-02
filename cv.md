@@ -4,7 +4,7 @@ layout: default
 permalink: /cv/
 ---
 
-John Pavlopoulos is an Assistant Professor specializing in Machine Learning for Information Retrieval and Data Mining of large document collections at the Department of Informatics, Athens University of Economics and Business, Greece. He also holds affiliations with Archimedes/Athena RC, Greece, and Stockholm University, Sweden.
+John Pavlopoulos is an Assistant Professor of Machine Learning at the Department of Informatics, Athens University of Economics and Business, Greece. He also holds affiliations with Archimedes/Athena RC, Greece, and Stockholm University, Sweden.
 
 Previously, he served as a Senior Lecturer (fixed-term) in NLP and Data Science at the Department of Computer and Systems Sciences, Stockholm University, Sweden, and was a visiting scholar at the Venice Centre for Digital and Public Humanities, Ca’ Foscari University of Venice, Italy.
 
