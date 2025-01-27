@@ -14,5 +14,5 @@ My research is dedicated to Machine Learning for NLP, with a focus on applicatio
 
 * E-mail: ipavlopoulos (or annis) at aueb dot gr
 * Office Address: Antoniadou Wing, 3rd Floor (A308), Patision 76, Athina 104 34
-* Office hours: Thursday and Friday, 9-10am EEST
+* Office hours: Tuesday and Wednesday from 2pm to 4pm EEST
 * Phone: +30 210 82 03 133
