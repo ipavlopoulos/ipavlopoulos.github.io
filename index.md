@@ -19,6 +19,6 @@ My research is dedicated to Machine Learning for NLP, with a focus on applicatio
 
 ## News
 
-- 📢 **July 2025**: Our (2nd) Nature paper is out (see [predictingthepast.com](https://predictingthepast.com)).
-- 🎓 **July 2025**: Our survey on NLP for Greek is online (at [cell.com/patterns](https://www.cell.com/patterns/fulltext/S2666-3899(25)00161-8)).
-- 🧪 **June 2025**: Gave a talk about HTR at Princeton (more about the event at [cdh.princeton.edu](https://cdh.princeton.edu/events/2025/06/scoop-source-codes-of-the-past-launching-an-international-atrhtr-network-for-manuscript-analysis/)).
+- 📢 **July 2025**: Our (2nd) Nature paper is out ([predictingthepast.com](https://predictingthepast.com)).
+- 🎓 **July 2025**: Our survey on NLP for Greek is online ([cell.com/patterns](https://www.cell.com/patterns/fulltext/S2666-3899(25)00161-8)).
+- 🧪 **June 2025**: Gave a talk about HTR at Princeton ([cdh.princeton.edu](https://cdh.princeton.edu/events/2025/06/scoop-source-codes-of-the-past-launching-an-international-atrhtr-network-for-manuscript-analysis/)).
