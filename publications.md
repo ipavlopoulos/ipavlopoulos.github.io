@@ -8,6 +8,8 @@ permalink: /publications/
 
 ## publications in proceedings of peer-reviewed venues
 
+* Dimakis, A., Pavlopoulos, J., Anastasopoulos, A. (2025). Dialect Normalization using Large Language Models and Morphological Rules. In Findings of the Association for Computational Linguistics: ACL 2025, pages 23696–23714, Vienna, Austria. Association for Computational Linguistics.
+
 * Pavlopoulos, J., Vardakas, G., Likas, A. (2024). Revisiting Silhouette Aggregation. In the 27th International Conference on
 Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg), a preprint is present: [arXiv:2401.05831](https://arxiv.org/abs/2401.05831)).
 
@@ -106,6 +108,10 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg)
 * Vrettaros, J., Pavlopoulos, J., Vouros, G. and Drigas, S., 2008. The development of a self-assessment system for the learners answers with the use of GPNN. In Proceedings of the World Summit on Knowledge Society (WSKS), Athens, Greece, pp.332—340. 
 
 ## journals
+* Assael, Y., Sommerschield, T., Cooley, A., Shillingford, B., Pavlopoulos, J. et al. 2025. Contextualizing ancient texts with generative neural networks. Nature. https://doi.org/10.1038/s41586-025-09292-5
+
+* Bakagianni, J., Pouli, K., Gavriilidou, M., Pavlopoulos, J., 2025. A systematic survey of natural language processing for the Greek language. Patterns. https://www.cell.com/patterns/fulltext/S2666-3899(25)00161-8 
+  
 * Barmpounis E.-K., Pavlopoulos, J., Louridas, P., Dritsa, K., 2024. Recognition and Analysis of the Proceedings of the Greek Parliament after WWII. DHQ 18(1). https://www.digitalhumanities.org/dhq/vol/18/1/000736/000736.html (data at: https://zenodo.org/records/8302990; [Transkribus model](https://app.transkribus.org/training/gallery) under the name "Greek Parliamentary Proceedings 1946")
 
 * Pavlopoulos J., Romell A., Curman J., Steinert O., Lindgren T., Borg M., and Randl K., 2023. Automotive Fault Nowcasting with Machine Learning and Natural Language Processing. Machine Learning. https://doi.org/10.1007/s10994-023-06398-7
