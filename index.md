@@ -16,3 +16,9 @@ My research is dedicated to Machine Learning for NLP, with a focus on applicatio
 * Office Address: Antoniadou Wing, 3rd Floor (A308), Patision 76, Athina 104 34
 * Office hours: Monday/Friday 1pm EEST
 * Phone: +30 210 82 03 133
+
+## News
+
+- 📢 **July 2025**: Our (2nd) Nature paper is out (https://predictingthepast.com).
+- 🎓 **July 2025**: Our survey on NLP for Greek is online (https://www.cell.com/patterns/fulltext/S2666-3899(25)00161-8).
+- 🧪 **June 2025**: Gave a talk for HTR at the Institute for Advanced Study, Princeton (https://hellenic.princeton.edu/events/2025/scoop-source-codes-past-launching-international-atrhtr-network-manuscript-analysis).
