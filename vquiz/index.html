@@ -175,16 +175,57 @@
 
         // --- Core Application Logic ---
 
-        // Helper function for Base64 conversion
+        const MAX_IMAGE_SIZE = 1024; // Max width or height in pixels for resizing
+
+        // Helper function for Base64 conversion with image resizing
         window.convertToBase64 = (file) => {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
-                reader.onload = () => resolve(reader.result.split(',')[1]); // Only the Base64 part
+
+                reader.onload = (e) => {
+                    const img = new Image();
+                    
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+
+                        let width = img.width;
+                        let height = img.height;
+
+                        // Determine the new dimensions while maintaining aspect ratio
+                        if (width > height) {
+                            if (width > MAX_IMAGE_SIZE) {
+                                height *= MAX_IMAGE_SIZE / width;
+                                width = MAX_IMAGE_SIZE;
+                            }
+                        } else {
+                            if (height > MAX_IMAGE_SIZE) {
+                                width *= MAX_IMAGE_SIZE / height;
+                                height = MAX_IMAGE_SIZE;
+                            }
+                        }
+
+                        // Set canvas dimensions to the new, smaller size
+                        canvas.width = width;
+                        canvas.height = height;
+
+                        // Draw the image onto the canvas with new dimensions
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        // Get the resized image data as JPEG (good for photos) with a quality of 80%
+                        // and extract only the Base64 part after the comma.
+                        const resizedBase64 = canvas.toDataURL('image/jpeg', 0.8).split(',')[1];
+                        resolve(resizedBase64);
+                    };
+
+                    img.onerror = () => reject(new Error("Failed to load image for resizing."));
+                    img.src = e.target.result;
+                };
+
                 reader.onerror = error => reject(error);
                 reader.readAsDataURL(file);
             });
         };
-
         // Utility for displaying errors
         window.showError = (message) => {
             const errorBox = document.getElementById('errorBox');
