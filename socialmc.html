@@ -1,0 +1,401 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLM Multiple Choice Quiz Generator</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+            min-height: 100vh;
+        }
+        .card {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 0 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .answer-option {
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .answer-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .loading-ring {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+
+  <!-- Add your site or application content here -->
+
+<body class="p-4 md:p-8 flex items-center justify-center">
+
+    <!-- Main Container -->
+    <div class="w-full max-w-2xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">🖼️ Image-to-Quiz VLM</h1>
+            <p class="text-gray-500 mt-2">Upload an image and let the model generate a multiple-choice question.</p>
+        </header>
+
+        <!-- Input Card -->
+        <div class="card bg-white p-6 rounded-xl mb-8 border border-gray-100">
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">Upload Image</h2>
+
+            <input type="file" id="imageInput" accept="image/*" capture="environment" class="w-full border border-gray-300 rounded-lg p-3 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 transition duration-150">
+
+            <button id="generateButton" onclick="generateQuestion()" class="mt-4 w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition duration-150 flex items-center justify-center disabled:opacity-50" disabled>
+                <span id="buttonText">Generate Question</span>
+                <div id="loadingIndicator" class="loading-ring ml-3 hidden"></div>
+            </button>
+        </div>
+
+        <!-- Result Card -->
+        <div id="resultCard" class="card bg-white p-6 rounded-xl border border-gray-100 hidden">
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">Generated Quiz</h2>
+
+            <!-- Preview Image -->
+            <div id="imagePreviewContainer" class="mb-4 hidden">
+                <p class="text-sm text-gray-500 mb-2">Image Used:</p>
+                <img id="uploadedImagePreview" class="max-h-60 w-full object-contain rounded-lg border border-gray-200 bg-gray-50" alt="Uploaded image preview">
+            </div>
+
+            <!-- Question Area -->
+            <div id="questionContainer" class="mb-6">
+                <p class="text-lg font-medium text-gray-800" id="questionText"></p>
+                <div id="optionsContainer" class="space-y-3 mt-4">
+                    <!-- Options will be injected here -->
+                </div>
+            </div>
+
+            <!-- Answer Button/Area -->
+            <div class="mt-6 border-t pt-4">
+                <button id="showAnswerButton" onclick="showAnswer()" class="bg-indigo-500 text-white py-2 px-5 rounded-lg font-semibold hover:bg-indigo-600 transition duration-150">
+                    Show Correct Answer
+                </button>
+                <p id="answerText" class="text-lg font-bold mt-3 text-green-600 hidden"></p>
+            </div>
+        </div>
+
+        <!-- Error Message Box -->
+        <div id="errorBox" class="hidden fixed bottom-4 right-4 bg-red-500 text-white p-4 rounded-lg shadow-lg max-w-xs transition-opacity duration-300" role="alert">
+            <p class="font-bold">Error</p>
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+
+    <!-- Firebase Initialization and Logic -->
+    <script type="module">
+        // Global variables provided by the environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        // Firebase imports
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, setDoc, doc, collection, query, where, onSnapshot, updateDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global Firebase variables
+        let app;
+        let db;
+        let auth;
+        window.userId = null;
+        window.isAuthReady = false;
+
+        // Function to set up Firebase and authentication
+        async function setupFirebase() {
+            try {
+                if (firebaseConfig) {
+                    app = initializeApp(firebaseConfig);
+                    auth = getAuth(app);
+                    db = getFirestore(app);
+                    setLogLevel('Debug'); // Enable debug logging for Firestore
+
+                    onAuthStateChanged(auth, async (user) => {
+                        if (user) {
+                            window.userId = user.uid;
+                        } else {
+                            // Sign in anonymously if no token is available
+                            await signInAnonymously(auth);
+                            // The onAuthStateChanged listener will fire again with the anonymous user.
+                        }
+                        window.isAuthReady = true;
+                        console.log("Firebase Auth Ready. User ID:", window.userId);
+                    });
+
+                    // Use custom token if provided
+                    if (initialAuthToken) {
+                        await signInWithCustomToken(auth, initialAuthToken);
+                    }
+
+                } else {
+                    console.error("Firebase config is missing.");
+                    // Still allow the app logic to run, but skip Firestore setup
+                }
+            } catch (e) {
+                console.error("Error setting up Firebase:", e);
+            }
+        }
+
+        // --- Core Application Logic ---
+
+        // Helper function for Base64 conversion
+        window.convertToBase64 = (file) => {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result.split(',')[1]); // Only the Base64 part
+                reader.onerror = error => reject(error);
+                reader.readAsDataURL(file);
+            });
+        };
+
+        // Utility for displaying errors
+        window.showError = (message) => {
+            const errorBox = document.getElementById('errorBox');
+            document.getElementById('errorMessage').textContent = message;
+            errorBox.classList.remove('hidden');
+            errorBox.classList.add('opacity-100');
+            setTimeout(() => {
+                errorBox.classList.add('opacity-0');
+                errorBox.classList.remove('opacity-100');
+                setTimeout(() => errorBox.classList.add('hidden'), 300);
+            }, 5000);
+        };
+
+        // Exponential backoff retry logic for fetch
+        window.fetchWithExponentialBackoff = async (url, options, retries = 5, delay = 1000) => {
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.status !== 429) return response; // Not throttling, return response
+                    console.log(`Rate limit hit. Retrying in ${delay / 1000}s...`);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2; // Exponentially increase delay
+                } catch (error) {
+                    console.error("Fetch error, retrying...", error);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2;
+                }
+            }
+            throw new Error("Failed to fetch from API after multiple retries due to rate limiting or persistent error.");
+        };
+
+        const API_KEY = "AIzaSyAg7gPcOUQfHzlv1bzbF3Hc0lORrIm6eRI"; // Placeholder, will be provided by Canvas runtime
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`;
+
+        // Main function to generate the question
+        window.generateQuestion = async () => {
+            const imageInput = document.getElementById('imageInput');
+            const file = imageInput.files[0];
+            const resultCard = document.getElementById('resultCard');
+            const uploadedImagePreview = document.getElementById('uploadedImagePreview');
+            const button = document.getElementById('generateButton');
+            const buttonText = document.getElementById('buttonText');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+
+            if (!file) {
+                showError("Please select an image file first.");
+                return;
+            }
+
+            button.disabled = true;
+            buttonText.textContent = "Generating...";
+            loadingIndicator.classList.remove('hidden');
+            resultCard.classList.add('hidden');
+            document.getElementById('answerText').classList.add('hidden');
+
+            try {
+                // 1. Convert image to Base64
+                const base64ImageData = await convertToBase64(file);
+
+                // Display a preview of the image used
+                uploadedImagePreview.src = URL.createObjectURL(file);
+                document.getElementById('imagePreviewContainer').classList.remove('hidden');
+
+                // 2. Define the JSON schema for structured output
+                const responseSchema = {
+                    type: "ARRAY",
+                    items: {
+                        type: "OBJECT",
+                        properties: {
+                            "question": { "type": "STRING", "description": "The multiple-choice question." },
+                            "options": {
+                                "type": "OBJECT",
+                                "properties": {
+                                    "A": { "type": "STRING" },
+                                    "B": { "type": "STRING" },
+                                    "C": { "type": "STRING" },
+                                    "D": { "type": "STRING" }
+                                },
+                                "required": ["A", "B", "C", "D"],
+                                "description": "Exactly four answer options labeled A, B, C, and D."
+                            },
+                            "correct_answer": { "type": "STRING", "description": "The single correct option label (A, B, C, or D)." }
+                        },
+                        "required": ["question", "options", "correct_answer"]
+                    }
+                };
+
+                const userPrompt = "Generate one compelling and specific multiple-choice question based *only* on the content of the provided image. Provide exactly four options (A, B, C, D) and identify the single correct option.";
+
+                // 3. Construct the API payload
+                const payload = {
+                    contents: [
+                        {
+                            role: "user",
+                            parts: [
+                                { text: userPrompt },
+                                {
+                                    inlineData: {
+                                        mimeType: file.type,
+                                        data: base64ImageData
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    generationConfig: {
+                        responseMimeType: "application/json",
+                        responseSchema: responseSchema,
+                    }
+                };
+
+                // 4. Send the request to the VLLM
+                const response = await fetchWithExponentialBackoff(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (!response.ok || !result.candidates || result.candidates.length === 0) {
+                    throw new Error(result.error?.message || "API call failed with no candidates returned.");
+                }
+
+                const jsonText = result.candidates[0].content.parts[0].text;
+                const parsedJson = JSON.parse(jsonText);
+
+                // The expected output is an array containing one question object
+                if (!Array.isArray(parsedJson) || parsedJson.length === 0) {
+                     throw new Error("Model returned invalid structure.");
+                }
+
+                const quizData = parsedJson[0];
+
+                // 5. Render the result
+                window.quizData = quizData; // Store globally for showAnswer
+                renderQuiz(quizData);
+                resultCard.classList.remove('hidden');
+
+            } catch (error) {
+                console.error("Quiz generation failed:", error);
+                showError("Failed to generate quiz. " + (error.message || "Please try a different image."));
+            } finally {
+                button.disabled = !imageInput.files[0]; // Enable if a file is still selected
+                buttonText.textContent = "Generate Question";
+                loadingIndicator.classList.add('hidden');
+            }
+        };
+
+        window.renderQuiz = (quiz) => {
+            document.getElementById('questionText').textContent = quiz.question;
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+
+            const letters = ['A', 'B', 'C', 'D'];
+            letters.forEach(letter => {
+                const text = quiz.options[letter];
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'answer-option bg-gray-50 p-3 rounded-lg border border-gray-200 text-gray-700';
+                optionDiv.innerHTML = `<span class="font-bold text-blue-600 mr-2">${letter}:</span> ${text}`;
+                optionDiv.id = `option-${letter}`;
+                optionsContainer.appendChild(optionDiv);
+            });
+
+            document.getElementById('answerText').classList.add('hidden');
+            document.getElementById('showAnswerButton').classList.remove('hidden');
+        };
+
+        window.showAnswer = () => {
+            if (!window.quizData) return;
+
+            const correct_answer = window.quizData.correct_answer;
+            const correctText = `Correct Answer: ${correct_answer} - ${window.quizData.options[correct_answer]}`;
+
+            // Highlight the correct option
+            const optionsContainer = document.getElementById('optionsContainer');
+            const options = optionsContainer.children;
+            for (let i = 0; i < options.length; i++) {
+                const option = options[i];
+                const optionLetter = option.id.split('-')[1];
+                option.classList.remove('bg-gray-50', 'border-gray-200');
+                if (optionLetter === correct_answer) {
+                    option.classList.add('bg-green-100', 'border-green-400', 'ring-2', 'ring-green-500');
+                } else {
+                    option.classList.add('bg-red-50', 'border-red-200');
+                }
+            }
+
+            // Display the answer text
+            const answerTextElement = document.getElementById('answerText');
+            answerTextElement.textContent = correctText;
+            answerTextElement.classList.remove('hidden');
+            document.getElementById('showAnswerButton').classList.add('hidden');
+        };
+
+        // Event listener to enable the button once a file is selected
+        document.getElementById('imageInput').addEventListener('change', (e) => {
+            const button = document.getElementById('generateButton');
+            button.disabled = !e.target.files.length;
+            // Hide the result card when a new file is selected
+            document.getElementById('resultCard').classList.add('hidden');
+        });
+
+        // Initialize Firebase on load
+        setupFirebase();
+
+    </script>
+</body>
+
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
