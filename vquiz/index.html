@@ -1,32 +1,13 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VLM Multiple Choice Quiz Generator</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -58,24 +39,31 @@
         }
     </style>
 </head>
-
-<body>
-
-  <!-- Add your site or application content here -->
-
 <body class="p-4 md:p-8 flex items-center justify-center">
 
     <!-- Main Container -->
     <div class="w-full max-w-2xl">
         <header class="text-center mb-8">
-            <h1 class="text-3xl font-bold text-gray-800">🖼️ Image-to-Quiz</h1>
-            <p class="text-gray-500 mt-2">Upload an image and answer the multiple-choice question.</p>
+            <h1 class="text-3xl font-bold text-gray-800">🖼️ Image-to-Quiz VLM</h1>
+            <p class="text-gray-500 mt-2">Upload an image and let the model generate a multiple-choice question.</p>
         </header>
 
         <!-- Input Card -->
         <div class="card bg-white p-6 rounded-xl mb-8 border border-gray-100">
-            <h2 class="text-xl font-semibold mb-4 text-gray-700">Upload Image</h2>
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">Customize Quiz Parameters</h2>
 
+            <div class="space-y-4 mb-4">
+                <div>
+                    <label for="ageInput" class="block text-sm font-medium text-gray-700 mb-1">Target Audience (e.g., kids 8 to 10, college students):</label>
+                    <input type="text" id="ageInput" placeholder="Enter target age/audience" value="general audience" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500 transition duration-150">
+                </div>
+                <div>
+                    <label for="themeInput" class="block text-sm font-medium text-gray-700 mb-1">Specific Theme/Topic (Optional, e.g., safety, physics, antisocial parking):</label>
+                    <input type="text" id="themeInput" placeholder="Enter specific theme (optional)" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500 transition duration-150">
+                </div>
+            </div>
+
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">Upload Image (Max 1024px Resolution)</h2>
             <input type="file" id="imageInput" accept="image/*" capture="environment" class="w-full border border-gray-300 rounded-lg p-3 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 transition duration-150">
 
             <button id="generateButton" onclick="generateQuestion()" class="mt-4 w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition duration-150 flex items-center justify-center disabled:opacity-50" disabled>
@@ -184,7 +172,7 @@
 
                 reader.onload = (e) => {
                     const img = new Image();
-                    
+
                     img.onload = () => {
                         const canvas = document.createElement('canvas');
                         const ctx = canvas.getContext('2d');
@@ -226,6 +214,7 @@
                 reader.readAsDataURL(file);
             });
         };
+
         // Utility for displaying errors
         window.showError = (message) => {
             const errorBox = document.getElementById('errorBox');
@@ -270,6 +259,10 @@
             const buttonText = document.getElementById('buttonText');
             const loadingIndicator = document.getElementById('loadingIndicator');
 
+            // Get the custom inputs
+            const ageInput = document.getElementById('ageInput').value.trim();
+            const themeInput = document.getElementById('themeInput').value.trim();
+
             if (!file) {
                 showError("Please select an image file first.");
                 return;
@@ -282,14 +275,14 @@
             document.getElementById('answerText').classList.add('hidden');
 
             try {
-                // 1. Convert image to Base64
+                // 1. Convert and resize image to Base64
                 const base64ImageData = await convertToBase64(file);
 
-                // Display a preview of the image used
+                // Display a preview of the image used (Note: this still uses the original file object URL for display quality)
                 uploadedImagePreview.src = URL.createObjectURL(file);
                 document.getElementById('imagePreviewContainer').classList.remove('hidden');
 
-                // 2. Define the JSON schema for structured output
+                // 2. Define the JSON schema for structured output (remains unchanged)
                 const responseSchema = {
                     type: "ARRAY",
                     items: {
@@ -313,9 +306,18 @@
                     }
                 };
 
-                const userPrompt = "Generate one compelling and specific multiple-choice question based *only* on the content of the provided image. Provide exactly four options (A, B, C, D) and identify the single correct option.";
+                // 3. Construct the dynamic user prompt
+                let userPrompt = `Generate one compelling and specific multiple-choice question based *only* on the content of the provided image. `;
 
-                // 3. Construct the API payload
+                if (themeInput) {
+                    userPrompt += `The question must relate specifically to the theme of "${themeInput}". `;
+                }
+
+                userPrompt += `Tailor the language and complexity of the question and options for a target audience of: "${ageInput}". `;
+                userPrompt += `Provide exactly four options (A, B, C, D) and identify the single correct option.`;
+
+
+                // 4. Construct the API payload
                 const payload = {
                     contents: [
                         {
@@ -324,7 +326,7 @@
                                 { text: userPrompt },
                                 {
                                     inlineData: {
-                                        mimeType: file.type,
+                                        mimeType: 'image/jpeg',
                                         data: base64ImageData
                                     }
                                 }
@@ -337,7 +339,7 @@
                     }
                 };
 
-                // 4. Send the request to the VLLM
+                // 5. Send the request to the VLLM
                 const response = await fetchWithExponentialBackoff(API_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -360,7 +362,7 @@
 
                 const quizData = parsedJson[0];
 
-                // 5. Render the result
+                // 6. Render the result
                 window.quizData = quizData; // Store globally for showAnswer
                 renderQuiz(quizData);
                 resultCard.classList.remove('hidden');
@@ -434,9 +436,4 @@
 
     </script>
 </body>
-
-  <script src="js/app.js"></script>
-
-</body>
-
 </html>
