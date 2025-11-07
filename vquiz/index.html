@@ -7,7 +7,9 @@
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- STANDARD CSS STYLES -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -25,6 +27,23 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+        /* Style for the user's selected option */
+        .answer-option.selected-by-user {
+            border-color: #3b82f6; /* Blue border */
+            background-color: #eff6ff; /* Light blue background */
+            box-shadow: 0 0 0 2px #3b82f6;
+        }
+        /* Styles applied after answer reveal */
+        .answer-option.correct {
+            background-color: #d1fae5 !important; /* Light green */
+            border-color: #10b981 !important; /* Green border */
+            box-shadow: 0 0 0 2px #10b981;
+        }
+        .answer-option.incorrect {
+            background-color: #fee2e2 !important; /* Light red */
+            border-color: #ef4444 !important; /* Red border */
+            box-shadow: 0 0 0 2px #ef4444;
+        }
         .loading-ring {
             border: 4px solid #f3f3f3;
             border-top: 4px solid #3b82f6;
@@ -36,6 +55,25 @@
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+    </style>
+
+    <!-- TAILWIND CUSTOM UTILITIES (Requires type="text/tailwindcss" for @apply to work via CDN) -->
+    <style type="text/tailwindcss">
+        /* Custom styles for the interactive selection pills */
+        .selection-pill {
+            /* Common styles */
+            @apply px-4 py-2 rounded-full text-sm font-medium border transition duration-200 whitespace-nowrap cursor-pointer;
+            /* Default state with shadow */
+            @apply border-gray-200 bg-white text-gray-700 shadow-sm;
+            /* Hover effect: slight color change and increased shadow */
+            @apply hover:bg-blue-50 hover:border-blue-400 hover:shadow-md;
+        }
+        .selection-pill.selected {
+            /* Selected state: Stronger color, more prominent shadow, and slight scale for emphasis */
+            @apply bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-300/50 transform scale-[1.02];
+            /* Hover on selected: Darker background and more intense shadow */
+            @apply hover:bg-blue-700 hover:border-blue-700 hover:shadow-xl hover:scale-[1.03];
         }
     </style>
 </head>
@@ -53,13 +91,31 @@
             <h2 class="text-xl font-semibold mb-4 text-gray-700">Customize Quiz Parameters</h2>
 
             <div class="space-y-4 mb-4">
+                <!-- Target Audience Selector -->
                 <div>
-                    <label for="ageInput" class="block text-sm font-medium text-gray-700 mb-1">Target Audience (e.g., kids 8 to 10, college students):</label>
-                    <input type="text" id="ageInput" placeholder="Enter target age/audience" value="general audience" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500 transition duration-150">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Target Audience:</label>
+                    <!-- Hidden input stores the selected value, default is Kids (8-10) -->
+                    <input type="hidden" id="ageInput" value="kids 8 to 10">
+                    <div id="ageSelection" class="flex flex-wrap gap-2">
+                        <button type="button" class="selection-pill" data-value="general audience">General Audience</button>
+                        <button type="button" class="selection-pill selected" data-value="kids 8 to 10">Kids (8-10)</button>
+                        <button type="button" class="selection-pill" data-value="teenager">Teenagers</button>
+                        <button type="button" class="selection-pill" data-value="adult">Adults</button>
+                    </div>
                 </div>
+
+                <!-- Specific Theme Selector -->
                 <div>
-                    <label for="themeInput" class="block text-sm font-medium text-gray-700 mb-1">Specific Theme/Topic (Optional, e.g., safety, physics, antisocial parking):</label>
-                    <input type="text" id="themeInput" placeholder="Enter specific theme (optional)" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-blue-500 focus:border-blue-500 transition duration-150">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Specific Theme/Topic (Optional):</label>
+                    <!-- Hidden input stores the selected value, default is Antisocial Parking -->
+                    <input type="hidden" id="themeInput" value="antisocial parking">
+                    <div id="themeSelection" class="flex flex-wrap gap-2">
+                        <button type="button" class="selection-pill" data-value="">None (General)</button>
+                        <button type="button" class="selection-pill selected" data-value="antisocial parking">Antisocial Parking</button>
+                        <button type="button" class="selection-pill" data-value="arts">Arts</button>
+                        <button type="button" class="selection-pill" data-value="road safety rules">Road Safety Rules</button>
+                        <button type="button" class="selection-pill" data-value="natural science">Natural Science</button>
+                    </div>
                 </div>
             </div>
 
@@ -125,6 +181,8 @@
         let auth;
         window.userId = null;
         window.isAuthReady = false;
+        // New global variable to track the user's selected answer
+        window.userSelection = null;
 
         // Function to set up Firebase and authentication
         async function setupFirebase() {
@@ -246,7 +304,7 @@
             throw new Error("Failed to fetch from API after multiple retries due to rate limiting or persistent error.");
         };
 
-        const API_KEY = "AIzaSyAg7gPcOUQfHzlv1bzbF3Hc0lORrIm6eRI"; // Placeholder, will be provided by Canvas runtime
+        const API_KEY = "AIzaSyAg7gPcOUQfHzlv1bzbF3Hc0lORrIm6eRI"; // to hide
         const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${API_KEY}`;
 
         // Main function to generate the question
@@ -259,7 +317,7 @@
             const buttonText = document.getElementById('buttonText');
             const loadingIndicator = document.getElementById('loadingIndicator');
 
-            // Get the custom inputs
+            // Get the custom inputs from the HIDDEN fields, which are updated by the buttons
             const ageInput = document.getElementById('ageInput').value.trim();
             const themeInput = document.getElementById('themeInput').value.trim();
 
@@ -307,7 +365,7 @@
                 };
 
                 // 3. Construct the dynamic user prompt
-                let userPrompt = `Generate one compelling and specific multiple-choice question based *only* on the content of the provided image. `;
+                let userPrompt = `Generate the output **in the Greek language**. Generate one compelling and specific multiple-choice question based *only* on the content of the provided image. `;
 
                 if (themeInput) {
                     userPrompt += `The question must relate specifically to the theme of "${themeInput}". `;
@@ -378,6 +436,8 @@
         };
 
         window.renderQuiz = (quiz) => {
+            // Reset user selection when a new quiz is generated
+            window.userSelection = null;
             document.getElementById('questionText').textContent = quiz.question;
             const optionsContainer = document.getElementById('optionsContainer');
             optionsContainer.innerHTML = '';
@@ -389,6 +449,8 @@
                 optionDiv.className = 'answer-option bg-gray-50 p-3 rounded-lg border border-gray-200 text-gray-700';
                 optionDiv.innerHTML = `<span class="font-bold text-blue-600 mr-2">${letter}:</span> ${text}`;
                 optionDiv.id = `option-${letter}`;
+                // Add click handler for selection
+                optionDiv.setAttribute('onclick', `selectAnswer('${letter}')`);
                 optionsContainer.appendChild(optionDiv);
             });
 
@@ -396,31 +458,85 @@
             document.getElementById('showAnswerButton').classList.remove('hidden');
         };
 
+        // New function to handle user selection
+        window.selectAnswer = (selectedLetter) => {
+            window.userSelection = selectedLetter;
+            const optionsContainer = document.getElementById('optionsContainer');
+            const options = optionsContainer.children;
+
+            // Remove selection highlighting from all options
+            for (let i = 0; i < options.length; i++) {
+                options[i].classList.remove('selected-by-user');
+            }
+
+            // Add selection highlighting to the clicked option
+            const selectedOption = document.getElementById(`option-${selectedLetter}`);
+            if (selectedOption) {
+                selectedOption.classList.add('selected-by-user');
+            }
+        };
+
         window.showAnswer = () => {
             if (!window.quizData) return;
 
             const correct_answer = window.quizData.correct_answer;
-            const correctText = `Correct Answer: ${correct_answer} - ${window.quizData.options[correct_answer]}`;
-
-            // Highlight the correct option
             const optionsContainer = document.getElementById('optionsContainer');
             const options = optionsContainer.children;
+
+            // 1. Clear previous feedback classes and disable selection
             for (let i = 0; i < options.length; i++) {
                 const option = options[i];
                 const optionLetter = option.id.split('-')[1];
-                option.classList.remove('bg-gray-50', 'border-gray-200');
+
+                // Clear all previous visual states (selected-by-user, correct, incorrect)
+                option.classList.remove('selected-by-user', 'correct', 'incorrect');
+
+                // 2. Mark the correct answer
                 if (optionLetter === correct_answer) {
-                    option.classList.add('bg-green-100', 'border-green-400', 'ring-2', 'ring-green-500');
-                } else {
-                    option.classList.add('bg-red-50', 'border-red-200');
+                    option.classList.add('correct');
                 }
+
+                // 3. Provide feedback on the user's selection (if any)
+                if (window.userSelection && optionLetter === window.userSelection) {
+                    if (optionLetter !== correct_answer) {
+                        // User selected incorrectly: mark their choice as incorrect
+                        option.classList.add('incorrect');
+                    } else {
+                        // User selected correctly: ensure their choice is marked as correct (which is already done in step 2)
+                        option.classList.add('correct');
+                    }
+                }
+
+                // 4. Remove the onclick attribute to prevent further selection
+                option.removeAttribute('onclick');
             }
 
-            // Display the answer text
+            // Display the answer text in Greek
             const answerTextElement = document.getElementById('answerText');
-            answerTextElement.textContent = correctText;
+            answerTextElement.textContent = `Σωστή Απάντηση: ${correct_answer} - ${window.quizData.options[correct_answer]}`;
             answerTextElement.classList.remove('hidden');
             document.getElementById('showAnswerButton').classList.add('hidden');
+        };
+
+        // Function to handle the selection logic for the new buttons
+        window.setupPillSelection = (containerId, hiddenInputId) => {
+            const container = document.getElementById(containerId);
+            const hiddenInput = document.getElementById(hiddenInputId);
+
+            container.querySelectorAll('.selection-pill').forEach(button => {
+                button.addEventListener('click', () => {
+                    // 1. Remove 'selected' class from all buttons in the container
+                    container.querySelectorAll('.selection-pill').forEach(btn => {
+                        btn.classList.remove('selected');
+                    });
+
+                    // 2. Add 'selected' class to the clicked button
+                    button.classList.add('selected');
+
+                    // 3. Update the value of the hidden input
+                    hiddenInput.value = button.getAttribute('data-value');
+                });
+            });
         };
 
         // Event listener to enable the button once a file is selected
@@ -431,8 +547,10 @@
             document.getElementById('resultCard').classList.add('hidden');
         });
 
-        // Initialize Firebase on load
+        // Initialize Firebase and set up pill selectors on load
         setupFirebase();
+        setupPillSelection('ageSelection', 'ageInput');
+        setupPillSelection('themeSelection', 'themeInput');
 
     </script>
 </body>
