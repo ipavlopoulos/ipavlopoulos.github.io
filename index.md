@@ -18,7 +18,7 @@ My research is dedicated to Machine Learning for NLP, with a focus on applicatio
 * Phone: +30 210 82 03 133
 
 ## News
-- 📢 ** September 2025 **: Gave a talk about AI for the Humanities ([AI-based methods for the Humanities at BIFOLD](https://www.bifold.berlin/news-events/events/ai-based-methods-for-the-humanities/agenda-and-program))
+- 📢 **September 2025**: Gave a talk about AI for the Humanities ([AI-based methods for the Humanities at BIFOLD](https://www.bifold.berlin/news-events/events/ai-based-methods-for-the-humanities/agenda-and-program))
 - 🎓 **July 2025**: Our (2nd) Nature paper is out ([predictingthepast.com](https://predictingthepast.com)).
 - 🎓 **July 2025**: Our survey on NLP for Greek is online ([cell.com/patterns](https://www.cell.com/patterns/fulltext/S2666-3899(25)00161-8)).
 - 📢 **June 2025**: Gave a talk about HTR at Princeton ([cdh.princeton.edu](https://cdh.princeton.edu/events/2025/06/scoop-source-codes-of-the-past-launching-an-international-atrhtr-network-for-manuscript-analysis/)).
