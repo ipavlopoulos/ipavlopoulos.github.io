@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Use Inter font family -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        @import url('https://fonts.fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f7f9fc;
@@ -34,6 +34,24 @@
         }
         .point-item {
             border-left: 4px solid #10b981;
+        }
+        .quiz-image-container {
+            width: 100%;
+            height: auto;
+            max-height: 250px; /* Limit height for display */
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .quiz-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -159,7 +177,7 @@
             generateBtn.textContent = loading ? 'Αναζήτηση Δεδομένων...' : 'Δημιουργία Αναφοράς Σημερινών Κουίζ';
         }
 
-        // --- UPDATED to use CET timezone logic ---
+        // Uses CET timezone logic
         function getTodayIsoStrings() {
             const timezone = 'Europe/Paris'; // Χρήση ζώνης ώρας CET/CEST
             
@@ -179,7 +197,6 @@
             
             return { startOfTodayIso };
         }
-        // --- END UPDATED FUNCTION ---
 
         // --- Firebase Functions ---
         async function initializeFirebase() {
@@ -236,10 +253,10 @@
             const collectionPath = `artifacts/${appId}/users/${userId}/quizzes`;
             const { startOfTodayIso } = getTodayIsoStrings();
             
-            console.log(`[Report Filter] Target Date (ISO YYYY-MM-DD in CET): ${startOfTodayIso}`); // <-- DEBUG: Log the target date
+            console.log(`[Report Filter] Target Date (ISO YYYY-MM-DD in CET): ${startOfTodayIso}`);
 
             try {
-                // Fetch all documents for the current user's quizzes (Firestore query without date filter)
+                // Fetch all documents for the current user's quizzes
                 const q = query(collection(db, collectionPath));
                 const querySnapshot = await getDocs(q);
                 
@@ -247,13 +264,11 @@
                 querySnapshot.forEach((doc) => {
                     const data = doc.data();
                     allDocuments.push(data);
-                    // <-- DEBUG: Log the timestamp of every document fetched
                     console.log(`[Report Data] Fetched Document Timestamp: ${data.timestamp} (Doc ID: ${doc.id})`); 
                 });
 
-                // Client-side filtering (now relying on CET-calculated date)
+                // Client-side filtering
                 const filteredQuizzes = allDocuments.filter(doc => {
-                    // Safety check for doc.timestamp, which should be an ISO string like '2025-11-23T21:29:00.000Z'
                     const docDate = doc.timestamp ? doc.timestamp.substring(0, 10) : '';
                     
                     // Check 1: Date Match (using CET "today")
@@ -264,7 +279,6 @@
                     const matchesTheme = selectedTheme === 'all' || doc.quizSettings.theme === selectedTheme;
                     
                     if (!matchesDate || !matchesAge || !matchesTheme) {
-                        // <-- DEBUG: Log why a document was excluded
                         console.log(`[Report Filter] Excluding document with timestamp ${doc.timestamp}. Conditions: (Date: ${matchesDate}, Age: ${matchesAge}, Theme: ${matchesTheme})`);
                         return false;
                     }
@@ -305,7 +319,8 @@
                         correctAnswer: quiz.quizData.correctAnswer,
                         explanation: quiz.quizData.explanation,
                         userAnswer: quiz.userAnswer || null,
-                        isCorrect: quiz.isCorrect
+                        isCorrect: quiz.isCorrect,
+                        imageUrl: quiz.quizData.imageUrl // Include image URL
                     };
                     points.push(point);
 
@@ -334,6 +349,17 @@
             // 4. Render Discussion Points
             discussionPointsDiv.innerHTML = points.map(p => `
                 <div class="point-item p-4 bg-gray-50 rounded-lg shadow-sm">
+                    
+                    <!-- Image Display Area -->
+                    <div class="quiz-image-container">
+                        ${p.imageUrl ? `
+                            <img src="${p.imageUrl}" alt="Εικόνα Κουίζ ${p.index}" class="quiz-image" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x250/f3f4f6/9ca3af?text=Δεν+Βρέθηκε+Εικόνα';">
+                        ` : `
+                            <p class="text-gray-500 italic">Δεν υπάρχει εικόνα για αυτό το κουίζ.</p>
+                        `}
+                    </div>
+
                     <p class="font-bold text-lg text-gray-700 mb-2">Σημείο ${p.index}: ${p.question}</p>
                     <p class="text-sm">
                         <span class="font-semibold text-green-700">Σωστή Απάντηση:</span> ${p.correctAnswer}
