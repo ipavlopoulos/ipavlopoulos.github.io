@@ -651,7 +651,7 @@
                 } else {
                     console.warn("No GPS coordinates found, saving quiz data without location.");
                     // If you still want to save the quiz even without location:
-                    // await window.saveQuizToFirestore(quizData, null);
+                    await window.saveQuizToFirestore(quizData, null);
                 }
                 // --- END NEW STEP 6 ---
 
