@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Αναφορά Κουίζ Εκπαιδευτικού</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+            margin-bottom: 1.5rem;
+            border: 1px solid #e5e7eb;
+        }
+        .button-primary {
+            transition: all 0.2s;
+            background-color: #10b981; /* Emerald 500 */
+        }
+        .button-primary:hover {
+            background-color: #059669; /* Emerald 600 */
+            transform: translateY(-1px);
+        }
+        .point-item {
+            border-left: 4px solid #10b981;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Αναφορά Σημείων Συζήτησης από Κουίζ</h1>
+
+        <!-- Loading & Status Messages -->
+        <div id="status-message" class="hidden p-3 mb-4 rounded-lg text-sm text-center font-medium" role="alert"></div>
+
+        <!-- Step 1: Filters -->
+        <div id="step-1" class="card">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4 border-b pb-2">1. Επιλογή Φίλτρων</h2>
+            
+            <div class="grid md:grid-cols-3 gap-4 mb-6">
+                <!-- Age/Level Select -->
+                <div class="flex flex-col">
+                    <label for="age-select" class="text-sm font-medium text-gray-600 mb-1">Ηλικία/Επίπεδο</label>
+                    <select id="age-select" class="p-2 border border-gray-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500">
+                        <option value="all" selected>Όλα τα Επίπεδα</option>
+                        <option value="kid">Παιδί (Kid)</option>
+                        <option value="teenager">Έφηβος (Teenager)</option>
+                        <option value="adult">Ενήλικας (Adult)</option>
+                    </select>
+                </div>
+
+                <!-- Theme Select -->
+                <div class="flex flex-col">
+                    <label for="theme-select" class="text-sm font-medium text-gray-600 mb-1">Θέμα Κουίζ</label>
+                    <select id="theme-select" class="p-2 border border-gray-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500">
+                        <option value="all" selected>Όλα τα Θέματα</option>
+                        <option value="art">Τέχνη (Art)</option>
+                        <option value="antisocial">Κοινωνικά Θέματα (Antisocial)</option>
+                        <option value="general">Γενικές Γνώσεις</option>
+                    </select>
+                </div>
+
+                <!-- Date Filter -->
+                <div class="flex flex-col">
+                    <label for="date-display" class="text-sm font-medium text-gray-600 mb-1">Ημερομηνία Αναφοράς</label>
+                    <input id="date-display" type="text" disabled class="p-2 border border-gray-300 bg-gray-100 rounded-lg text-gray-500 font-semibold text-center">
+                </div>
+            </div>
+
+            <button id="generate-report-btn" class="w-full mt-4 text-white font-semibold py-3 px-4 rounded-lg button-primary disabled:opacity-50">
+                Δημιουργία Αναφοράς Σημερινών Κουίζ
+            </button>
+        </div>
+
+        <!-- Step 2: Report Display -->
+        <div id="step-2" class="card hidden">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4 border-b pb-2">2. Σημεία Συζήτησης για την Τάξη</h2>
+            
+            <div id="report-summary" class="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-sm text-blue-800 hidden"></div>
+
+            <div id="discussion-points" class="space-y-4">
+                <!-- Discussion points will be inserted here -->
+            </div>
+            
+            <div id="no-data-message" class="hidden text-center p-6 bg-yellow-50 text-yellow-800 rounded-lg">
+                Δεν βρέθηκαν κουίζ που να ταιριάζουν με τα κριτήρια για σήμερα.
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // --- Configuration ---
+        // Global Firebase/Auth/App Variables (using the configuration from the user's context)
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
+            apiKey: "AIzaSyCFslMC6avCrHcrLfxtzNv_yb362ZgajKY",
+            authDomain: "way-to-school.firebaseapp.com",
+            projectId: "way-to-school",
+            storageBucket: "way-to-school.firebasestorage.app",
+            messagingSenderId: "673870615354",
+            appId: "1:673870615354:web:a7a77c9794c6478320b603",
+            measurementId: "G-XBXDFRMKM3"
+        };
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        
+        setLogLevel('debug'); // Enable Firestore logging
+
+        let app, db, auth, userId = null;
+
+        // --- UI Elements ---
+        const statusMessage = document.getElementById('status-message');
+        const generateBtn = document.getElementById('generate-report-btn');
+        const ageSelect = document.getElementById('age-select');
+        const themeSelect = document.getElementById('theme-select');
+        const dateDisplay = document.getElementById('date-display');
+        const step2 = document.getElementById('step-2');
+        const reportSummary = document.getElementById('report-summary');
+        const discussionPointsDiv = document.getElementById('discussion-points');
+        const noDataMessage = document.getElementById('no-data-message');
+
+        // --- Utility Functions (Greek Text) ---
+        function showStatus(message, type = 'info') {
+            statusMessage.textContent = message;
+            statusMessage.className = `p-3 mb-4 rounded-lg text-sm text-center font-medium`;
+            statusMessage.classList.add('block');
+            
+            if (type === 'error') {
+                statusMessage.classList.add('bg-red-100', 'text-red-800');
+            } else if (type === 'success') {
+                statusMessage.classList.add('bg-green-100', 'text-green-800');
+            } else if (type === 'loading') {
+                statusMessage.classList.add('bg-yellow-100', 'text-yellow-800');
+            } else { // info (default)
+                statusMessage.classList.add('bg-blue-100', 'text-blue-800');
+            }
+        }
+        
+        function disableUI(loading) {
+            generateBtn.disabled = loading;
+            generateBtn.textContent = loading ? 'Αναζήτηση Δεδομένων...' : 'Δημιουργία Αναφοράς Σημερινών Κουίζ';
+        }
+
+        function getTodayIsoStrings() {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            // ISO strings are used for string comparison, as they are lexicographically sorted.
+            // We use the start of today and the start of tomorrow as the range.
+            const startOfTodayIso = today.toISOString().substring(0, 10); // e.g., '2025-11-23'
+            const endOfTodayIso = tomorrow.toISOString().substring(0, 10); // e.g., '2025-11-24'
+            
+            dateDisplay.value = startOfTodayIso;
+            
+            return { startOfTodayIso, endOfTodayIso };
+        }
+
+        // --- Firebase Functions ---
+        async function initializeFirebase() {
+            try {
+                app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+                
+                await new Promise((resolve, reject) => {
+                    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+                        unsubscribe(); // Stop listening after the first state change
+                        if (initialAuthToken) {
+                            try {
+                                await signInWithCustomToken(auth, initialAuthToken);
+                                userId = auth.currentUser.uid;
+                                showStatus(`Συνδεθήκατε ως Εκπαιδευτικός (User ID: ${userId}).`, 'success');
+                            } catch (error) {
+                                console.error("Custom Token Auth Error:", error);
+                                await signInAnonymously(auth);
+                                userId = auth.currentUser.uid;
+                                showStatus(`Αποτυχία Custom Token. Συνδεθήκατε ανώνυμα (User ID: ${userId}).`, 'info');
+                            }
+                        } else {
+                            await signInAnonymously(auth);
+                            userId = auth.currentUser.uid;
+                            showStatus(`Συνδεθήκατε ανώνυμα (User ID: ${userId}).`, 'info');
+                        }
+                        resolve();
+                    }, reject);
+                });
+                
+            } catch (error) {
+                console.error("Firebase Initialization Error:", error);
+                showStatus(`Σφάλμα εκκίνησης Firebase: ${error.message}`, 'error');
+            }
+        }
+
+        async function fetchAndGenerateReport() {
+            if (!db || !userId) {
+                showStatus("Περιμένετε την ολοκλήρωση της σύνδεσης στο Firebase.", 'error');
+                return;
+            }
+            
+            disableUI(true);
+            showStatus("Ανάκτηση δεδομένων κουίζ από το Firestore...", 'loading');
+
+            discussionPointsDiv.innerHTML = '';
+            reportSummary.classList.add('hidden');
+            noDataMessage.classList.add('hidden');
+            step2.classList.remove('hidden');
+
+            const selectedAge = ageSelect.value;
+            const selectedTheme = themeSelect.value;
+            const collectionPath = `artifacts/${appId}/users/${userId}/quizzes`;
+            const { startOfTodayIso } = getTodayIsoStrings();
+            
+            try {
+                // Fetch all documents for the current user's quizzes
+                const q = query(collection(db, collectionPath));
+                const querySnapshot = await getDocs(q);
+                
+                const allDocuments = [];
+                querySnapshot.forEach((doc) => {
+                    allDocuments.push(doc.data());
+                });
+
+                // Client-side filtering
+                const filteredQuizzes = allDocuments.filter(doc => {
+                    const docDate = doc.timestamp ? doc.timestamp.substring(0, 10) : '';
+                    
+                    const matchesDate = docDate === startOfTodayIso;
+                    if (!matchesDate) return false;
+
+                    const matchesAge = selectedAge === 'all' || doc.quizSettings.age === selectedAge;
+                    const matchesTheme = selectedTheme === 'all' || doc.quizSettings.theme === selectedTheme;
+                    
+                    return matchesAge && matchesTheme;
+                });
+                
+                // Process and Render Report
+                generateDiscussionPoints(filteredQuizzes, selectedAge, selectedTheme, startOfTodayIso);
+
+            } catch (e) {
+                console.error("Error fetching documents:", e);
+                showStatus(`Σφάλμα ανάκτησης δεδομένων: ${e.message}`, 'error');
+                step2.classList.add('hidden');
+            } finally {
+                disableUI(false);
+            }
+        }
+        
+        function generateDiscussionPoints(quizzes, ageFilter, themeFilter, date) {
+            if (quizzes.length === 0) {
+                discussionPointsDiv.innerHTML = '';
+                noDataMessage.classList.remove('hidden');
+                showStatus(`Ολοκληρώθηκε. Δεν βρέθηκαν δεδομένα για τα επιλεγμένα φίλτρα: ${ageFilter}, ${themeFilter}.`, 'info');
+                return;
+            }
+
+            const points = [];
+            let correctAnswersCount = 0;
+            let totalQuizzesAnswered = 0;
+            
+            // 1. Collect points based on quiz results
+            quizzes.forEach((quiz, index) => {
+                if (quiz.quizData) {
+                    const point = {
+                        index: index + 1,
+                        question: quiz.quizData.question,
+                        correctAnswer: quiz.quizData.correctAnswer,
+                        explanation: quiz.quizData.explanation,
+                        userAnswer: quiz.userAnswer || null,
+                        isCorrect: quiz.isCorrect
+                    };
+                    points.push(point);
+
+                    // 2. Calculate summary statistics
+                    if (quiz.userAnswer !== null) {
+                        totalQuizzesAnswered++;
+                        if (quiz.isCorrect === true) {
+                            correctAnswersCount++;
+                        }
+                    }
+                }
+            });
+
+            // 3. Render Summary
+            const successRate = totalQuizzesAnswered > 0 ? ((correctAnswersCount / totalQuizzesAnswered) * 100).toFixed(1) : '0';
+            reportSummary.innerHTML = `
+                <p class="font-bold">Σύνοψη Αναφοράς:</p>
+                <p><strong>Ημερομηνία:</strong> ${date}</p>
+                <p><strong>Φίλτρα:</strong> Επίπεδο: ${ageFilter === 'all' ? 'Όλα' : ageSelect.options[ageSelect.selectedIndex].text}, Θέμα: ${themeFilter === 'all' ? 'Όλα' : themeSelect.options[themeSelect.selectedIndex].text}</p>
+                <p><strong>Συνολικά Κουίζ (σήμερα):</strong> ${quizzes.length}</p>
+                <p><strong>Ποσοστό Επιτυχίας (απαντημένα):</strong> ${successRate}% (${correctAnswersCount} / ${totalQuizzesAnswered})</p>
+            `;
+            reportSummary.classList.remove('hidden');
+
+
+            // 4. Render Discussion Points
+            discussionPointsDiv.innerHTML = points.map(p => `
+                <div class="point-item p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-bold text-lg text-gray-700 mb-2">Σημείο ${p.index}: ${p.question}</p>
+                    <p class="text-sm">
+                        <span class="font-semibold text-green-700">Σωστή Απάντηση:</span> ${p.correctAnswer}
+                    </p>
+                    <p class="text-sm italic text-gray-600 mt-1">
+                        <span class="font-semibold">Πλήρης Επεξήγηση:</span> ${p.explanation}
+                    </p>
+                    ${p.userAnswer ? `
+                        <div class="mt-2 text-xs p-1 rounded inline-block ${p.isCorrect ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}">
+                            Απάντηση Χρήστη: ${p.userAnswer} (${p.isCorrect ? 'Σωστό' : 'Λάθος'})
+                        </div>
+                    ` : ''}
+                    <div class="mt-3">
+                        <p class="font-semibold text-sm text-indigo-700">Πρόταση για Συζήτηση (Εκπαιδευτικός):</p>
+                        <ul class="list-disc list-inside ml-4 text-sm text-gray-600">
+                            <li>Παρουσιάστε την εικόνα και την ερώτηση στην τάξη.</li>
+                            <li>Ζητήστε από τους μαθητές να ψηφίσουν την απάντησή τους πριν αποκαλύψετε τη σωστή.</li>
+                            <li>Χρησιμοποιήστε την Επεξήγηση για να εμβαθύνετε στο θέμα και να συνδέσετε την εικόνα με το μάθημα.</li>
+                        </ul>
+                    </div>
+                </div>
+            `).join('');
+
+            showStatus("Η αναφορά δημιουργήθηκε με επιτυχία.", 'success');
+        }
+
+        // --- Event Listeners and Initial Setup ---
+        generateBtn.addEventListener('click', fetchAndGenerateReport);
+
+        window.onload = () => {
+            // 1. Initialize Firebase and Auth
+            initializeFirebase();
+            
+            // 2. Set the current date display
+            getTodayIsoStrings();
+        };
+
+    </script>
+
+</body>
+</html>
