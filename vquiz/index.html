@@ -422,7 +422,7 @@
 
             // 1. Query for all quizzes that have a location saved
             const quizzesRef = collection(window.db, "quizzes");
-            const q = query(quizzesRef, where("location", "!=", null));
+            const q = query(quizzesRef);
 
             // Clear any previous markers (to prevent duplicates on re-render)
             quizMap.eachLayer((layer) => {
