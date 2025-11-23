@@ -16,9 +16,13 @@
     
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- EXIF library -->
+    <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
     <!-- Load Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <!-- STANDARD CSS STYLES -->
     <style>
         body {
@@ -163,6 +167,19 @@
             </div>
         </div>
 
+        <div id="mapCard" class="card bg-white p-6 rounded-xl border border-gray-100 mt-8">
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">📍 Map of Generated Quizzes</h2>
+
+            <div id="quizMap" style="height: 400px;" class="w-full rounded-lg border border-gray-300 mb-4 bg-gray-50"></div>
+
+            <div id="markerDetails" class="p-3 bg-blue-50 border border-blue-200 rounded-lg text-sm hidden">
+                <p class="font-bold text-blue-700 mb-1">Selected Quiz:</p>
+                <p id="detailQuestion" class="text-gray-800"></p>
+                <p id="detailLocation" class="text-gray-600 mt-1"></p>
+                <p id="detailAnswer" class="text-green-600 font-medium mt-2"></p>
+            </div>
+        </div>
+
         <!-- Error Message Box -->
         <div id="errorBox" class="hidden fixed bottom-4 right-4 bg-red-500 text-white p-4 rounded-lg shadow-lg max-w-xs transition-opacity duration-300" role="alert">
             <p class="font-bold">Error</p>
@@ -173,8 +190,16 @@
     <!-- Firebase Initialization and Logic -->
     <script type="module">
         // Global variables provided by the environment
+        const firebaseConfig = {
+          apiKey: "AIzaSyCFslMC6avCrHcrLfxtzNv_yb362ZgajKY",
+          authDomain: "way-to-school.firebaseapp.com",
+          projectId: "way-to-school",
+          storageBucket: "way-to-school.firebasestorage.app",
+          messagingSenderId: "673870615354",
+          appId: "1:673870615354:web:a7a77c9794c6478320b603",
+          measurementId: "G-XBXDFRMKM3"
+        };
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
         const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
 
         // Firebase imports
@@ -191,6 +216,58 @@
         window.isAuthReady = false;
         // New global variable to track the user's selected answer
         window.userSelection = null;
+
+
+        // --- EXIF EXTRACTION FUNCTIONS ---
+
+        // Function to convert DMS (Degrees, Minutes, Seconds) array to Decimal Degrees (DD)
+        function convertDMSToDD(dmsArray, direction) {
+            if (!dmsArray || dmsArray.length !== 3) return null;
+
+            // The EXIF data is often stored as rational numbers (numerator/denominator)
+            const deg = dmsArray[0].numerator / dmsArray[0].denominator;
+            const min = dmsArray[1].numerator / dmsArray[1].denominator;
+            const sec = dmsArray[2].numerator / dmsArray[2].denominator;
+
+            let dd = deg + (min / 60) + (sec / 3600);
+
+            // South and West directions are negative
+            if (direction === 'S' || direction === 'W') {
+                dd *= -1;
+            }
+            return dd;
+        }
+
+        // Main function to read EXIF GPS data from the file
+        window.getGpsFromExif = (file) => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.src = URL.createObjectURL(file);
+
+                img.onload = function() {
+                    EXIF.getData(img, function() {
+                        const gpsLat = EXIF.getTag(this, 'GPSLatitude');
+                        const gpsLatRef = EXIF.getTag(this, 'GPSLatitudeRef');
+                        const gpsLon = EXIF.getTag(this, 'GPSLongitude');
+                        const gpsLonRef = EXIF.getTag(this, 'GPSLongitudeRef');
+
+                        if (gpsLat && gpsLon) {
+                            try {
+                                const lat = convertDMSToDD(gpsLat, gpsLatRef);
+                                const lon = convertDMSToDD(gpsLon, gpsLonRef);
+                                resolve({ latitude: lat, longitude: lon });
+                            } catch (e) {
+                                reject(new Error("Found EXIF tags but failed to convert them."));
+                            }
+                        } else {
+                            resolve(null); // No GPS data found
+                        }
+                    });
+                };
+                img.onerror = () => reject(new Error("Failed to load image for EXIF reading."));
+            });
+        };
+        // --------------------------------------------------------
 
         // Function to set up Firebase and authentication
         async function setupFirebase() {
@@ -226,6 +303,45 @@
                 console.error("Error setting up Firebase:", e);
             }
         }
+
+        /**
+         * Saves the quiz data and location to Firestore.
+         * @param {object} quizData The structured data from the VLM.
+         * @param {object | null} latLon The extracted {latitude, longitude} object, or null.
+         */
+        window.saveQuizToFirestore = async (quizData, latLon) => {
+            if (!window.db || !window.userId) {
+                console.error("Firestore or User ID is not initialized. Cannot save.");
+                return;
+            }
+
+            // Create a new document reference with a unique ID
+            const quizRef = doc(collection(window.db, "quizzes"));
+
+            const dataToSave = {
+                userId: window.userId,
+                createdAt: new Date(),
+                question: quizData.question,
+                correctAnswer: quizData.options[quizData.correct_answer],
+                correctOption: quizData.correct_answer,
+                options: quizData.options,
+                // Save the location data if it exists
+                location: latLon ? {
+                    latitude: latLon.latitude,
+                    longitude: latLon.longitude
+                } : null,
+            };
+
+            try {
+                await setDoc(quizRef, dataToSave);
+                console.log("Quiz saved to Firestore with ID:", quizRef.id);
+                // You might want to return the ID for map display later
+                return quizRef.id;
+            } catch (e) {
+                console.error("Error saving quiz to Firestore:", e);
+                window.showError("Failed to save quiz data to the database.");
+            }
+        };
 
         // --- Core Application Logic ---
 
@@ -294,6 +410,88 @@
             }, 5000);
         };
 
+        // Global map variable
+        let quizMap = null;
+        const DEFAULT_CENTER = [37.9838, 23.7275]; // Athens, Greece (as a fallback)
+
+        // --- FIRESTORE FETCH & MAP PLOTTING (CRITICALLY MISSING) ---
+
+        // Function to fetch and plot quizzes
+        window.loadQuizzesFromFirestore = () => {
+            if (!window.db) return;
+
+            // 1. Query for all quizzes that have a location saved
+            const quizzesRef = collection(window.db, "quizzes");
+            const q = query(quizzesRef, where("location", "!=", null));
+
+            // Clear any previous markers (to prevent duplicates on re-render)
+            quizMap.eachLayer((layer) => {
+                if (layer instanceof L.Marker) {
+                    quizMap.removeLayer(layer);
+                }
+            });
+
+            // 2. Listen for real-time updates
+            onSnapshot(q, (snapshot) => {
+                let firstMarkerLocation = null;
+
+                snapshot.docChanges().forEach((change) => {
+                    const quiz = change.doc.data();
+
+                    if (quiz.location && (change.type === "added" || change.type === "modified")) {
+                        const lat = quiz.location.latitude;
+                        const lon = quiz.location.longitude;
+
+                        if (!firstMarkerLocation) {
+                            firstMarkerLocation = [lat, lon];
+                        }
+
+                        // 3. Create the Marker
+                        const marker = L.marker([lat, lon]).addTo(quizMap);
+
+                        // 4. Bind Pop-up and Click Handler
+                        marker.bindPopup(`<b>Question:</b> ${quiz.question}`);
+
+                        marker.on('click', function (e) {
+                            document.getElementById('detailQuestion').textContent = quiz.question;
+                            document.getElementById('detailLocation').textContent = `Lat: ${lat.toFixed(4)}, Lon: ${lon.toFixed(4)}`;
+                            document.getElementById('detailAnswer').textContent = `Correct Answer: ${quiz.correctAnswer}`;
+                            document.getElementById('markerDetails').classList.remove('hidden');
+                        });
+                    }
+                });
+
+                // 5. Adjust the map view after loading
+                if (firstMarkerLocation) {
+                    // Center the map on the first found marker and zoom in
+                    quizMap.setView(firstMarkerLocation, 10);
+                } else {
+                    // If no geo-tagged quizzes are found, reset to default view
+                    quizMap.setView(DEFAULT_CENTER, 2);
+                }
+            });
+        };
+        // ---------------------------------------------------------------
+
+        // Function to initialize the map
+        window.initMap = () => {
+            // Check if the map has already been initialized
+            if (quizMap) {
+                quizMap.remove(); // Remove previous instance if it exists
+            }
+
+            // Initialize the map centered on the default location
+            quizMap = L.map('quizMap').setView(DEFAULT_CENTER, 2); // Zoom level 2 (world view)
+
+            // Add a tile layer (the actual map image) from OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(quizMap);
+
+            console.log("Map initialized.");
+            window.loadQuizzesFromFirestore(); // Load data once map is ready
+        };
+
         // Exponential backoff retry logic for fetch
         window.fetchWithExponentialBackoff = async (url, options, retries = 5, delay = 1000) => {
             for (let i = 0; i < retries; i++) {
@@ -341,6 +539,18 @@
             document.getElementById('answerText').classList.add('hidden');
 
             try {
+                // START OF (GET) COORDINATES (CODE)
+                let latLon = null;
+                try {
+                    latLon = await window.getGpsFromExif(file);
+                    if (latLon) {
+                        console.log(`Extracted GPS: Lat ${latLon.latitude}, Lon ${latLon.longitude}`);
+                    }
+                } catch (e) {
+                    console.warn("Could not read EXIF data:", e.message);
+                }
+                // ENF OF COORDINATES
+
                 // 1. Convert and resize image to Base64
                 const base64ImageData = await convertToBase64(file);
 
@@ -374,6 +584,12 @@
 
                 // 3. Construct the dynamic user prompt
                 let userPrompt = `Generate the output **in the Greek language**. Generate one compelling and specific multiple-choice question based *only* on the content of the provided image. `;
+
+                // START OF (GET) COORDINATES (CODE)
+                if (latLon) {
+                    userPrompt += `The image was taken near **Latitude ${latLon.latitude.toFixed(4)} and Longitude ${latLon.longitude.toFixed(4)}**. `;
+                }
+                // ENF OF COORDINATES
 
                 if (themeInput) {
                     userPrompt += `The question must relate specifically to the theme of "${themeInput}". `;
@@ -427,6 +643,39 @@
                 }
 
                 const quizData = parsedJson[0];
+
+                // --- NEW STEP 6: SAVE DATA TO FIRESTORE ---
+                if (latLon) {
+                    // Only save if we successfully extracted coordinates
+                    await window.saveQuizToFirestore(quizData, latLon);
+                } else {
+                    console.warn("No GPS coordinates found, saving quiz data without location.");
+                    // If you still want to save the quiz even without location:
+                    // await window.saveQuizToFirestore(quizData, null);
+                }
+                // --- END NEW STEP 6 ---
+
+                // --- NEW: LOG DATA TO CONSOLE (and aiwalk.log) ---
+                console.log("--- Quiz Generation Log ---");
+
+                if (latLon) {
+                    console.log(`GPS Location: Lat ${latLon.latitude.toFixed(4)}, Lon ${latLon.longitude.toFixed(4)}`);
+                } else {
+                    console.log("GPS Location: Not available in EXIF data.");
+                }
+
+                console.log(`Audience: ${ageInput}`);
+                console.log(`Theme: ${themeInput || 'General'}`);
+                console.log(`Question: ${quizData.question}`);
+                console.log(`Correct Answer (ID): ${quizData.correct_answer}`);
+                console.log(`Correct Answer (Text): ${quizData.options[quizData.correct_answer]}`);
+                console.log("Options:");
+                console.log(`  A: ${quizData.options.A}`);
+                console.log(`  B: ${quizData.options.B}`);
+                console.log(`  C: ${quizData.options.C}`);
+                console.log(`  D: ${quizData.options.D}`);
+                console.log("---------------------------");
+                // --- END NEW LOGGING ---
 
                 // 6. Render the result
                 window.quizData = quizData; // Store globally for showAnswer
@@ -559,6 +808,9 @@
         setupFirebase();
         setupPillSelection('ageSelection', 'ageInput');
         setupPillSelection('themeSelection', 'themeInput');
+
+        // --- NEW: Initialize the map on page load ---
+        window.initMap();
 
     </script>
 </body>
