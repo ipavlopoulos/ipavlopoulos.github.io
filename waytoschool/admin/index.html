@@ -159,27 +159,27 @@
             generateBtn.textContent = loading ? 'Αναζήτηση Δεδομένων...' : 'Δημιουργία Αναφοράς Σημερινών Κουίζ';
         }
 
-        /**
-         * Υπολογίζει το χρονικό εύρος της "σημερινής ημέρας" με βάση την τοπική ώρα του χρήστη.
-         * Επιστρέφει Date objects για την αρχή της ημέρας (00:00:00) και το τέλος της ημέρας (μια στιγμή πριν τα μεσάνυχτα).
-         */
-        function getTodayDateRange() {
-            const today = new Date();
-            // Αρχή της σημερινής ημέρας (π.χ., 2025-11-23 00:00:00)
-            const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0, 0);
+        // --- UPDATED to use CET timezone logic ---
+        function getTodayIsoStrings() {
+            const timezone = 'Europe/Paris'; // Χρήση ζώνης ώρας CET/CEST
             
-            // Αρχή της αυριανής ημέρας (π.χ., 2025-11-24 00:00:00)
-            const startOfTomorrow = new Date(startOfToday);
-            startOfTomorrow.setDate(startOfTomorrow.getDate() + 1);
-            
-            // Το τέλος της σημερινής ημέρας είναι η στιγμή πριν την έναρξη της αυριανής.
-            const endOfToday = startOfTomorrow; // Όλα τα timestamps πρέπει να είναι < startOfTomorrow
+            // 1. Λήψη της σημερινής ημερομηνίας ως string στη ζώνη ώρας CET (π.χ. "11/23/2025")
+            const todayDateString = new Date().toLocaleDateString('en-US', {
+                timeZone: timezone,
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            }); // Format: MM/DD/YYYY
 
-            // Εμφάνιση της ημερομηνίας σε απλή μορφή για το UI
-            dateDisplay.value = startOfToday.toISOString().substring(0, 10);
+            // 2. Μετατροπή σε YYYY-MM-DD για σύγκριση με το ISO timestamp prefix
+            const [month, day, year] = todayDateString.split('/');
+            const startOfTodayIso = `${year}-${month}-${day}`; // e.g., '2025-11-23'
             
-            return { startOfToday, endOfToday };
+            dateDisplay.value = `${startOfTodayIso} (CET)`; // Ενημέρωση UI
+            
+            return { startOfTodayIso };
         }
+        // --- END UPDATED FUNCTION ---
 
         // --- Firebase Functions ---
         async function initializeFirebase() {
@@ -234,42 +234,37 @@
             const selectedAge = ageSelect.value;
             const selectedTheme = themeSelect.value;
             const collectionPath = `artifacts/${appId}/users/${userId}/quizzes`;
+            const { startOfTodayIso } = getTodayIsoStrings();
             
-            // Λήψη του χρονικού εύρους με βάση την τοπική ώρα
-            const { startOfToday, endOfToday } = getTodayDateRange();
-            const startMillis = startOfToday.getTime();
-            const endMillis = endOfToday.getTime();
-
-            console.log(`[Report Filter] Time Range Start (Local): ${startOfToday.toISOString()} (${startMillis})`);
-            console.log(`[Report Filter] Time Range End (Local/Exclusive): ${endOfToday.toISOString()} (${endMillis})`);
+            console.log(`[Report Filter] Target Date (ISO YYYY-MM-DD in CET): ${startOfTodayIso}`); // <-- DEBUG: Log the target date
 
             try {
-                // Fetch all documents for the current user's quizzes
-                // NOTE: Δεν μπορούμε να φιλτράρουμε απευθείας με where('timestamp', '>=', startOfTodayIso) 
-                // γιατί το timestamp είναι string ISO, όχι Date object.
-                // Ανακτούμε όλα τα έγγραφα και φιλτράρουμε client-side.
+                // Fetch all documents for the current user's quizzes (Firestore query without date filter)
                 const q = query(collection(db, collectionPath));
                 const querySnapshot = await getDocs(q);
                 
                 const allDocuments = [];
                 querySnapshot.forEach((doc) => {
-                    allDocuments.push(doc.data());
+                    const data = doc.data();
+                    allDocuments.push(data);
+                    // <-- DEBUG: Log the timestamp of every document fetched
+                    console.log(`[Report Data] Fetched Document Timestamp: ${data.timestamp} (Doc ID: ${doc.id})`); 
                 });
 
-                // Client-side filtering (Robust Date Comparison)
+                // Client-side filtering (now relying on CET-calculated date)
                 const filteredQuizzes = allDocuments.filter(doc => {
-                    if (!doc.timestamp) return false;
+                    // Safety check for doc.timestamp, which should be an ISO string like '2025-11-23T21:29:00.000Z'
+                    const docDate = doc.timestamp ? doc.timestamp.substring(0, 10) : '';
                     
-                    const docDate = new Date(doc.timestamp);
-                    const docMillis = docDate.getTime();
-                    
-                    // Έλεγχος αν η χρονική σήμανση του εγγράφου είναι εντός του τοπικού εύρους [startOfToday, endOfToday)
-                    const matchesDate = docMillis >= startMillis && docMillis < endMillis;
+                    // Check 1: Date Match (using CET "today")
+                    const matchesDate = docDate === startOfTodayIso;
 
+                    // Check 2 & 3: Age and Theme Match
                     const matchesAge = selectedAge === 'all' || doc.quizSettings.age === selectedAge;
                     const matchesTheme = selectedTheme === 'all' || doc.quizSettings.theme === selectedTheme;
                     
                     if (!matchesDate || !matchesAge || !matchesTheme) {
+                        // <-- DEBUG: Log why a document was excluded
                         console.log(`[Report Filter] Excluding document with timestamp ${doc.timestamp}. Conditions: (Date: ${matchesDate}, Age: ${matchesAge}, Theme: ${matchesTheme})`);
                         return false;
                     }
@@ -278,7 +273,7 @@
                 });
                 
                 // Process and Render Report
-                generateDiscussionPoints(filteredQuizzes, selectedAge, selectedTheme, startOfToday.toLocaleDateString('el-GR'));
+                generateDiscussionPoints(filteredQuizzes, selectedAge, selectedTheme, startOfTodayIso);
 
             } catch (e) {
                 console.error("Error fetching documents:", e);
@@ -328,7 +323,7 @@
             const successRate = totalQuizzesAnswered > 0 ? ((correctAnswersCount / totalQuizzesAnswered) * 100).toFixed(1) : '0';
             reportSummary.innerHTML = `
                 <p class="font-bold">Σύνοψη Αναφοράς:</p>
-                <p><strong>Ημερομηνία:</strong> ${date}</p>
+                <p><strong>Ημερομηνία (CET):</strong> ${date}</p>
                 <p><strong>Φίλτρα:</strong> Επίπεδο: ${ageFilter === 'all' ? 'Όλα' : ageSelect.options[ageSelect.selectedIndex].text}, Θέμα: ${themeFilter === 'all' ? 'Όλα' : themeSelect.options[themeSelect.selectedIndex].text}</p>
                 <p><strong>Συνολικά Κουίζ (σήμερα):</strong> ${quizzes.length}</p>
                 <p><strong>Ποσοστό Επιτυχίας (απαντημένα):</strong> ${successRate}% (${correctAnswersCount} / ${totalQuizzesAnswered})</p>
@@ -372,8 +367,8 @@
             // 1. Initialize Firebase and Auth
             initializeFirebase();
             
-            // 2. Set the current date display and get the range
-            getTodayDateRange();
+            // 2. Set the current date display using CET
+            getTodayIsoStrings();
         };
 
     </script>
