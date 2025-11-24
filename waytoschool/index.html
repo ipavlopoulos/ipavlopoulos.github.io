@@ -372,7 +372,7 @@
             const language = document.getElementById('language-input').value;
             
             const model = "gemini-2.5-flash-preview-09-2025";
-            const apiKey = "AIzaSyBwbj_B_tiSNOLsWMp2kJUgZsaWmqkoKPQ";
+            const apiKey = "AIzaSyBh7x2Y6ljBEWPyQf7mb80yAa9wMqCouzc";
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
             const mimeType = downscaledImageBase64.match(/data:(.*?);/)?.[1] || 'image/jpeg';
             const base64Data = downscaledImageBase64.split(',')[1];
