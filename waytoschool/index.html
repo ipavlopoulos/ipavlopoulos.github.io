@@ -432,41 +432,43 @@
                         body: JSON.stringify(payload)
                     });
                     
-                    if (!fetchResponse.ok) throw new Error(`HTTP error! status: ${fetchResponse.status}`);
+                    // --- REVISED LOGIC STARTS HERE ---
+                    if (fetchResponse.ok) {
+                        response = await fetchResponse.json();
+                        break; // Success
+                    }
+
+                    const status = fetchResponse.status;
                     
-                    response = await fetchResponse.json();
-                    break; // Success
+                    // Errors 400-499 are client errors and usually permanent, 
+                    // except for 429 (Too Many Requests).
+                    if (status >= 400 && status < 500 && status !== 429) {
+                        // Throw unrecoverable error that bypasses the retry delay logic
+                        throw new Error(`Permanent HTTP Error ${status}: Unrecoverable client error. Aborting retries.`);
+                    }
+
+                    // If it's a 429 or 5xx error, throw an error to trigger the retry/delay block below
+                    throw new Error(`Retriable HTTP Error ${status}.`);
+                    // --- REVISED LOGIC ENDS HERE ---
+
                 } catch (error) {
+                    // Check if it's the unrecoverable error we just threw
+                    if (error.message.includes("Permanent HTTP Error")) {
+                        // Re-throw the error immediately to stop all attempts
+                        throw error;
+                    }
+
+                    // Proceed with retry logic for retriable errors
                     console.error(`Attempt ${attempts} failed:`, error);
                     if (attempts < maxRetries) {
                         const delay = Math.pow(2, attempts) * 1000;
+                        showStatus(`Σφάλμα. Δοκιμή ${attempts + 1} σε ${delay / 1000} δευτ.`, 'loading');
                         await new Promise(res => setTimeout(res, delay));
                     } else {
                         throw new Error(`Failed to fetch from Gemini API after ${maxRetries} attempts.`);
                     }
                 }
             }
-
-            disableUI(false);
-            
-            if (response && response.candidates && response.candidates.length > 0 && response.candidates[0].content.parts[0].text) {
-                try {
-                    const jsonText = response.candidates[0].content.parts[0].text;
-                    currentQuizData = JSON.parse(jsonText);
-                    
-                    // Proceed to Step 2
-                    renderQuiz(currentQuizData);
-                    await saveQuizData('generation'); // Save generated quiz data to Firestore
-
-                } catch (e) {
-                    console.error("JSON Parsing Error:", e);
-                    showStatus(`Σφάλμα ανάλυσης JSON από το Gemini: ${e.message}. Δοκιμάστε ξανά.`, 'error');
-                }
-            } else {
-                showStatus("Αποτυχία λήψης απάντησης από το Gemini. Ελέγξτε την κονσόλα.", 'error');
-                console.error("Gemini Response Error:", response);
-            }
-        }
         
         // --- Quiz Rendering and Interaction ---
         function renderQuiz(data) {
