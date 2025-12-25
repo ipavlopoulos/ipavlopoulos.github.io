@@ -8,6 +8,10 @@ permalink: /publications/
 
 ## publications in proceedings of peer-reviewed venues
 
+* Boumpi, M. Dalakleidi, K. V., Pavlopoulos, J. (2025) From Pen to Prediction: Handwriting-Based Alzheimer's Detection. In 2025 IEEE 25th International Conference on Bioinformatics and Bioengineering (BIBE), pages 671-675, Athens, Greece, 2025, doi: 10.1109/BIBE66822.2025.00116.
+
+* Bakagianni, J. et. al. (2025) FoodSafeSum: Enabling Natural Language Processing Applications for Food Safety Document Summarization and Analysis." In EMNLP, November 2025, Suzhou, China., pp. 16786-16804. Association for Computational Linguistics. https://doi.org/10.18653/v1/2025.findings-emnlp.911
+
 * Dimakis, A., Pavlopoulos, J., Anastasopoulos, A. (2025). Dialect Normalization using Large Language Models and Morphological Rules. In Findings of the Association for Computational Linguistics: ACL 2025, pages 23696–23714, Vienna, Austria. Association for Computational Linguistics.
 
 * Pavlopoulos, J., Vardakas, G., Likas, A. (2024). Revisiting Silhouette Aggregation. In the 27th International Conference on
@@ -108,9 +112,12 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg)
 * Vrettaros, J., Pavlopoulos, J., Vouros, G. and Drigas, S., 2008. The development of a self-assessment system for the learners answers with the use of GPNN. In Proceedings of the World Summit on Knowledge Society (WSKS), Athens, Greece, pp.332—340. 
 
 ## journals
+
+* Bakagianni, J., Kanella, P., Maria, G., Pavlopoulos, J.*. 2025. A systematic survey of natural language processing for the Greek language." Patterns 6, no. 11 (2025).
+
 * Assael, Y., Sommerschield, T., Cooley, A., Shillingford, B., Pavlopoulos, J. et al. 2025. Contextualizing ancient texts with generative neural networks. Nature. https://doi.org/10.1038/s41586-025-09292-5
 
-* Bakagianni, J., Pouli, K., Gavriilidou, M., Pavlopoulos, J., 2025. A systematic survey of natural language processing for the Greek language. Patterns. https://www.cell.com/patterns/fulltext/S2666-3899(25)00161-8 
+* Bakagianni, J., Pouli, K., Gavriilidou, M., Pavlopoulos, J., 2025. A systematic survey of natural language processing for the Greek language. Patterns 6, no. 11. https://doi.org/10.1016/j.patter.2025.101313
   
 * Barmpounis E.-K., Pavlopoulos, J., Louridas, P., Dritsa, K., 2024. Recognition and Analysis of the Proceedings of the Greek Parliament after WWII. DHQ 18(1). https://www.digitalhumanities.org/dhq/vol/18/1/000736/000736.html (data at: https://zenodo.org/records/8302990; [Transkribus model](https://app.transkribus.org/training/gallery) under the name "Greek Parliamentary Proceedings 1946")
 
