@@ -19,9 +19,9 @@ permalink: /publications/
 * Pavlopoulos, J., Vardakas, G., Likas, A. (2024). Revisiting Silhouette Aggregation. In the 27th International Conference on
 Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg), a preprint is present: [arXiv:2401.05831](https://arxiv.org/abs/2401.05831)).
 
-* Pavlopoulos, J., Louridas, P., & Filos, P. (2024). Towards a Greek Proverb Atlas: A Computational Spatial Exploration and Attribution of Greek Proverbs. (To appear) In the Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing  (EMNLP 2024), Miami, USA. Related preprint: https://www.researchsquare.com/article/rs-3360387/v4
+* Pavlopoulos, J., Louridas, P., & Filos, P. (2024). Towards a Greek Proverb Atlas: A Computational Spatial Exploration and Attribution of Greek Proverbs. In the Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing  (EMNLP 2024), Miami, USA. https://aclanthology.org/2024.emnlp-main.661/ 
 
-* Randl, K., Pavlopoulos, J., Henriksson, A., & Lindgren, T. (2024). Evaluating the Reliability of Self-Explanations in Large Language Models. In International Conference on Discovery Science (to appear). Cham: Springer Nature Switzerland. Related preprint: arXiv preprint arXiv:2407.14487.
+* Randl, K., Pavlopoulos, J., Henriksson, A., & Lindgren, T. (2024). Evaluating the Reliability of Self-Explanations in Large Language Models. In International Conference on Discovery Science. Cham: Springer Nature Switzerland. Related preprint: arXiv preprint arXiv:2407.14487. https://link.springer.com/chapter/10.1007/978-3-031-78977-9_3 
 
 * De Gregorio, G., Ferretti, L., Pena, R. C., Marthot-Santaniello, I., Konstantinidou, M., & Pavlopoulos, J. (2024, August). A New Framework for Error Analysis in Computational Paleographic Dating of Greek Papyri. In International Conference on Document Analysis and Recognition (pp. 102-118). Cham: Springer Nature Switzerland.
 
@@ -114,6 +114,8 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg)
 * Vrettaros, J., Pavlopoulos, J., Vouros, G. and Drigas, S., 2008. The development of a self-assessment system for the learners answers with the use of GPNN. In Proceedings of the World Summit on Knowledge Society (WSKS), Athens, Greece, pp.332—340. 
 
 ## journals
+
+* Randl, K., Pavlopoulos, J. et al. Mind the gap: from plausible to valid self-explanations in large language models. Mach Learn 114, 220 (2025). https://doi.org/10.1007/s10994-025-06838-6
 
 * Bakagianni, J., Kanella, P., Maria, G., Pavlopoulos, J.*. 2025. A systematic survey of natural language processing for the Greek language." Patterns 6, no. 11 (2025).
 
