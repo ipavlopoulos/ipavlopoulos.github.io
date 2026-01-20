@@ -8,7 +8,7 @@ permalink: /publications/
 
 ## publications in proceedings of peer-reviewed venues
 
-* Boumpi, M. Dalakleidi, K. V., Pavlopoulos, J. (2025) From Pen to Prediction: Handwriting-Based Alzheimer's Detection. In IEEE 25th International Conference on Bioinformatics and Bioengineering (BIBE), pages 671-675, Athens, Greece, 2025, https://doi.org/10.1109/BIBE66822.2025.00116 [[accepted version](files/IEEE_Pen_to_Prediction.pdf) or try it out in [this demo](https://applied.ml.cs.aueb.gr/alzheimer)]
+* Boumpi, M. Dalakleidi, K. V., Pavlopoulos, J. (2025) From Pen to Prediction: Handwriting-Based Alzheimer's Detection. In IEEE 25th International Conference on Bioinformatics and Bioengineering (BIBE), pages 671-675, Athens, Greece, 2025, [https://doi.org/10.1109/BIBE66822.2025.00116](https://doi.org/10.1109/BIBE66822.2025.00116) [[accepted version](files/IEEE_Pen_to_Prediction.pdf), [slides](files/AD_presentation_30102025.pdf), [demo](https://applied.ml.cs.aueb.gr/alzheimer)]
 
 * Bakagianni, J. et al. (2025) DiaShift: An Explainable System for Temporal Diagnostic Shift Detection in Clinical Notes. In IEEE 25th International Conference on Bioinformatics and Bioengineering (BIBE), Athens, Greece, 2025, pp. 341-345, https://doi.org/10.1109/BIBE66822.2025.00063
 
