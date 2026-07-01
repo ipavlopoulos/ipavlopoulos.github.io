@@ -36,4 +36,4 @@ Korre Katerina, 2020. “Using Predictive Text for Grammatical Error Correction 
 
 ---
 
-Undergraduate students interested in undertaking a thesis under my supervision should: (a) have an average grade of 7.5 or more; (b) have a grade of 8 or more in courses of programming, mathematics, AI, Applied Data Science (or attend the course), Machine Learning (or attend the course); (c) be able to attend (BSc or MSc) courses that relate to the topic of the thesis.
+Undergraduate students interested in undertaking a thesis under my supervision should: (a) have an average grade of 8 or more; (b) have a grade of 8 or more in related courses (data mining, mathematics, programming; ideally also in AI and/or ML); (c) be able to attend BSc/MSc courses related to the topic of the thesis.
