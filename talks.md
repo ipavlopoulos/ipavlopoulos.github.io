@@ -4,6 +4,18 @@ layout: default
 permalink: /talks/
 ---
 
+## Recent talks
+
+* **9 March 2026 — Learning to Align: Addressing Frequency Distribution Shifts.** Research seminar, Department of Statistics, Athens University of Economics and Business. [Seminar listing](https://www.dept.aueb.gr/el/stat/content/ereynitikaseminaria).
+
+* **24 September 2025 — Explainable Foundation Models for Historical and Subjective Data.** Keynote at AI-based Methods for the Humanities, BIFOLD, Einstein Center Digital Future, Berlin. [Program](https://www.bifold.berlin/news-events/events/ai-based-methods-for-the-humanities/agenda-and-program).
+
+* **4 July 2025 — Machine Learning for Ancient Languages: Applications to Byzantine Manuscripts.** At “Artificial Intelligence: Hopes and Fears”, 44th Thessaloniki Book Festival. [Program](https://sekve.gr/wp-content/uploads/2025/06/festival_vivliou_2025_01.pdf).
+
+* **12 June 2025 — Learning to Adapt: Addressing Character Frequency Distribution Shifts in HTR.** SCOOP: Source Codes of the Past, Institute for Advanced Study, Princeton. [Program](https://cdh.princeton.edu/events/2025/06/scoop-source-codes-of-the-past-launching-an-international-atrhtr-network-for-manuscript-analysis/).
+
+## Recorded talks
+
 <div style="max-width: 430px;">
     <div>Improved text toxicity detection by focusing on polarized texts. In other words, an item doesn't have to be black/white nor gray. One group of people may see it as black while another as white.</div>
     <video src="https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-02-25/0123olf/nDFU-talk.mp4" controls="controls" style="max-width: 430px;">

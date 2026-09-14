@@ -4,9 +4,27 @@ title: Publications
 permalink: /publications/
 ---
 
-(find me in [scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en&oi=ao">Scholar</a>))
+(find me on [Google Scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en))
+
+## accepted papers
+
+* Randl, K., Rocchietti, G., Henriksson, A., Abedjan, Z., Lindgren, T., Pavlopoulos, J. (2026). Quantifying Retriever-Generator Alignment in RAG with Local Explanations. Accepted at Findings of EMNLP 2026. [Acceptance announcement](https://www.tu.berlin/d2ip/nachrichtendetails/research-paper-accepted-forppublication-at-emnlp-2026-findings); [preprint, titled RAG-E: Quantifying Retriever-Generator Alignment and Failure Modes](https://arxiv.org/abs/2601.21803).
+
+* Semoglou, A., Likas, A., Pavlopoulos, J. (2026). Composite Silhouette. Accepted at ECML PKDD 2026. [DOI](https://doi.org/10.1007/978-3-032-37654-1_38); [preprint](https://arxiv.org/abs/2604.13816); [code and publication details](https://pypi.org/project/compsil/).
+
+* Pavlopoulos, J., Barbakos, S., Ferretti, L., Voulgarakis, D., Paparrigopoulou, A., Konstantinidou, M., De Gregorio, G., Marthot-Santaniello, I., Platanou, P., Essler, H. (2026). Learning Diachronic Representations of Ancient Greek Letterforms. Accepted at ICDAR 2026. [Preprint and acceptance details](https://arxiv.org/abs/2606.24984).
 
 ## publications in proceedings of peer-reviewed venues
+
+* Kaliosis, P., Pavlopoulos, J. (2025). Learning to Align: Addressing Character Frequency Distribution Shifts in Handwritten Text Recognition. In Findings of the Association for Computational Linguistics: EMNLP 2025, pp. 18667–18684. [Paper](https://aclanthology.org/2025.findings-emnlp.1014/).
+
+* Korre, K., Tsirmpas, D., Gkoumas, N., Cabalé, E., Myrtzani, D., Evgeniou, T., Androutsopoulos, I., Pavlopoulos, J. (2025). Evaluation and Facilitation of Online Discussions in the LLM Era: A Survey. In Proceedings of EMNLP 2025, pp. 24443–24462. [Paper](https://aclanthology.org/2025.emnlp-main.1243/).
+
+* Randl, K., Pavlopoulos, J., Henriksson, A., Lindgren, T., Bakagianni, J. (2025). SemEval-2025 Task 9: The Food Hazard Detection Challenge. In Proceedings of the 19th International Workshop on Semantic Evaluation (SemEval-2025), pp. 2523–2534. [Paper](https://aclanthology.org/2025.semeval-1.325/).
+
+* Eleftheriou, K., Louridas, P., Pavlopoulos, J. (2025). KostasThesis2025 at SemEval-2025 Task 10 Subtask 2: A Continual Learning Approach to Propaganda Analysis in Online News. In Proceedings of the 19th International Workshop on Semantic Evaluation (SemEval-2025), pp. 899–908. [Paper](https://aclanthology.org/2025.semeval-1.122/).
+
+* Loukas, L., Smyrnioudis, N., Dikonomaki, C., Barbakos, S., Toumazatos, A., Koutsikakis, J., Kyriakakis, M., Georgiou, M., Vassos, S., Pavlopoulos, J., Androutsopoulos, I. (2025). GR-NLP-TOOLKIT: An Open-Source NLP Toolkit for Modern Greek. In Proceedings of the 31st International Conference on Computational Linguistics: System Demonstrations, pp. 174–182. [Paper](https://aclanthology.org/2025.coling-demos.17/).
 
 * Boumpi, M. Dalakleidi, K. V., Pavlopoulos, J. (2025) From Pen to Prediction: Handwriting-Based Alzheimer's Detection. In IEEE 25th International Conference on Bioinformatics and Bioengineering (BIBE), pages 671-675, Athens, Greece, 2025, [https://doi.org/10.1109/BIBE66822.2025.00116](https://doi.org/10.1109/BIBE66822.2025.00116) [[accepted version](files/IEEE_Pen_to_Prediction.pdf), [slides](files/AD_presentation_30102025.pdf), [demo](https://applied.ml.cs.aueb.gr/alzheimer)]
 
@@ -15,6 +33,14 @@ permalink: /publications/
 * Bakagianni, J. et. al. (2025) FoodSafeSum: Enabling Natural Language Processing Applications for Food Safety Document Summarization and Analysis." In EMNLP, November 2025, Suzhou, China., pp. 16786-16804. Association for Computational Linguistics. https://doi.org/10.18653/v1/2025.findings-emnlp.911
 
 * Dimakis, A., Pavlopoulos, J., Anastasopoulos, A. (2025). Dialect Normalization using Large Language Models and Morphological Rules. In Findings of the Association for Computational Linguistics: ACL 2025, pages 23696–23714, Vienna, Austria. Association for Computational Linguistics.
+
+* Randl, K., Pavlopoulos, J., Henriksson, A., Lindgren, T. (2024). CICLe: Conformal In-Context Learning for Largescale Multi-Class Food Risk Classification. In Findings of the Association for Computational Linguistics: ACL 2024, pp. 7695–7715. [Paper](https://aclanthology.org/2024.findings-acl.459/).
+
+* Kaliosis, P., Pavlopoulos, J., Charalampakos, F., Moschovis, G., Androutsopoulos, I. (2024). A Data-Driven Guided Decoding Mechanism for Diagnostic Captioning. In Findings of the Association for Computational Linguistics: ACL 2024, pp. 7450–7466. [Paper](https://aclanthology.org/2024.findings-acl.444/).
+
+* Toumazatos, A., Pavlopoulos, J., Androutsopoulos, I., Vassos, S. (2024). Still All Greeklish to Me: Greeklish to Greek Transliteration. In Proceedings of LREC-COLING 2024, pp. 15309–15319. [Paper](https://aclanthology.org/2024.lrec-main.1330/).
+
+* Pavlopoulos, J., Sandell, R., Konstantinidou, M., Bozzone, C. (2024). HoLM: Analyzing the Linguistic Unexpectedness in Homeric Poetry. In Proceedings of LREC-COLING 2024, pp. 8166–8172. [Paper](https://aclanthology.org/2024.lrec-main.715/).
 
 * Pavlopoulos, J., Vardakas, G., Likas, A. (2024). Revisiting Silhouette Aggregation. In the 27th International Conference on
 Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg), a preprint is present: [arXiv:2401.05831](https://arxiv.org/abs/2401.05831)).
@@ -59,15 +85,11 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg)
 
 * Miliou, I., Pavlopoulos, J., Papapetrou, P., 2021. Sentiment Nowcasting During the COVID-19 Pandemic. In International Conference on Discovery Science, pp. 218-228 ([link](/files/miliou_et_al_2021.pdf)).
 
-* Ljungman, J. and Lislevand, V. and Pavlopoulos, J. and Farazouli, A. and Lee, Z. and Papapetrou, P. and Fors, U., 2021. Automated Grading of Exam Responses: An Extensive Classification Benchmark. In International Conference on Discovery Science, pp. 3-18.
-
 * Kougia, V. and Pavlopoulos, J., 2021. Multimodal or Text? Retrieval or BERT? Benchmarking Classifiers for the Shared Task on Hateful Memes. In the 5th Workshop on Online Abuse and Harms (WOAH 2021), pp. 220-225
 
 * Xenos, A. and Pavlopoulos, J. and Androutsopoulos, I., 2021. Context sensitivity estimation in toxicity detection. In the 5th Workshop on Online Abuse and Harms (WOAH 2021), pp. 140-145.
 
 * Pavlopoulos, J., Sorensen, J., Laugier, L. and Androutsopoulos, I., 2021, August. SemEval-2021 task 5: Toxic spans detection. In Proceedings of the 15th international workshop on semantic evaluation (SemEval-2021) (pp. 59-69).
-
-* Kougia, V., Pavlopoulos, J., Papapetrou, P. and Gordon, M., 2021. RTEX: A novel framework for ranking, tagging, and explanatory diagnostic captioning of radiography exams. Journal of the American Medical Informatics Association, 28(8), pp.1651-1659.
 
 * Pavlopoulos, J. and Papapetrou, P., 2021. Customized Neural Predictive Medical Text: A Use-Case on Caregivers. In Artificial Intelligence in Medicine: 19th International Conference on Artificial Intelligence in Medicine, AIME 2021, Virtual Event, June 15–18, 2021, Proceedings (pp. 438-443). Springer International Publishing.
 
@@ -115,9 +137,11 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg)
 
 ## journals
 
-* Randl, K., Pavlopoulos, J. et al. Mind the gap: from plausible to valid self-explanations in large language models. Mach Learn 114, 220 (2025). https://doi.org/10.1007/s10994-025-06838-6
+* Semoglou, A., Pavlopoulos, J. (2026). CAKE: Confidence in Assignments via K-partition Ensembles. Machine Learning with Applications, 24, 100915. [DOI](https://doi.org/10.1016/j.mlwa.2026.100915); [preprint](https://arxiv.org/abs/2602.18435).
 
-* Bakagianni, J., Kanella, P., Maria, G., Pavlopoulos, J.*. 2025. A systematic survey of natural language processing for the Greek language." Patterns 6, no. 11 (2025).
+* Georgiadis, T., Pavlopoulos, J., Mamoulis, N. (2026). SpaRAGraph: Spatial Reasoning using Retrieval-Augmented Generation. ACM Transactions on Spatial Algorithms and Systems. [DOI](https://doi.org/10.1145/3799424).
+
+* Randl, K., Pavlopoulos, J. et al. Mind the gap: from plausible to valid self-explanations in large language models. Mach Learn 114, 220 (2025). https://doi.org/10.1007/s10994-025-06838-6
 
 * Assael, Y., Sommerschield, T., Cooley, A., Shillingford, B., Pavlopoulos, J. et al. 2025. Contextualizing ancient texts with generative neural networks. Nature. https://doi.org/10.1038/s41586-025-09292-5
 
@@ -143,13 +167,27 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg)
 
 * Olczak J., Pavlopoulos J., Prijs J., Ijpma F. F. A., Doornberg J. N., Lundstrom C., Hedlund J., and Gordon M., 2021. Presenting artificial intelligence, deep learning, and machine learning studies to clinicians and healthcare stakeholders: an introductory reference with a guideline and a Clinical AI Research (CAIR) checklist proposal. Acta Orthopaedica.  
 
-* Kougia V., Pavlopoulos J., Papapetrou P., 2021. RTEx: A novel framework for Ranking, Tagging, and Explanatory diagnostic captioning of radiography exams. Journal of the American Medical Informatics Association.
+* Kougia, V., Pavlopoulos, J., Papapetrou, P., Gordon, M. (2021). RTEx: A novel framework for ranking, tagging, and explanatory diagnostic captioning of radiography exams. Journal of the American Medical Informatics Association, 28(8), pp. 1651–1659.
 
 * Tsatsaronis G., Balikas G., Malakasiotis P., Partalas I., Zschunke, M., Alvers, M., Weissenborn, D., Krithara, A., Petridis, S., Polychronopoulos, D., Almirantis, Y., Pavlopoulos, J., Baskiotis, N., Gallinari, P., Artieres, T., Ngomo, A.-C., Heino, N., Gaussier, E.; Barrio-Alvers, L., Schroeder, M., Androutsopoulos, I. and Paliouras, G., 2015. An overview of the bioasq large-scale biomedical semantic indexing and question answering competition. BMC Bioinformatics 16(1).
 
 * Alexopoulos P., Pavlopoulos J. and Mylonas P., “A Semantic Framework for Harvesting Vague Enterprise Knowledge from Microposts”. International Journal on Artificial Intelligence Tools 23(02), 2014.
 
 * Vrettaros J., Pavlopoulos J., Drigas A. S. and Hrissagis K., “GPNN techniques in learning assessment systems”. In International Journal of Technology Enhanced Learning. Inderscience Publishers, pp. 415—429, 3(4), 2011.
+
+## preprints
+
+* Tsirmpas, D., Korre, K., Pavlopoulos, J. (2026). To Facilitate or not to Facilitate: Human and LLM Facilitator Tendencies in Online Discussions. [arXiv:2607.28643](https://arxiv.org/abs/2607.28643).
+
+* Tzachristas, I., Pavlopoulos, J. (2026). Aristotelian Virtue Profiling of LLMs through Ethical Dilemmas. [arXiv:2606.28683](https://arxiv.org/abs/2606.28683).
+
+* Tsirmpas, D., Pavlopoulos, J. (2026). Quantifying and Attributing Polarization to Annotator Groups. [arXiv:2602.06055](https://arxiv.org/abs/2602.06055).
+
+* Korre, K., Pavlopoulos, J. (2025). Proverbs or Pythian Oracles? Sentiments and Emotions in Greek Sayings. [arXiv:2510.13341](https://arxiv.org/abs/2510.13341).
+
+* Bakagianni, J., Pavlopoulos, J., Likas, A. (2025). TopClustRAG at SIGIR 2025 LiveRAG Challenge. [arXiv:2506.15246](https://arxiv.org/abs/2506.15246).
+
+* Pavlopoulos, J., Bakagianni, J., Pouli, K., Gavriilidou, M. (2025). Open or Closed LLM for Lesser-Resourced Languages? Lessons from Greek. [arXiv:2501.12826](https://arxiv.org/abs/2501.12826).
 
 ## theses
 
