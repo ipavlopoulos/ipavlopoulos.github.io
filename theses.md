@@ -4,6 +4,22 @@ layout: default
 permalink: /theses/
 ---
 
+Chatzipapadopoulou Anna, 2025. "Ensemble Learning in Uncertainty Quantification for Multi-Label Prediction: From Theoretical Foundations to Medical Image Understanding". MSc Thesis, Computer Science, Athens University of Economics and Business. Co-supervised with Ion Androutsopoulos ([pdf](https://nlp.cs.aueb.gr/theses/Chatzipapadopoulou_MSc_Thesis.pdf)).
+
+Schoinaki Maria, 2025. "Improvements to the explanations of Ithaca’s chronological attributions of ancient Greek inscriptions". BSc Thesis, Computer Science, Department of Informatics, Athens University of Economics and Business. Co-supervised with Ion Androutsopoulos and Yannis Assael ([pdf](https://nlp.cs.aueb.gr/theses/BSc_Thesis_Maria_Schoinaki.pdf)).
+
+Pantelidis Ippokratis, 2025. "Exploring Post-Training Techniques for Diagnostic Captioning". BSc Thesis, Computer Science, Department of Informatics, Athens University of Economics and Business. Co-supervised with Ion Androutsopoulos ([pdf](https://nlp.cs.aueb.gr/theses/bsc_thesis_ippokratis.pdf)).
+
+Voulgarakis Dionysios, 2024. "Improving Fraud Detection in Online Banking". MSc Thesis, Data Science, Athens University of Economics and Business ([link](https://doi.org/10.26219/heal.aueb.4305)).
+
+Samprovalaki Marina, 2024. "Exploring Multimodal Large Language Models for Medical Image Captioning". MSc Thesis, Computer Science, Athens University of Economics and Business. Co-supervised with Ion Androutsopoulos ([pdf](https://nlp.cs.aueb.gr/theses/m_samprovalaki_msc_thesis.pdf)).
+
+Tsirmpas Dimitris, 2024. "Mitigating Polarisation in Online Discussions Through Adaptive Moderation Techniques". MSc Thesis, Data Science, Athens University of Economics and Business ([pdf](https://nlp.cs.aueb.gr/theses/msc_thesis_dimitris_tsirmpas.pdf)).
+
+Chatzipapadopoulou Anna, 2024. "Enhanced Biomedical Image Tagging". BSc Thesis, Informatics, Athens University of Economics and Business. Co-supervised with Ion Androutsopoulos ([pdf](https://nlp.cs.aueb.gr/theses/Bsc_Thesis_Chatzipapadopoulou.pdf)).
+
+Kaliosis Panagiotis, 2023. "Exploring Uni-modal, Multi-modal and Few-shot Deep Learning Methods for Diagnostic Captioning". MSc Thesis, Computer Science, Athens University of Economics and Business. Co-supervised with Ion Androutsopoulos ([pdf](https://nlp.cs.aueb.gr/theses/p_kaliosis_msc_thesis.pdf)).
+
 Barmpounis Epameinondas-Konstantinos, 2022. "Computational analysis of Greek Parliamentary Minutes of the period 1946-1947". MSc Thesis, Digital Methods for the Humanities ([link](http://www.pyxida.aueb.gr/index.php?op=view_object&object_id=10013))
 
 Peteinou Eleni, 2022. "Toxicity classification for the detection of ageism on social media". MSc Thesis, Digital Methods for the Humanities ([link](http://www.pyxida.aueb.gr/index.php?op=view_object&object_id=10080))
