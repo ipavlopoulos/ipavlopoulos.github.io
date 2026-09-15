@@ -18,7 +18,15 @@ My research is dedicated to Machine Learning for NLP, with a focus on applicatio
 * Phone: +30 210 82 03 133
 
 ## News
+
+- 🎓 **September 2026**: Our work on [Composite Silhouette](https://doi.org/10.1007/978-3-032-37654-1_38) is part of ECML PKDD 2026. [Code and slides](https://pypi.org/project/compsil/).
+- 🎓 **June 2026**: Our [Learning Diachronic Representations of Ancient Greek Letterforms](https://arxiv.org/abs/2606.24984) preprint is available, with acceptance at ICDAR 2026.
+- 🎓 **June 2026**: [CAKE: Confidence in Assignments via K-partition Ensembles](https://doi.org/10.1016/j.mlwa.2026.100915) appears in Machine Learning with Applications. [Code](https://github.com/semoglou/cake).
+- 🎓 **May 2026**: [SpaRAGraph: Spatial Reasoning using Retrieval-Augmented Generation](https://doi.org/10.1145/3799424) is out in ACM Transactions on Spatial Algorithms and Systems.
+- 📢 **March 2026**: Gave a research seminar on Learning to Align: Addressing Frequency Distribution Shifts at the [Department of Statistics, AUEB](https://www.dept.aueb.gr/el/stat/content/ereynitikaseminaria).
 - 📢 **September 2025**: Gave a talk about AI for the Humanities ([AI-based methods for the Humanities at BIFOLD](https://www.bifold.berlin/news-events/events/ai-based-methods-for-the-humanities/agenda-and-program))
 - 🎓 **July 2025**: Our (2nd) Nature paper is out ([predictingthepast.com](https://predictingthepast.com)).
 - 🎓 **July 2025**: Our survey on NLP for Greek is online ([cell.com/patterns](https://www.cell.com/patterns/fulltext/S2666-3899(25)00161-8)).
 - 📢 **June 2025**: Gave a talk about HTR at Princeton ([cdh.princeton.edu](https://cdh.princeton.edu/events/2025/06/scoop-source-codes-of-the-past-launching-an-international-atrhtr-network-for-manuscript-analysis/)).
+
+See all [publications]({{ '/publications/' | relative_url }}) and [talks]({{ '/talks/' | relative_url }}).
