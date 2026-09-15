@@ -30,11 +30,11 @@ permalink: /publications/
 
 * Loukas, L., Smyrnioudis, N., Dikonomaki, C., Barbakos, S., Toumazatos, A., Koutsikakis, J., Kyriakakis, M., Georgiou, M., Vassos, S., Pavlopoulos, J., Androutsopoulos, I. (2025). GR-NLP-TOOLKIT: An Open-Source NLP Toolkit for Modern Greek. In Proceedings of the 31st International Conference on Computational Linguistics: System Demonstrations, pp. 174–182. [Paper](https://aclanthology.org/2025.coling-demos.17/).
 
-* Boumpi, M. Dalakleidi, K. V., Pavlopoulos, J. (2025) From Pen to Prediction: Handwriting-Based Alzheimer's Detection. In IEEE 25th International Conference on Bioinformatics and Bioengineering (BIBE), pages 671-675, Athens, Greece, 2025, [https://doi.org/10.1109/BIBE66822.2025.00116](https://doi.org/10.1109/BIBE66822.2025.00116) [[accepted version](files/IEEE_Pen_to_Prediction.pdf), [slides](files/AD_presentation_30102025.pdf), [demo](https://applied.ml.cs.aueb.gr/alzheimer)]
+* Boumpi, M., Dalakleidi, K. V., Pavlopoulos, J. (2025) From Pen to Prediction: Handwriting-Based Alzheimer's Detection. In IEEE 25th International Conference on Bioinformatics and Bioengineering (BIBE), pages 671-675, Athens, Greece, 2025, [https://doi.org/10.1109/BIBE66822.2025.00116](https://doi.org/10.1109/BIBE66822.2025.00116) [[accepted version](files/IEEE_Pen_to_Prediction.pdf), [slides](files/AD_presentation_30102025.pdf), [demo](https://applied.ml.cs.aueb.gr/alzheimer)]
 
 * Bakagianni, J. et al. (2025) DiaShift: An Explainable System for Temporal Diagnostic Shift Detection in Clinical Notes. In IEEE 25th International Conference on Bioinformatics and Bioengineering (BIBE), Athens, Greece, 2025, pp. 341-345, https://doi.org/10.1109/BIBE66822.2025.00063
 
-* Bakagianni, J. et. al. (2025) FoodSafeSum: Enabling Natural Language Processing Applications for Food Safety Document Summarization and Analysis." In EMNLP, November 2025, Suzhou, China., pp. 16786-16804. Association for Computational Linguistics. https://doi.org/10.18653/v1/2025.findings-emnlp.911
+* Bakagianni, J. et al. (2025) FoodSafeSum: Enabling Natural Language Processing Applications for Food Safety Document Summarization and Analysis. In Findings of the Association for Computational Linguistics: EMNLP 2025, pp. 16786-16804, Suzhou, China. Association for Computational Linguistics. https://doi.org/10.18653/v1/2025.findings-emnlp.911
 
 * Dimakis, A., Pavlopoulos, J., Anastasopoulos, A. (2025). Dialect Normalization using Large Language Models and Morphological Rules. In Findings of the Association for Computational Linguistics: ACL 2025, pages 23696–23714, Vienna, Austria. Association for Computational Linguistics.
 
@@ -79,12 +79,11 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg)
 
 * Liagkou, K., Pavlopoulos, J., Machotka, E., 2022. A Study of Distant Viewing of ukiyo-e prints. In Proceedings of the Language Resources and Evaluation Conference (LREC). Marseille, France and online, June 2022.
 
+* Pavlopoulos, J., Laugier, L., Xenos, A., Sorensen, J., Androutsopoulos, I., 2022. From the Detection of Toxic Spans in Online Discussions to the Analysis of Toxic-to-Civil Transfer. In Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 3721–3734, Dublin, Ireland. [Paper](https://aclanthology.org/2022.acl-long.259/).
+
 * Chatzipanagiotou, M., Machotka, E., Pavlopoulos, J., 2021. Automated recognition of geographical named entities in titles of Ukiyo-e prints. In Digital Humanities Workshop (DHW 2021). Association for Computing Machinery, New York, NY, USA, 70–77. DOI:https://doi.org/10.1145/3526242.3526254
 
 * Fasoi, M., Pavlopoulos, J., Konstantinidou, M., 2021. Computational Authorship Analysis of Homeric Language. In Digital Humanities Workshop (DHW 2021). Association for Computing Machinery, New York, NY, USA, 78–88. DOI:https://doi.org/10.1145/3526242.3526256
-
-* Pavlopoulos, J., Laugier, L., Xenos, A., Sorensen, J., Androutsopoulos, I., 2022. From the Detection of Toxic Spans in Online Discussions to the Analysis of Toxic-to-Civil Transfer. In Proceedings of the Association for Computational Linguistics. To be held in Dublin, Ireland, U.K. and online, May 2022.
-
 * Ljungman, J., Lislevand, V., Pavlopoulos, J., Farazouli, A., Lee, Z., Papapetrou, P., Fors, U., 2021. Automated Grading of Exam Responses: An Extensive Classification Benchmark. In International Conference on Discovery Science. Springer, Cham. pp. 3-18.
 
 * Miliou, I., Pavlopoulos, J., Papapetrou, P., 2021. Sentiment Nowcasting During the COVID-19 Pandemic. In International Conference on Discovery Science, pp. 218-228 ([link](/files/miliou_et_al_2021.pdf)).
@@ -97,7 +96,7 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg)
 
 * Pavlopoulos, J. and Papapetrou, P., 2021. Customized Neural Predictive Medical Text: A Use-Case on Caregivers. In Artificial Intelligence in Medicine: 19th International Conference on Artificial Intelligence in Medicine, AIME 2021, Virtual Event, June 15–18, 2021, Proceedings (pp. 438-443). Springer International Publishing.
 
-* Laugier, L., Pavlopoulos, J., Sorensen, J. and Dixon, L., 2021. Civil rephrases of toxic texts with self-supervised transformers. arXiv preprint arXiv:2102.05456.
+* Laugier, L., Pavlopoulos, J., Sorensen, J. and Dixon, L., 2021. Civil Rephrases Of Toxic Texts With Self-Supervised Transformers. In Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics: Main Volume, pp. 1442–1461. [Paper](https://aclanthology.org/2021.eacl-main.124/).
 
 * Korre, K. and Chatzipanagiotou, M. and Pavlopoulos, J., 2021. ELERRANT: Automatic Grammatical Error Type Classification for Greek. In RANLP, pp. 708-717.
 
@@ -107,11 +106,11 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg)
 
 * Pavlopoulos, J. and Sorensen, J. and Dixon, L. and Thain, N. and Androutsopoulos, I., 2020. Toxicity Detection: Does Context Really Matter? In ACL.
 
-* Kouyia V., Pavlopoulos, J. and Androutsopoulos, I., 2020. Medical Image Tagging with Neural Retrieval and Deep Learning. In LNCS.
+* Kougia V., Pavlopoulos, J. and Androutsopoulos, I., 2020. Medical Image Tagging with Neural Retrieval and Deep Learning. In LNCS.
 
-* Kouyia V., Pavlopoulos, J. and Androutsopoulos, I., 2019. AUEB NLP Group at ImageCLEFmed Caption 2019. In the International Conference and Labs of the Evaluation Forum for European Languages.
+* Kougia V., Pavlopoulos, J. and Androutsopoulos, I., 2019. AUEB NLP Group at ImageCLEFmed Caption 2019. In the International Conference and Labs of the Evaluation Forum for European Languages.
 
-* Kouyia, V., Pavlopoulos, J. and Androutsopoulos, I., 2019. A Survey of Biomedical Image Captioning. In Proceedings of the Shortcomings in Vision and Language NAACL Workshop, Minneapolis, MN, USA.
+* Kougia, V., Pavlopoulos, J. and Androutsopoulos, I., 2019. A Survey of Biomedical Image Captioning. In Proceedings of the Shortcomings in Vision and Language NAACL Workshop, Minneapolis, MN, USA.
 
 * Pavlopoulos, J., Malakasiotis, P., Bakagianni, J. and Androutsopoulos, I., 2017. Improved Abusive Comment Moderation with User Embeddings. In Proceedings of the Natural Language Processing meets Journalism Workshop in EMNLP, Copenhagen, Denmark, pp. 51—55.
 
@@ -165,7 +164,7 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg)
 
 * Pavlopoulos, J., Kougia, V., Androutsopoulos, I., Papamichail, D., 2022. Diagnostic Captioning: a Survey. Knowledge and Information Systems, 1-32. https://doi.org/10.1007/s10115-022-01684-7.
 
-* Xenos, A., Pavlopoulos, J., Androutsopoulos, I., Dixon, L., Sorensen, J., Laugier, L., 2022. Toxicity Detection can be Sensitive to the Conversational Context. First Monday, 27(9), 2022. https://doi.org/10.5210/fm.v27i5.12285. 
+* Xenos, A., Pavlopoulos, J., Androutsopoulos, I., Dixon, L., Sorensen, J., Laugier, L., 2022. Toxicity Detection can be Sensitive to the Conversational Context. First Monday, 27(5), 2022. https://doi.org/10.5210/fm.v27i5.12285. 
 
 * Assael, Y., Sommerschield, T., Shillingford, B., Bordbar, M., Pavlopoulos, J., Chatzipanagiotou, M., Androutsopoulos, I., Prag, J., de Freitas., N., 2022. Restoring and attributing ancient texts with deep neural networks. In Nature.
 
@@ -195,6 +194,6 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg)
 
 ## theses
 
-* Pavlopoulos, J., 2014. Aspect Based Sentiment Analysis. PhD Thesis, University of Athens Economics and Business, Department of Informatics, Greece, Supervisor: Professor Ion Androutsopoulos.
+* Pavlopoulos, J., 2014. Aspect Based Sentiment Analysis. PhD Thesis, Athens University of Economics and Business, Department of Informatics, Greece, Supervisor: Professor Ion Androutsopoulos.
 
 * Pavlopoulos, J., 2009. Implementation and Comparison of models addressing Automatic Text Illustration, MSc Dissertation, University of Edinburgh, School of Informatics, U.K., Supervisor: Professor Mirella Lapata.
