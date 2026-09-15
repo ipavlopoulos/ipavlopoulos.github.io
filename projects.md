@@ -3,6 +3,8 @@ title: Projects
 layout: default
 permalink: /projects/
 ---
+* [AIRIS](https://airis-ai.eu/): Mechanism-informed multimodal generative AI for causal and dynamical modelling in biomedical research. Member of the Athena Research Center team. Funded by Horizon Europe (2026-2030).
+
 * [LLM3](https://sites.google.com/view/llm3): Improving online discussions and deliberations with large language models. Funded by Archimedes/Athena RC (2024-2025).
 
 * [EFRA](https://efraproject.eu/): AI-enabled food risk prevention. EU-funded project (2023-2026).
