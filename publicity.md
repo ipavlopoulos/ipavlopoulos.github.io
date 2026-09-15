@@ -4,6 +4,9 @@ layout: default
 permalink: /publicity/
 ---
 
+* Machine learning and the humanities — OPA News, 28 June 2026
+  > My article [«Όταν οι μηχανές “διαβάζουν” τον άνθρωπο» (in Greek)](https://www.tovima.gr/print/afieromata/opa/otan-oi-mixanes-diavazoun-ton-anthropo), originally published in the OPA News supplement of *To Vima tis Kyriakis*.
+
 * Online toxicity
   > [Read a news article in "Kathimerini" (in Greek)](https://www.kathimerini.gr/society/reportaz/563509870/oi-psychologoi-toy-tiktok-kai-oi-diagnoseis-toxikotitas/) 
 * Automated Fault Diagnosis (Scania)
