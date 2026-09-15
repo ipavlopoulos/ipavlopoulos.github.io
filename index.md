@@ -9,6 +9,7 @@ permalink: /
 I serve as an Assistant Professor at the Department of Informatics of [Athens University of Economics and Business](https://aueb.gr/en) while I am a researcher at [Archimedes, Athena Research Center](https://www.athenarc.gr/en/archimedes) and affiliated with [Stockholm University](https://dsv.su.se/en/). 
 Previously, I held the position of Senior Lecturer (fixed-term) in NLP and Data Science at the Department of Computer and Systems Sciences of [Stockholm University](https://dsv.su.se/en/), and had the privilege of being a visiting scholar at the [Venice Centre for Digital and Public Humanities](https://vedph.github.io/), Ca' Foscari University of Venice.
 My research is dedicated to Machine Learning for NLP, with a focus on applications in Social Sciences & Humanities, and Healthcare.
+I am also a member of the Athena Research Center team in [AIRIS](https://airis-ai.eu/), a Horizon Europe project developing multimodal generative AI for biomedical research.
 
 --- 
 
