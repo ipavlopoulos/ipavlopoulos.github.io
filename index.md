@@ -20,10 +20,11 @@ I am also a member of the Athena Research Center team in [AIRIS](https://airis-a
 
 ## News
 
+- 🎓 **September 2026**: Our papers on benchmarking open-weight LLMs for Modern Greek and efficient Greek clinical text de-identification were part of [SETN 2026](https://www.setn2026.tuc.gr/en/program/schedule) in Chania. See [publications]({{ '/publications/' | relative_url }}).
 - 📢 **September 2026**: Co-coordinated WG2, Document or Handwriting Classification, with Maria Konstantinidou and Paraskevi Platanou at the [2nd SCOOP Exchange Meeting](https://indico.global/event/18380/timetable/?view=standard_numbered) in Vienna.
-- 🎓 **September 2026**: Our work on [Composite Silhouette](https://doi.org/10.1007/978-3-032-37654-1_38) is part of ECML PKDD 2026. [Code and slides](https://pypi.org/project/compsil/).
+- 🎓 **September 2026**: Our work on [Composite Silhouette](https://doi.org/10.1007/978-3-032-37654-1_38) was presented at ECML PKDD 2026 in Naples. [Code and slides](https://pypi.org/project/compsil/).
+- 🎓 **September 2026**: Our [Learning Diachronic Representations of Ancient Greek Letterforms](https://doi.org/10.1007/978-3-032-36039-7_10) was presented at ICDAR 2026 in Vienna. [Code and data](https://github.com/ipavlopoulos/diachronic-greek-letterforms).
 - 📢 **August 2026**: Gave a talk on Machine Learning for the Humanities in the AI and Byzantine Studies roundtable at the [25th International Congress of Byzantine Studies](https://www.icbs2026.org/program/) in Vienna.
-- 🎓 **June 2026**: Our [Learning Diachronic Representations of Ancient Greek Letterforms](https://arxiv.org/abs/2606.24984) preprint is available, with acceptance at ICDAR 2026.
 - 🎓 **June 2026**: [CAKE: Confidence in Assignments via K-partition Ensembles](https://doi.org/10.1016/j.mlwa.2026.100915) appears in Machine Learning with Applications. [Code](https://github.com/semoglou/cake).
 - 🎓 **May 2026**: [SpaRAGraph: Spatial Reasoning using Retrieval-Augmented Generation](https://doi.org/10.1145/3799424) is out in ACM Transactions on Spatial Algorithms and Systems.
 - 📢 **March 2026**: Gave a research seminar on Learning to Align: Addressing Frequency Distribution Shifts at the [Department of Statistics, AUEB](https://www.dept.aueb.gr/el/stat/content/ereynitikaseminaria).

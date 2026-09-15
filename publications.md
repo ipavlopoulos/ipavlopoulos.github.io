@@ -10,11 +10,15 @@ permalink: /publications/
 
 * Randl, K., Rocchietti, G., Henriksson, A., Abedjan, Z., Lindgren, T., Pavlopoulos, J. (2026). Quantifying Retriever-Generator Alignment in RAG with Local Explanations. Accepted at Findings of EMNLP 2026. [Acceptance announcement](https://www.tu.berlin/d2ip/nachrichtendetails/research-paper-accepted-forppublication-at-emnlp-2026-findings); [preprint, titled RAG-E: Quantifying Retriever-Generator Alignment and Failure Modes](https://arxiv.org/abs/2601.21803).
 
-* Semoglou, A., Likas, A., Pavlopoulos, J. (2026). Composite Silhouette. Accepted at ECML PKDD 2026. [DOI](https://doi.org/10.1007/978-3-032-37654-1_38); [preprint](https://arxiv.org/abs/2604.13816); [code and publication details](https://pypi.org/project/compsil/).
-
-* Pavlopoulos, J., Barbakos, S., Ferretti, L., Voulgarakis, D., Paparrigopoulou, A., Konstantinidou, M., De Gregorio, G., Marthot-Santaniello, I., Platanou, P., Essler, H. (2026). Learning Diachronic Representations of Ancient Greek Letterforms. Accepted at ICDAR 2026. [Preprint and acceptance details](https://arxiv.org/abs/2606.24984).
-
 ## publications in proceedings of peer-reviewed venues
+
+* Pavlopoulos, J., Bakagianni, J. (2026). Edge-Capable Open-Weight LLMs in Modern Greek NLP: A Reproducible Benchmark. 14th EETN Conference on Artificial Intelligence (SETN 2026), Chania, Greece. [Conference program](https://www.setn2026.tuc.gr/en/program/schedule).
+
+* Lislevand, V., Stamatis, K., Bakagianni, J., Kougia, V., Dalakleidi, K. V., Pavlopoulos, J. (2026). Can Small Models Have Big Impact? Efficient Greek Clinical Text De-identification via Synthetic Augmentation. 14th EETN Conference on Artificial Intelligence (SETN 2026), Chania, Greece. [Conference program](https://www.setn2026.tuc.gr/en/program/schedule).
+
+* Semoglou, A., Likas, A., Pavlopoulos, J. (2026). Composite Silhouette. In Machine Learning and Knowledge Discovery in Databases. Research Track (ECML PKDD 2026), Part I. Springer. [DOI](https://doi.org/10.1007/978-3-032-37654-1_38); [preprint](https://arxiv.org/abs/2604.13816); [code and publication details](https://pypi.org/project/compsil/).
+
+* Pavlopoulos, J., Barbakos, S., Ferretti, L., Voulgarakis, D., Paparrigopoulou, A., Konstantinidou, M., De Gregorio, G., Marthot-Santaniello, I., Platanou, P., Essler, H. (2026). Learning Diachronic Representations of Ancient Greek Letterforms. In Document Analysis and Recognition – ICDAR 2026, Part III, pp. 158–174. Springer. [DOI](https://doi.org/10.1007/978-3-032-36039-7_10); [preprint](https://arxiv.org/abs/2606.24984).
 
 * Kaliosis, P., Pavlopoulos, J. (2025). Learning to Align: Addressing Character Frequency Distribution Shifts in Handwritten Text Recognition. In Findings of the Association for Computational Linguistics: EMNLP 2025, pp. 18667–18684. [Paper](https://aclanthology.org/2025.findings-emnlp.1014/).
 
