@@ -1,0 +1,232 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ydnt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{John Pavlopoulos} \\[7.5pt]
+\href{https://github.com/ipavlopoulos}{\raisebox{-0.05\height}\faGithub\ ipavlopoulos} \ $|$ \ 
+\href{https://linkedin.com/in/itpavlopoulos}{\raisebox{-0.05\height}\faLinkedin\ ipavlopoulos} \ $|$ \ 
+\href{https://ipavlopoulos.github.io/}{\raisebox{-0.05\height}\faGlobe \ ipavlopoulos.github.io} \ $|$ \ 
+\href{mailto:ipavlopoulos@aueb.gr}{\raisebox{-0.05\height}\faEnvelope \ ipavlopoulos@aueb.gr} \ $|$ \ 
+%\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Summary}
+Assistant Professor specializing in Machine Learning for Information Retrieval and Data Mining of large document collections at the Department of Informatics, Athens University of Economics and Business, Greece. He holds affiliations with Archimedes/Athena RC, Greece, and Stockholm University, Sweden. Previously, he served as a Senior Lecturer (fixed-term) in NLP and Data Science at the Department of Computer and Systems Sciences, Stockholm University, Sweden, and was a visiting scholar at the Venice Centre for Digital and Public Humanities, Ca’ Foscari University of Venice, Italy. His research focuses on Machine Learning for Natural Language Processing (NLP), with a strong emphasis on applications in Digital Humanities. His work has been published in top-tier journals, such as \emph{Machine Learning} and \emph{Nature}, and presented at leading NLP conferences, such as ACL and EMNLP. 
+
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Assistant Professor} & \hfill May 2024 - present \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Department of Informatics, Athens University of Economics and Business, Greece}\\
+\multicolumn{2}{@{}X@{}}{\emph{Machine Learning for Information Retrieval and Data Mining of Large Document Collections}}\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Visiting Scholar} & \hfill Dec 2021 - Aug 2022 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{The Venice Centre for Digital and Public Humanities (VeDPH), Ca'Foscari, Italy}\\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Senior Lecturer (fixed-term)} & \hfill Jun 2020 - Nov 2021 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Department of Computer and System Sciences, Stockholm University, Sweden}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Postdoctoral researcher} & \hfill Jun 2019 - May 2020 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Department of Computer and System Sciences, Stockholm University, Sweden}\\
+\end{tabularx}
+
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{AIRIS} & \hfill \href{https://airis-ai.eu/}{Link to Website} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Mechanism-informed multimodal generative AI for causal and dynamical modelling in biomedical research. Member of the Athena Research Center team. Funded by Horizon Europe (2026-2030).}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{LLM3} & \hfill \href{https://sites.google.com/view/llm3}{Link to Website} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{This project develops and evaluates mediation agents based on Large Language Models that will actively participate in online discussions, with or without additional human mediation.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{EFRA} & \hfill \href{https://efraproject.eu/}{Link to Website} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{EU-funded project (2023-2026) for AI-enabled food risk prevention. }  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{NLP for Digital Art History} & \hfill \href{https://www.su.se/english/research/research-projects/natural-language-processing-for-digital-art-history}{Link to Website} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{A combination ‘distant viewing’ of visual materials with NLP and ‘close reading’ of the artefacts through formal and contextual analysis to study Japanese early modern woodblock prints, so-called ukiyo-e (‘pictures of the floating world’), produced between the seventeenth and mid-nineteenth century.
+}  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2010 - 2014 & PhD (Aspect-based Sent. Analysis) at \textbf{Athens University of Economics and Business} \\
+
+2008 - 2009 & MSc (AI) at \textbf{University of Edinburgh} \\ 
+
+2001 - 2007 & BSc (Applied Math. \& Phys. Sciences) at \textbf{National Technical University of Athens} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	Projects and Awards
+%----------------------------------------------------------------------------------------
+
+\section{Grants}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2025-2026 & Funding for junior faculty ``Action 1'' (AUEB).\\
+2022-2023 & Studying toxic language classifiers (unrestricted research support by Google).
+\\
+2020-2021 & Cost model development for the moderation of user posts on online platforms (project with the Joint Research Center, European Commission; PI).
+\\
+2019-2020 & Context-aware toxic language detection in online conversations (Google Research Award; PI).
+\\
+2016-2018 & Machine learning to filter profanity (Google Digital News Initiative; PI).
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Publications}
+\begin{refsection}[citations.bib]
+\nocite{*}
+\printbibliography[heading=none]
+\end{refsection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+%\section{Skills}
+%\begin{tabularx}{\linewidth}{@{}l X@{}}
+%Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
+%Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+%\end{tabularx}
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}

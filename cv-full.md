@@ -1,16 +1,187 @@
 ---
 layout: default
-title: Publications
-permalink: /publications/
+permalink: /cv/full/
 ---
 
-(find me on [Google Scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en))
+# John Pavlopoulos
 
-## accepted papers
+**Curriculum Vitae** — last updated September 2026. Also available as PDF, in
+[English]({{ '/files/cv_en.pdf' | relative_url }}) and
+[Greek]({{ '/files/cv_gr.pdf' | relative_url }}), or as a
+[short version]({{ '/files/cv_short_en.pdf' | relative_url }}).
+
+Assistant Professor of Machine Learning, Department of Informatics, Athens
+University of Economics and Business. Researcher at Archimedes, Athena Research
+Center, and affiliated with Stockholm University.
+
+* E-mail: ipavlopoulos (or annis) at aueb dot gr
+* Office: Antoniadou Wing, 3rd Floor (A308), Patision 76, Athens 104 34
+* Phone: +30 210 82 03 133
+* Web: [ipavlopoulos.github.io](https://ipavlopoulos.github.io); [Google Scholar](https://scholar.google.com/citations?user=niKjjdEAAAAJ&hl=en)
+
+## Research interests
+
+Machine learning for Natural Language Processing, with applications in the
+Social Sciences and Humanities, and in Healthcare. In particular: machine and
+deep learning for text and images; mining emotion and named entities from large
+collections; classification for early diagnosis or filtering; and natural
+language generation.
+
+## Education
+
+* **2010–2014** — PhD in Natural Language Processing, "Aspect Based Sentiment
+  Analysis". Department of Informatics, Athens University of Economics and
+  Business, Greece. Supervisor: Professor Ion Androutsopoulos.
+* **2008–2009** — MSc in Artificial Intelligence, School of Informatics,
+  University of Edinburgh, UK. Dissertation supervised by Professor Mirella Lapata.
+* **2001–2007** — School of Applied Mathematics and Physical Sciences, National
+  Technical University of Athens, Greece.
+
+## Academic and professional experience
+
+* **Athens University of Economics and Business**, Department of Informatics —
+  Assistant Professor of Machine Learning.
+* **Archimedes, Athena Research Center** — Researcher.
+* **Stockholm University**, Department of Computer and Systems Sciences —
+  Senior Lecturer (fixed-term) in NLP and Data Science (2020–2021);
+  Postdoctoral Researcher (2019–2020); currently affiliated.
+* **Ca' Foscari University of Venice**, Department of Humanities — Visiting
+  Scholar in NLP at the Venice Centre for Digital and Public Humanities
+  (2021–2022). Co-organised the HTREC academic challenge.
+* **Google Jigsaw** — Research associate (from 2018).
+* **Cognitiv+** — Data Scientist (2018–2019). Layout and skew detection in
+  images of legal documents; data annotation manager.
+* **Liquid Media / Straintek** — Senior Researcher (2016–2018), leading the team
+  developing APIs for multilingual abusive language detection; Postdoctoral
+  Researcher (2015–2016).
+* **Hellenic Army** — Software development (2014–2015).
+* **BioASQ** — Research associate (2012–2014).
+
+## Teaching
+
+Currently teaching Natural Language Processing (MSc in Digital Methods for the
+Humanities), Programming with Java (BSc), and Data Mining (BSc) at the Athens
+University of Economics and Business.
+
+Previously: Practical Data Science (MS in Data Science, AUEB); Natural Language
+Processing (PhD course, Stockholm University); Visiting Lecturer in Data Science
+(Stockholm University).
+
+## Scholarships and awards
+
+* Google Research Award for postdoctoral studies.
+* Best paper, 27th International Conference on Discovery Science (2024).
+* Best paper, 1st Workshop on Machine Learning for Ancient Languages (2024).
+* PriceWaterhouseCoopers scholarship for postgraduate studies.
+* Thomaidio Award for the best BSc thesis in the university.
+* Ganioti-Papageorgi scholarship for undergraduate studies.
+* Aglaias Koufodimou scholarship for undergraduate studies.
+
+## Service
+
+Member of the editorial board of *magazén*, International Journal for Digital
+and Public Humanities. Member of the organising committee of the ML4AL ACL
+workshop and of the programme committee of the Abusive Language Workshop.
+Reviewer for NeurIPS, ACL, EMNLP, COLING and NAACL-HLT, and for journals
+including Natural Language Engineering and Data Mining and Knowledge Discovery.
+
+## Research projects
+
+* [AIRIS](https://airis-ai.eu/): Mechanism-informed multimodal generative AI for causal and dynamical modelling in biomedical research. Member of the Athena Research Center team. Funded by Horizon Europe (2026-2030).
+
+* [LLM3](https://sites.google.com/view/llm3): Improving online discussions and deliberations with large language models. Funded by Archimedes/Athena RC (2024-2025).
+
+* [EFRA](https://efraproject.eu/): AI-enabled food risk prevention. EU-funded project (2023-2026).
+
+* Studying toxicity classifiers. Project funded by Google (unrestricted research support), Senior Researcher (2022-2023).
+
+* [Natural Language Processing for Digital Art History](https://www.su.se/english/research/research-projects/natural-language-processing-for-digital-art-history), Project Manager (2021-2022). 
+
+* [Automatic grading](https://datascience.dsv.su.se/projects/autograding.html) and assessment of electronic exams, Senior Researcher (2021).
+
+* Cost model development for the moderation of user posts on online platforms. Project with the Joint Research Center, European Commission, Principal Investigator (2020). 
+
+* [EXTREMUM:Explainable and Ethical Machine Learning for Knowledge Discovery from Medical Data Sources](https://dsv.su.se/en/research/research-areas/datascience/extremum-explainable-and-ethical-machine-learning-for-knowledge-discovery-from-medical-data-sources-1.442728). Data Science Group, Department of Computer and System Sciences, Stockholm University; Researcher (2019/2020).
+
+* ConvAI: Context-aware abusive language detection in online conversations. Google Research Award, Principal Investigator (2019).
+
+* [ML2P Filter](https://newsinitiative.withgoogle.com/dnifund/dni-projects/ml2p-filter/): Machine learning to filter profanity. Google Digital News Initiative (DNI) project; Principal Investigator (2016-2018).
+
+* [BioASQ](http://www.bioasq.org/). FP7 ICT, Research Associate (2012-2014).
+
+## Invited talks and session coordination
+
+* **16 September 2026 — Τεχνητή Νοημοσύνη στην Εκπαίδευση: τα μοντέλα ΤΝ, αντικαταστάτες ή βοηθοί;** Talk (in Greek) at the 2nd Model Junior High School of Athens, on critical literacy for AI output, what it changes in assessment, and moving from user to co-designer of the tools. [Slides]({{ '/files/omilia_tn_ekpaidefsi.pdf' | relative_url }}); [interactive exercises]({{ '/diadrastikes_askiseis.html' | relative_url }}).
+
+* **29 August 2026 — Machine Learning for the Humanities.** At the 25th International Congress of Byzantine Studies, Vienna, in the roundtable “6.04 RT — AI and Byzantine Studies”. [Program](https://www.icbs2026.org/program/).
+
+* **9 March 2026 — Learning to Align: Addressing Frequency Distribution Shifts.** Research seminar, Department of Statistics, Athens University of Economics and Business. [Seminar listing](https://www.dept.aueb.gr/el/stat/content/ereynitikaseminaria).
+
+* **24 September 2025 — Explainable Foundation Models for Historical and Subjective Data.** Keynote at AI-based Methods for the Humanities, BIFOLD, Einstein Center Digital Future, Berlin. [Program](https://www.bifold.berlin/news-events/events/ai-based-methods-for-the-humanities/agenda-and-program).
+
+* **4 July 2025 — Machine Learning for Ancient Languages: Applications to Byzantine Manuscripts.** At “Artificial Intelligence: Hopes and Fears”, 44th Thessaloniki Book Festival. [Program](https://sekve.gr/wp-content/uploads/2025/06/festival_vivliou_2025_01.pdf).
+
+* **12 June 2025 — Learning to Adapt: Addressing Character Frequency Distribution Shifts in HTR.** SCOOP: Source Codes of the Past, Institute for Advanced Study, Princeton. [Program](https://cdh.princeton.edu/events/2025/06/scoop-source-codes-of-the-past-launching-an-international-atrhtr-network-for-manuscript-analysis/).
+
+### Session coordination
+
+* **8 September 2026 — WG2: Document or Handwriting Classification.** Co-coordinated the working group's conclusions session with Maria Konstantinidou and Paraskevi Platanou at the 2nd SCOOP Exchange Meeting, University of Vienna (7–9 September 2026). [Program](https://indico.global/event/18380/timetable/?view=standard_numbered); [SCOOP network](https://www.scoop-network.org/).
+
+## Thesis supervision
+
+Chatzipapadopoulou Anna, 2025. "Ensemble Learning in Uncertainty Quantification for Multi-Label Prediction: From Theoretical Foundations to Medical Image Understanding". MSc Thesis, Computer Science, Athens University of Economics and Business. Co-supervised with Ion Androutsopoulos ([pdf](https://nlp.cs.aueb.gr/theses/Chatzipapadopoulou_MSc_Thesis.pdf)).
+
+Schoinaki Maria, 2025. "Improvements to the explanations of Ithaca’s chronological attributions of ancient Greek inscriptions". BSc Thesis, Computer Science, Department of Informatics, Athens University of Economics and Business. Co-supervised with Ion Androutsopoulos and Yannis Assael ([pdf](https://nlp.cs.aueb.gr/theses/BSc_Thesis_Maria_Schoinaki.pdf)).
+
+Pantelidis Ippokratis, 2025. "Exploring Post-Training Techniques for Diagnostic Captioning". BSc Thesis, Computer Science, Department of Informatics, Athens University of Economics and Business. Co-supervised with Ion Androutsopoulos ([pdf](https://nlp.cs.aueb.gr/theses/bsc_thesis_ippokratis.pdf)).
+
+Voulgarakis Dionysios, 2024. "Improving Fraud Detection in Online Banking". MSc Thesis, Data Science, Athens University of Economics and Business ([link](https://doi.org/10.26219/heal.aueb.4305)).
+
+Samprovalaki Marina, 2024. "Exploring Multimodal Large Language Models for Medical Image Captioning". MSc Thesis, Computer Science, Athens University of Economics and Business. Co-supervised with Ion Androutsopoulos ([pdf](https://nlp.cs.aueb.gr/theses/m_samprovalaki_msc_thesis.pdf)).
+
+Tsirmpas Dimitris, 2024. "Mitigating Polarisation in Online Discussions Through Adaptive Moderation Techniques". MSc Thesis, Data Science, Athens University of Economics and Business ([pdf](https://nlp.cs.aueb.gr/theses/msc_thesis_dimitris_tsirmpas.pdf)).
+
+Chatzipapadopoulou Anna, 2024. "Enhanced Biomedical Image Tagging". BSc Thesis, Informatics, Athens University of Economics and Business. Co-supervised with Ion Androutsopoulos ([pdf](https://nlp.cs.aueb.gr/theses/Bsc_Thesis_Chatzipapadopoulou.pdf)).
+
+Kaliosis Panagiotis, 2023. "Exploring Uni-modal, Multi-modal and Few-shot Deep Learning Methods for Diagnostic Captioning". MSc Thesis, Computer Science, Athens University of Economics and Business. Co-supervised with Ion Androutsopoulos ([pdf](https://nlp.cs.aueb.gr/theses/p_kaliosis_msc_thesis.pdf)).
+
+Barmpounis Epameinondas-Konstantinos, 2022. "Computational analysis of Greek Parliamentary Minutes of the period 1946-1947". MSc Thesis, Digital Methods for the Humanities ([link](http://www.pyxida.aueb.gr/index.php?op=view_object&object_id=10013))
+
+Peteinou Eleni, 2022. "Toxicity classification for the detection of ageism on social media". MSc Thesis, Digital Methods for the Humanities ([link](http://www.pyxida.aueb.gr/index.php?op=view_object&object_id=10080))
+
+Anagnostopoulos Theodore, 2021. "Toxicity detection on Greek tweets". MSc Thesis, Data Science ([link](http://www.pyxida.aueb.gr/index.php?op=view_object&object_id=9122)).
+
+Papadatos Emmanouil, 2021. "Text classification to automatically detect hazards in foods from official announcements and social media". MSc thesis, Data Science ([link](http://www.pyxida.aueb.gr/index.php?op=view_object&object_id=9155)) 
+
+Liagkou Konstantina, 2021. "Brand cannibalisation". MSc Thesis, Data Science ([link](http://www.pyxida.aueb.gr/index.php?op=view_object&object_id=8985)).
+
+Ormyliotou Georgia, 2021. "Brand-based sentiment analysis". MSc Thesis, Data Science ([link](http://www.pyxida.aueb.gr/index.php?op=view_object&object_id=8997)).
+
+Jimenéz Enrique Javier Cobo and Rigobello Ronaldo Soares, 2021. "Explainability Techniques to Locate and Correct Grammatical Errors", Degree project at the master level, Department of Computer and Systems Sciences, Stockholm University ([pdf]({{ '/files/jimenez_rigobello_2021.pdf' | relative_url }})).
+
+Sjöstedt Nadia, 2021. "Explaining the Predictions of Text Toxicity Classifiers", Degree project at the master level, Department of Computer and Systems Sciences, Stockholm University ([pdf]({{ '/files/sjostedt_2021.pdf' | relative_url }})).
+
+Paparrigopoulou Asimina, 2021. "Chronological Attribution of Papyri Using Machine Learning", MS Thesis, Digital Methods for The Humanities, Athens University of Economics and Business ([pdf]({{ '/files/paparrigopoulou_2021.pdf' | relative_url }})).
+
+Xenos Alexandros, 2021. "Conversational Context in Toxicity Detection", MSc Thesis, Computer Science, Department of Informatics, Athens University of Economics and Business ([pdf](http://nlp.cs.aueb.gr/theses/axenos_msc_thesis.pdf)).
+
+Karatzas Vasilis, 2021. "Exploring Diagnostic Captioning Methods", MSc Thesis, Department of Informatics, Computer Science, Athens University of Economics and Business ([pdf](http://nlp.cs.aueb.gr/theses/karatzas_msc_thesis.pdf))
+
+Marina Thalassinou-Lislevand, 2020. “Emotion Classification on Greek Tweets“, MSc Thesis, Data Science ([pdf](/files/lislevand.pdf)).
+
+Fasoi Maria, 2020. "Language Modelling for Authorship Attribution In Homeric Texts", MSc Thesis, Digital Methods for the Humanities ([slides](/files/mfasoi.slides.pdf)).
+
+Stroumbouli Eleytheria, 2020. “Error Detection in English and Greek texts written by foreign learners“, MSc Thesis, Digital Methods for the Humanities ([pdf](/files/stroumbouli.pdf)).
+
+Korre Katerina, 2020. “Using Predictive Text for Grammatical Error Correction in Second Language Learning”. MSc Thesis, Digital Methods for the Humanities ([pdf](/files/korre.pdf), [slides](/files/korre.slides.pdf)).
+
+## Publications
+
+### Accepted papers
 
 * Randl, K., Rocchietti, G., Henriksson, A., Abedjan, Z., Lindgren, T., Pavlopoulos, J. (2026). Quantifying Retriever-Generator Alignment in RAG with Local Explanations. Accepted at Findings of EMNLP 2026. [Acceptance announcement](https://www.tu.berlin/d2ip/nachrichtendetails/research-paper-accepted-forppublication-at-emnlp-2026-findings); [preprint, titled RAG-E: Quantifying Retriever-Generator Alignment and Failure Modes](https://arxiv.org/abs/2601.21803).
 
-## publications in proceedings of peer-reviewed venues
+### Publications in proceedings of peer-reviewed venues
 
 * Pavlopoulos, J., Bakagianni, J. (2026). Edge-Capable Open-Weight LLMs in Modern Greek NLP: A Reproducible Benchmark. 14th EETN Conference on Artificial Intelligence (SETN 2026), Chania, Greece. [Conference program](https://www.setn2026.tuc.gr/en/program/schedule).
 
@@ -138,11 +309,11 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER]({{ '/files/best-paper-DS2024.
 
 * Vrettaros, J., Pavlopoulos, J., Vouros, G. and Drigas, S., 2008. The development of a self-assessment system for the learners answers with the use of GPNN. In Proceedings of the World Summit on Knowledge Society (WSKS), Athens, Greece, pp.332—340. 
 
-## book chapters
+### Book chapters
 
 * Konstantinidou, M., Pavlopoulos, J. (2026). Approaching Homer with NLP. In E. Barker, O. Bobou, R. Raja (eds.), The Oxford Handbook of Digital Classical Studies, pp. 675–689. Oxford University Press. [DOI](https://doi.org/10.1093/9780197835210.003.0057).
 
-## journals
+### Journal articles
 
 * Semoglou, A., Pavlopoulos, J. (2026). CAKE: Confidence in Assignments via K-partition Ensembles. Machine Learning with Applications, 24, 100915. [DOI](https://doi.org/10.1016/j.mlwa.2026.100915); [preprint](https://arxiv.org/abs/2602.18435).
 
@@ -182,7 +353,7 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER]({{ '/files/best-paper-DS2024.
 
 * Vrettaros J., Pavlopoulos J., Drigas A. S. and Hrissagis K., “GPNN techniques in learning assessment systems”. In International Journal of Technology Enhanced Learning. Inderscience Publishers, pp. 415—429, 3(4), 2011.
 
-## preprints
+### Preprints
 
 * Tsirmpas, D., Korre, K., Pavlopoulos, J. (2026). To Facilitate or not to Facilitate: Human and LLM Facilitator Tendencies in Online Discussions. [arXiv:2607.28643](https://arxiv.org/abs/2607.28643).
 
@@ -196,7 +367,7 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER]({{ '/files/best-paper-DS2024.
 
 * Pavlopoulos, J., Bakagianni, J., Pouli, K., Gavriilidou, M. (2025). Open or Closed LLM for Lesser-Resourced Languages? Lessons from Greek. [arXiv:2501.12826](https://arxiv.org/abs/2501.12826).
 
-## theses
+### Doctoral and master's theses
 
 * Pavlopoulos, J., 2014. Aspect Based Sentiment Analysis. PhD Thesis, Athens University of Economics and Business, Department of Informatics, Greece, Supervisor: Professor Ion Androutsopoulos.
 
