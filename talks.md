@@ -6,6 +6,8 @@ permalink: /talks/
 
 ## Recent talks
 
+* **16 September 2026 — Τεχνητή Νοημοσύνη στην Εκπαίδευση: τα μοντέλα ΤΝ, αντικαταστάτες ή βοηθοί;** Talk (in Greek) at the 2nd Model Junior High School of Athens, on critical literacy for AI output, what it changes in assessment, and moving from user to co-designer of the tools. [Slides]({{ '/files/omilia_tn_ekpaidefsi.pdf' | relative_url }}); [interactive exercises]({{ '/diadrastikes_askiseis.html' | relative_url }}).
+
 * **29 August 2026 — Machine Learning for the Humanities.** At the 25th International Congress of Byzantine Studies, Vienna, in the roundtable “6.04 RT — AI and Byzantine Studies”. [Program](https://www.icbs2026.org/program/).
 
 * **9 March 2026 — Learning to Align: Addressing Frequency Distribution Shifts.** Research seminar, Department of Statistics, Athens University of Economics and Business. [Seminar listing](https://www.dept.aueb.gr/el/stat/content/ereynitikaseminaria).
