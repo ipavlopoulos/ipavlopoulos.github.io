@@ -138,6 +138,10 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg)
 
 * Vrettaros, J., Pavlopoulos, J., Vouros, G. and Drigas, S., 2008. The development of a self-assessment system for the learners answers with the use of GPNN. In Proceedings of the World Summit on Knowledge Society (WSKS), Athens, Greece, pp.332—340. 
 
+## book chapters
+
+* Konstantinidou, M., Pavlopoulos, J. (2026). Approaching Homer with NLP. In E. Barker, O. Bobou, R. Raja (eds.), The Oxford Handbook of Digital Classical Studies, pp. 675–689. Oxford University Press. [DOI](https://doi.org/10.1093/9780197835210.003.0057).
+
 ## journals
 
 * Semoglou, A., Pavlopoulos, J. (2026). CAKE: Confidence in Assignments via K-partition Ensembles. Machine Learning with Applications, 24, 100915. [DOI](https://doi.org/10.1016/j.mlwa.2026.100915); [preprint](https://arxiv.org/abs/2602.18435).
