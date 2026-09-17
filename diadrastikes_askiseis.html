@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ΤΝ και Εκπαίδευση | Διαδραστικές ασκήσεις</title>
+  <style>
+    :root {
+      --ink: #17324d;
+      --muted: #5f7180;
+      --teal: #087e8b;
+      --teal-dark: #075d68;
+      --coral: #e76f51;
+      --cream: #f7f5f0;
+      --paper: #ffffff;
+      --line: #d9e1e4;
+      --good: #176b4d;
+      --good-bg: #e8f5ee;
+      --bad: #a54332;
+      --bad-bg: #fff0ec;
+      --shadow: 0 18px 50px rgba(23, 50, 77, .12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 90% 8%, rgba(231, 111, 81, .18), transparent 24rem),
+        linear-gradient(135deg, #f7f5f0 0%, #eef6f4 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.55;
+    }
+    .shell { width: min(1100px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 54px; }
+    header { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; }
+    .eyebrow { color: var(--coral); font: 700 .76rem/1.2 Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+    .ordinal { font-size: .78em; vertical-align: .28em; letter-spacing: 0; text-transform: lowercase; }
+    h1 { margin: 7px 0 4px; font-size: clamp(2rem, 5vw, 4rem); line-height: 1.04; letter-spacing: -.03em; }
+    .intro { max-width: 690px; margin: 0; color: var(--muted); font-size: 1.08rem; }
+    .counter { flex: 0 0 auto; padding: 10px 14px; border: 1px solid var(--line); background: rgba(255,255,255,.7); border-radius: 8px; font: 700 .85rem Arial, sans-serif; }
+    nav { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 18px; }
+    nav button { white-space: nowrap; border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 7px; padding: 10px 13px; cursor: pointer; font: 700 .84rem Arial, sans-serif; }
+    nav button[aria-selected="true"] { border-color: var(--teal); color: white; background: var(--teal); }
+    .exercise { display: none; background: rgba(255,255,255,.9); border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); padding: clamp(20px, 4vw, 42px); }
+    .exercise.active { display: block; animation: rise .35s ease both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .exercise h2 { margin: 0 0 5px; font-size: clamp(1.55rem, 3vw, 2.3rem); line-height: 1.1; }
+    .purpose { color: var(--teal-dark); font: 700 .85rem Arial, sans-serif; }
+    .brief { margin: 16px 0 22px; color: var(--muted); }
+    .prompt-box, .answer-box { padding: 17px 19px; border-left: 4px solid var(--teal); background: #f0f8f7; border-radius: 0 8px 8px 0; }
+    .answer-box { border-left-color: var(--coral); background: #fff7f3; }
+    .prompt-box strong, .answer-box strong { font: 700 .78rem Arial, sans-serif; text-transform: uppercase; letter-spacing: .08em; }
+    .options { display: grid; gap: 10px; margin: 18px 0; }
+    .option { text-align: left; padding: 14px 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); cursor: pointer; font: 1rem Georgia, serif; transition: border-color .2s, transform .2s, background .2s; }
+    .option:hover { border-color: var(--teal); transform: translateX(3px); }
+    .option.selected { border: 2px solid var(--teal); background: #e9f6f5; }
+    .option.correct { border-color: var(--good); background: var(--good-bg); }
+    .option.wrong { border-color: var(--bad); background: var(--bad-bg); }
+    .button-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 18px; }
+    .primary, .secondary { border: 0; border-radius: 7px; padding: 12px 17px; cursor: pointer; font: 700 .9rem Arial, sans-serif; }
+    .primary { background: var(--coral); color: white; }
+    .primary:hover { background: #c9563d; }
+    .secondary { background: var(--ink); color: white; }
+    .feedback { min-height: 28px; margin-top: 14px; font-weight: 700; }
+    .feedback.good { color: var(--good); }
+    .feedback.bad { color: var(--bad); }
+    .feedback.neutral { color: var(--teal-dark); }
+    .split { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    label { display: block; margin-bottom: 7px; font: 700 .8rem Arial, sans-serif; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; }
+    textarea, input[type="text"] { width: 100%; border: 1px solid var(--line); border-radius: 7px; padding: 13px; color: var(--ink); background: white; font: 1rem Georgia, serif; resize: vertical; }
+    textarea:focus, input:focus, button:focus-visible { outline: 3px solid rgba(8,126,139,.25); outline-offset: 2px; }
+    .checklist { display: grid; gap: 10px; margin: 15px 0; }
+    .check { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border: 1px solid var(--line); border-radius: 7px; }
+    .check input { margin-top: 5px; accent-color: var(--teal); }
+    .mini { color: var(--muted); font-size: .92rem; }
+    .footer-note { margin-top: 18px; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 700px) { header { display: block; } .counter { display: inline-block; margin-top: 16px; } .split { grid-template-columns: 1fr; } .shell { width: min(100% - 20px, 1100px); padding-top: 18px; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <div class="eyebrow" aria-label="2ο Πρότυπο Γυμνάσιο Αθηνών">2<span class="ordinal">&#959;</span> Πρότυπο Γυμνάσιο Αθηνών</div>
+        <h1>ΤΝ και Εκπαίδευση</h1>
+        <p class="intro">Τέσσερις σύντομες ασκήσεις για να δούμε τα μοντέλα ΤΝ ως αντικείμενα κριτικής, όχι ως αλάνθαστες αυθεντίες.</p>
+      </div>
+      <div class="counter" id="score" aria-live="polite">0 / 4 ολοκληρωμένες</div>
+    </header>
+
+    <nav aria-label="Ασκήσεις" role="tablist">
+      <button role="tab" aria-selected="true" data-target="exercise-1">1. Έλεγχος απάντησης</button>
+      <button role="tab" aria-selected="false" data-target="exercise-2">2. Καλύτερο prompt</button>
+      <button role="tab" aria-selected="false" data-target="exercise-3">3. Εντοπισμός bias</button>
+      <button role="tab" aria-selected="false" data-target="exercise-4">4. Counterfactual</button>
+    </nav>
+
+    <section class="exercise active" id="exercise-1" role="tabpanel">
+      <div class="purpose">Άσκηση 1 · hallucination και ψεύτικη πηγή · 3 λεπτά</div>
+      <h2>Ποιο σημείο χρειάζεται έλεγχο;</h2>
+      <p class="brief">Ένα μοντέλο ΤΝ απαντά στην ερώτηση: «Ποιος ήταν ο βασικός στόχος της εκπαίδευσης στην αρχαία Αθήνα;» Διάβασε την απάντηση και επέλεξε το πιο ύποπτο σημείο.</p>
+      <div class="answer-box"><strong>Απάντηση μοντέλου</strong><br>«Στην αρχαία Αθήνα, η εκπαίδευση στόχευε στην καλλιέργεια του σώματος, της μουσικής και της ρητορικής. Αυτό επιβεβαιώνεται από το έργο <em>Περὶ παιδείας Ἀθηναίων</em> του Πλάτωνα, που γράφτηκε περίπου το 390 π.Χ.»</div>
+      <div class="options" data-question="q1">
+        <button class="option" data-correct="false">Η αναφορά στη σωματική καλλιέργεια.</button>
+        <button class="option" data-correct="true">Ο συγκεκριμένος τίτλος έργου και η ακριβής χρονολόγηση.</button>
+        <button class="option" data-correct="false">Η αναφορά στη ρητορική.</button>
+      </div>
+      <div class="feedback" id="feedback-1" aria-live="polite"></div>
+      <div class="button-row"><button class="primary" data-action="check" data-index="1">Έλεγχος επιλογής</button><button class="secondary" data-action="reset" data-index="1">Επαναφορά</button></div>
+      <p class="footer-note">Για συζήτηση: Πώς θα ελέγχαμε αν η πηγή υπάρχει; Είναι αρκετό ότι η πρόταση ακούγεται πειστική;</p>
+    </section>
+
+    <section class="exercise" id="exercise-2" role="tabpanel">
+      <div class="purpose">Άσκηση 2 · prompt engineering · 4 λεπτά</div>
+      <h2>Ποιο prompt παράγει πιο ελέγξιμη απάντηση;</h2>
+      <p class="brief">Θέλουμε να μελετήσουμε την ειρωνεία σε ένα λογοτεχνικό απόσπασμα. Επίλεξε το prompt που κάνει τη σκέψη του μοντέλου πιο ορατή.</p>
+      <div class="options" data-question="q2">
+        <button class="option" data-correct="false"><strong>Α.</strong> «Κάνε περίληψη του κειμένου και πες μου αν έχει ειρωνεία.»</button>
+        <button class="option" data-correct="true"><strong>Β.</strong> «Κάνε περίληψη του αποσπάσματος σε 80 λέξεις. Δείξε δύο φράσεις όπου φαίνεται η ειρωνεία, εξήγησε τη σύνδεσή τους με το συμφραζόμενο και σημείωσε τι δεν μπορείς να τεκμηριώσεις.»</button>
+        <button class="option" data-correct="false"><strong>Γ.</strong> «Ανάλυσε πλήρως το κείμενο με ακαδημαϊκό ύφος.»</button>
+      </div>
+      <div class="feedback" id="feedback-2" aria-live="polite"></div>
+      <div class="button-row"><button class="primary" data-action="check" data-index="2">Έλεγχος επιλογής</button><button class="secondary" data-action="reset" data-index="2">Επαναφορά</button></div>
+      <p class="footer-note">Κεντρική ιδέα: Καλύτερη ερώτηση σημαίνει σαφέστερο κριτήριο αξιολόγησης και ορατότερη σκέψη.</p>
+    </section>
+
+    <section class="exercise" id="exercise-3" role="tabpanel">
+      <div class="purpose">Άσκηση 3 · αλγοριθμική μεροληψία · 5 λεπτά</div>
+      <h2>Τι πρέπει να ελέγξουμε πριν χρησιμοποιήσουμε την απάντηση;</h2>
+      <p class="brief">Ένα μοντέλο προτείνει: «Οι μαθητές που μιλούν πολύ στην τάξη είναι συνήθως οι πιο ικανοί». Τσέκαρε όσα προβλήματα βλέπεις στην πρόταση.</p>
+      <div class="checklist" id="bias-list">
+        <label class="check"><input type="checkbox" data-correct="true"> Συγχέει μια παρατηρήσιμη συμπεριφορά με την ικανότητα.</label>
+        <label class="check"><input type="checkbox" data-correct="true"> Παρουσιάζει μια γενίκευση σαν κανόνα, χωρίς στοιχεία.</label>
+        <label class="check"><input type="checkbox" data-correct="false"> Είναι γραμμένη σε απλή και κατανοητή γλώσσα.</label>
+        <label class="check"><input type="checkbox" data-correct="true"> Μπορεί να αδικεί μαθητές που συμμετέχουν διαφορετικά ή χρειάζονται περισσότερο χρόνο.</label>
+      </div>
+      <div class="feedback" id="feedback-3" aria-live="polite"></div>
+      <div class="button-row"><button class="primary" data-action="check-bias" data-index="3">Έλεγχος</button><button class="secondary" data-action="reset" data-index="3">Επαναφορά</button></div>
+      <p class="footer-note">Για συζήτηση: Ποια πρόσθετα δεδομένα ή ποια εναλλακτική διατύπωση θα χρειαζόμασταν;</p>
+    </section>
+
+    <section class="exercise" id="exercise-4" role="tabpanel">
+      <div class="purpose">Άσκηση 4 · counterfactual explainability · 5 λεπτά</div>
+      <h2>Άλλαξε μία λέξη και παρατήρησε τι μετακινείται</h2>
+      <p class="brief">Η αρχική πρόταση είναι: «Η ηρωίδα είναι γενναία επειδή μιλά ανοιχτά στον βασιλιά». Γράψε μια μικρή αλλαγή που θα μπορούσε να οδηγήσει σε διαφορετική ερμηνεία της πρότασης.</p>
+      <div class="prompt-box"><strong>Αρχικό κείμενο</strong><br>Η ηρωίδα είναι γενναία επειδή μιλά ανοιχτά στον βασιλιά.</div>
+      <div class="split" style="margin-top: 18px;">
+        <div><label for="change">Η ελάχιστη αλλαγή μου</label><input id="change" type="text" placeholder="π.χ. αντικαθιστώ τη λέξη «γενναία»..."></div>
+        <div><label for="effect">Τι αλλάζει στην ερμηνεία;</label><textarea id="effect" rows="3" placeholder="Η αλλαγή μετακινεί την ερμηνεία επειδή..."></textarea></div>
+      </div>
+      <div class="feedback" id="feedback-4" aria-live="polite"></div>
+      <div class="button-row"><button class="primary" data-action="check-counterfactual" data-index="4">Καταγραφή απάντησης</button><button class="secondary" data-action="reset" data-index="4">Επαναφορά</button></div>
+      <p class="footer-note">Δεν υπάρχει μία μοναδική σωστή αλλαγή. Η άσκηση εξετάζει αν μπορούμε να συνδέσουμε μια μικρή μεταβολή με διαφορετικό νόημα.</p>
+    </section>
+  </main>
+
+  <script>
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    const exercises = [...document.querySelectorAll('.exercise')];
+    const completed = new Set();
+
+    function updateScore() {
+      document.querySelector('#score').textContent = `${completed.size} / 4 ολοκληρωμένες`;
+    }
+
+    function showExercise(id) {
+      exercises.forEach(exercise => exercise.classList.toggle('active', exercise.id === id));
+      tabs.forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.target === id)));
+    }
+
+    tabs.forEach(tab => tab.addEventListener('click', () => showExercise(tab.dataset.target)));
+
+    function markComplete(index) {
+      completed.add(index);
+      updateScore();
+    }
+
+    function resetExercise(index) {
+      const exercise = document.querySelector(`#exercise-${index}`);
+      exercise.querySelectorAll('.option').forEach(option => option.classList.remove('selected', 'correct', 'wrong'));
+      exercise.querySelectorAll('input[type="checkbox"]').forEach(input => { input.checked = false; input.parentElement.classList.remove('correct', 'wrong'); });
+      exercise.querySelectorAll('input[type="text"], textarea').forEach(input => { input.value = ''; });
+      const feedback = document.querySelector(`#feedback-${index}`);
+      feedback.textContent = '';
+      feedback.className = 'feedback';
+      completed.delete(index);
+      updateScore();
+    }
+
+    document.querySelectorAll('.options').forEach(group => {
+      group.querySelectorAll('.option').forEach(option => option.addEventListener('click', () => {
+        group.querySelectorAll('.option').forEach(item => item.classList.remove('selected'));
+        option.classList.add('selected');
+      }));
+    });
+
+    document.querySelectorAll('[data-action="check"]').forEach(button => button.addEventListener('click', () => {
+      const index = button.dataset.index;
+      const group = document.querySelector(`#exercise-${index} .options`);
+      const selected = group.querySelector('.selected');
+      const feedback = document.querySelector(`#feedback-${index}`);
+      if (!selected) { feedback.textContent = 'Επίλεξε πρώτα μία απάντηση.'; feedback.className = 'feedback neutral'; return; }
+      group.querySelectorAll('.option').forEach(option => option.classList.toggle('correct', option.dataset.correct === 'true'));
+      selected.classList.toggle('wrong', selected.dataset.correct !== 'true');
+      feedback.textContent = selected.dataset.correct === 'true'
+        ? 'Σωστά. Η συγκεκριμένη πηγή χρειάζεται ανεξάρτητη επαλήθευση.'
+        : 'Όχι ακόμη. Αναζήτησε το πιο συγκεκριμένο και ελέγξιμο στοιχείο της απάντησης.';
+      feedback.className = `feedback ${selected.dataset.correct === 'true' ? 'good' : 'bad'}`;
+      if (selected.dataset.correct === 'true') markComplete(index);
+    }));
+
+    document.querySelector('[data-action="check-bias"]').addEventListener('click', () => {
+      const inputs = [...document.querySelectorAll('#bias-list input')];
+      const correct = inputs.every(input => input.checked === (input.dataset.correct === 'true'));
+      inputs.forEach(input => input.parentElement.classList.toggle('correct', input.checked === (input.dataset.correct === 'true')));
+      const feedback = document.querySelector('#feedback-3');
+      feedback.textContent = correct ? 'Πολύ καλά. Εντόπισες τη γενίκευση, τη σύγχυση έννοιας και την πιθανή αδικία.' : 'Έλεγξε ξανά: πρέπει να επιλεγούν μόνο οι τρεις προτάσεις που περιγράφουν πρόβλημα.';
+      feedback.className = `feedback ${correct ? 'good' : 'bad'}`;
+      if (correct) markComplete(3);
+    });
+
+    document.querySelector('[data-action="check-counterfactual"]').addEventListener('click', () => {
+      const change = document.querySelector('#change').value.trim();
+      const effect = document.querySelector('#effect').value.trim();
+      const feedback = document.querySelector('#feedback-4');
+      if (!change || !effect) { feedback.textContent = 'Συμπλήρωσε και τα δύο πεδία, ώστε να συνδέσεις την αλλαγή με την ερμηνεία.'; feedback.className = 'feedback neutral'; return; }
+      feedback.textContent = 'Καταγράφηκε. Τώρα εξήγησε προφορικά: γιατί αυτή η μικρή αλλαγή μετακινεί το νόημα;';
+      feedback.className = 'feedback good';
+      markComplete(4);
+    });
+
+    document.querySelectorAll('[data-action="reset"]').forEach(button => button.addEventListener('click', () => resetExercise(button.dataset.index)));
+  </script>
+</body>
+</html>
