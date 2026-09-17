@@ -32,11 +32,11 @@ Liagkou Konstantina, 2021. "Brand cannibalisation". MSc Thesis, Data Science ([l
 
 Ormyliotou Georgia, 2021. "Brand-based sentiment analysis". MSc Thesis, Data Science ([link](http://www.pyxida.aueb.gr/index.php?op=view_object&object_id=8997)).
 
-Jimenéz Enrique Javier Cobo and Rigobello Ronaldo Soares, 2021. "Explainability Techniques to Locate and Correct Grammatical Errors", Degree project at the master level, Department of Computer and Systems Sciences, Stockholm University ([pdf](files/jimenez_rigobello_2021.pdf)).
+Jimenéz Enrique Javier Cobo and Rigobello Ronaldo Soares, 2021. "Explainability Techniques to Locate and Correct Grammatical Errors", Degree project at the master level, Department of Computer and Systems Sciences, Stockholm University ([pdf]({{ '/files/jimenez_rigobello_2021.pdf' | relative_url }})).
 
-Sjöstedt Nadia, 2021. "Explaining the Predictions of Text Toxicity Classifiers", Degree project at the master level, Department of Computer and Systems Sciences, Stockholm University ([pdf](files/sjostedt_2021.pdf)).
+Sjöstedt Nadia, 2021. "Explaining the Predictions of Text Toxicity Classifiers", Degree project at the master level, Department of Computer and Systems Sciences, Stockholm University ([pdf]({{ '/files/sjostedt_2021.pdf' | relative_url }})).
 
-Paparrigopoulou Asimina, 2021. "Chronological Attribution of Papyri Using Machine Learning", MS Thesis, Digital Methods for The Humanities, Athens University of Economics and Business ([pdf](files/paparrigopoulou_2021.pdf)).
+Paparrigopoulou Asimina, 2021. "Chronological Attribution of Papyri Using Machine Learning", MS Thesis, Digital Methods for The Humanities, Athens University of Economics and Business ([pdf]({{ '/files/paparrigopoulou_2021.pdf' | relative_url }})).
 
 Xenos Alexandros, 2021. "Conversational Context in Toxicity Detection", MSc Thesis, Computer Science, Department of Informatics, Athens University of Economics and Business ([pdf](http://nlp.cs.aueb.gr/theses/axenos_msc_thesis.pdf)).
 

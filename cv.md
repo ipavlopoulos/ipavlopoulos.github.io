@@ -13,4 +13,4 @@ His research focuses on Machine Learning for Natural Language Processing (NLP), 
 John is a member of the Editorial Board for the magazén International Journal for Digital and Public Humanities. 
 He currently teaches the courses of Natural Language Processing (MSc, Digital Methods for the Humanities), Programming with Java (BSc), and Data Mining (BSc).
 
-More information may be found in [his resume](files/CV.pdf) or its extended versions in [Greek](files/cv_gr.pdf) and [English](files/cv_en.pdf).
+More information may be found in [his resume]({{ '/files/CV.pdf' | relative_url }}) or its extended versions in [Greek]({{ '/files/cv_gr.pdf' | relative_url }}) and [English]({{ '/files/cv_en.pdf' | relative_url }}).

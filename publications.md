@@ -30,7 +30,7 @@ permalink: /publications/
 
 * Loukas, L., Smyrnioudis, N., Dikonomaki, C., Barbakos, S., Toumazatos, A., Koutsikakis, J., Kyriakakis, M., Georgiou, M., Vassos, S., Pavlopoulos, J., Androutsopoulos, I. (2025). GR-NLP-TOOLKIT: An Open-Source NLP Toolkit for Modern Greek. In Proceedings of the 31st International Conference on Computational Linguistics: System Demonstrations, pp. 174–182. [Paper](https://aclanthology.org/2025.coling-demos.17/).
 
-* Boumpi, M., Dalakleidi, K. V., Pavlopoulos, J. (2025) From Pen to Prediction: Handwriting-Based Alzheimer's Detection. In IEEE 25th International Conference on Bioinformatics and Bioengineering (BIBE), pages 671-675, Athens, Greece, 2025, [https://doi.org/10.1109/BIBE66822.2025.00116](https://doi.org/10.1109/BIBE66822.2025.00116) [[accepted version](files/IEEE_Pen_to_Prediction.pdf), [slides](files/AD_presentation_30102025.pdf), [demo](https://applied.ml.cs.aueb.gr/alzheimer)]
+* Boumpi, M., Dalakleidi, K. V., Pavlopoulos, J. (2025) From Pen to Prediction: Handwriting-Based Alzheimer's Detection. In IEEE 25th International Conference on Bioinformatics and Bioengineering (BIBE), pages 671-675, Athens, Greece, 2025, [https://doi.org/10.1109/BIBE66822.2025.00116](https://doi.org/10.1109/BIBE66822.2025.00116) [[accepted version]({{ '/files/IEEE_Pen_to_Prediction.pdf' | relative_url }}), [slides]({{ '/files/AD_presentation_30102025.pdf' | relative_url }}), [demo](https://applied.ml.cs.aueb.gr/alzheimer)]
 
 * Bakagianni, J. et al. (2025) DiaShift: An Explainable System for Temporal Diagnostic Shift Detection in Clinical Notes. In IEEE 25th International Conference on Bioinformatics and Bioengineering (BIBE), Athens, Greece, 2025, pp. 341-345, https://doi.org/10.1109/BIBE66822.2025.00063
 
@@ -47,7 +47,7 @@ permalink: /publications/
 * Pavlopoulos, J., Sandell, R., Konstantinidou, M., Bozzone, C. (2024). HoLM: Analyzing the Linguistic Unexpectedness in Homeric Poetry. In Proceedings of LREC-COLING 2024, pp. 8166–8172. [Paper](https://aclanthology.org/2024.lrec-main.715/).
 
 * Pavlopoulos, J., Vardakas, G., Likas, A. (2024). Revisiting Silhouette Aggregation. In the 27th International Conference on
-Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg), a preprint is present: [arXiv:2401.05831](https://arxiv.org/abs/2401.05831)).
+Discovery Science 2024. Pisa, Italy. ([BEST PAPER]({{ '/files/best-paper-DS2024.jpeg' | relative_url }}), a preprint is present: [arXiv:2401.05831](https://arxiv.org/abs/2401.05831)).
 
 * Pavlopoulos, J., Louridas, P., & Filos, P. (2024). Towards a Greek Proverb Atlas: A Computational Spatial Exploration and Attribution of Greek Proverbs. In the Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing  (EMNLP 2024), Miami, USA. https://aclanthology.org/2024.emnlp-main.661/ 
 
@@ -55,13 +55,13 @@ Discovery Science 2024. Pisa, Italy. ([BEST PAPER](files/best-paper-DS2024.jpeg)
 
 * De Gregorio, G., Ferretti, L., Pena, R. C., Marthot-Santaniello, I., Konstantinidou, M., & Pavlopoulos, J. (2024, August). A New Framework for Error Analysis in Computational Paleographic Dating of Greek Papyri. In International Conference on Document Analysis and Recognition (pp. 102-118). Cham: Springer Nature Switzerland.
 
-* Pavlopoulos, J., Kougia, V., Arias, E.G., Platanou, P., Shabalin, S., Liagkou, K., Papadatos, E., Essler, H., Camps, J.B. and Fischer, F., 2024. Challenging Error Correction in Recognised Byzantine Greek. In Proceedings of the 1st Workshop on Machine Learning for Ancient Languages (ML4AL 2024) (pp. 1-12). ([BEST PAPER](files/best-paper-ML4AL2024.jpeg))
+* Pavlopoulos, J., Kougia, V., Arias, E.G., Platanou, P., Shabalin, S., Liagkou, K., Papadatos, E., Essler, H., Camps, J.B. and Fischer, F., 2024. Challenging Error Correction in Recognised Byzantine Greek. In Proceedings of the 1st Workshop on Machine Learning for Ancient Languages (ML4AL 2024) (pp. 1-12). ([BEST PAPER]({{ '/files/best-paper-ML4AL2024.jpeg' | relative_url }}))
 
 * Konstantinidou, M., Pavlopoulos, J., & Barker, E. (2024, August). Exploring intertextuality across the Homeric poems through language models. In Proceedings of the 1st Workshop on Machine Learning for Ancient Languages (ML4AL 2024) (pp. 260-268).
 
 * Pavlopoulos J. and Likas A., 2024. Polarized Opinion Detection Improves the Detection of Toxic Language. In Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers), Malta, pp. 1946–1958. [https://aclanthology.org/2024.eacl-long.117](https://aclanthology.org/2024.eacl-long.117) ([slides](https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-02-25/3x43ozj/nDFU-slides.pdf), [poster](https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-02-25/c133o9g/nDFU-poster.pdf), [video](https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2024-02-25/0123olf/nDFU-talk.mp4))
 
-* Pavlopoulos J., Kougia V., Platanou P. and Essler H., 2023. Detecting Erroneous Handwritten Byzantine Text Recognition. In Findings of the Conference on Empirical Methods in Natural Language Processing  (EMNLP 2023), Singapore ([slides](files/pavlopoulos_EMNLP23.pdf); [accepted manuscript](files/pavlopoulos_etal_2023_htrec.pdf))
+* Pavlopoulos J., Kougia V., Platanou P. and Essler H., 2023. Detecting Erroneous Handwritten Byzantine Text Recognition. In Findings of the Conference on Empirical Methods in Natural Language Processing  (EMNLP 2023), Singapore ([slides]({{ '/files/pavlopoulos_EMNLP23.pdf' | relative_url }}); [accepted manuscript]({{ '/files/pavlopoulos_etal_2023_htrec.pdf' | relative_url }}))
 
 * Liagkou K., Pavlopoulos J., Machotka E. 2023. Leveraging the Spatiotemporal Analysis of Meisho-e Landscapes. In Proceedings of the 26th International Conference of Discovery Science. Porto, Portugal ([accepted manuscript](/files/liagkou_et_al_2023_ukiyo-e.pdf))
 
