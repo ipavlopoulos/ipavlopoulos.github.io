@@ -18,7 +18,7 @@ permalink: /publications/
 
 * Semoglou, A., Likas, A., Pavlopoulos, J. (2026). Composite Silhouette. In Machine Learning and Knowledge Discovery in Databases. Research Track (ECML PKDD 2026), Part I. Springer. [DOI](https://doi.org/10.1007/978-3-032-37654-1_38); [preprint](https://arxiv.org/abs/2604.13816); [code and publication details](https://pypi.org/project/compsil/).
 
-* Pavlopoulos, J., Barbakos, S., Ferretti, L., Voulgarakis, D., Paparrigopoulou, A., Konstantinidou, M., De Gregorio, G., Marthot-Santaniello, I., Platanou, P., Essler, H. (2026). Learning Diachronic Representations of Ancient Greek Letterforms. In Document Analysis and Recognition – ICDAR 2026, Part III, pp. 158–174. Springer. [DOI](https://doi.org/10.1007/978-3-032-36039-7_10); [preprint](https://arxiv.org/abs/2606.24984).
+* Pavlopoulos, J., Barbakos, S., Ferretti, L., Voulgarakis, D., Paparrigopoulou, A., Konstantinidou, M., De Gregorio, G., Marthot-Santaniello, I., Platanou, P., Essler, H. (2026). Learning Diachronic Representations of Ancient Greek Letterforms. In Document Analysis and Recognition – ICDAR 2026, Part III, pp. 158–174. Springer. [DOI](https://doi.org/10.1007/978-3-032-36039-7_10); [preprint](https://arxiv.org/abs/2606.24984); [accepted manuscript]({{'/files/Learning_Diachronic_Greek_Letterforms__ICDAR_AM.pdf' | relative_url}} ).
 
 * Kaliosis, P., Pavlopoulos, J. (2025). Learning to Align: Addressing Character Frequency Distribution Shifts in Handwritten Text Recognition. In Findings of the Association for Computational Linguistics: EMNLP 2025, pp. 18667–18684. [Paper](https://aclanthology.org/2025.findings-emnlp.1014/).
 
