@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnostic Report Authoring</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #F7F8FA;
+    --surface:  #FFFFFF;
+    --border:   #E2E5EA;
+    --border2:  #C8CDD6;
+    --text:     #1A1D23;
+    --muted:    #6B7280;
+    --faint:    #9CA3AF;
+
+    --name-bg:    #EEF2FF; --name-bd:   #818CF8; --name-tx:  #3730A3;
+    --org-bg:     #ECFDF5; --org-bd:    #34D399; --org-tx:   #065F46;
+    --date-bg:    #FFFBEB; --date-bd:   #FCD34D; --date-tx:  #92400E;
+    --dr-bg:      #FFF1F2; --dr-bd:     #FB7185; --dr-tx:    #9F1239;
+    --loc-bg:     #EFF6FF; --loc-bd:    #60A5FA; --loc-tx:   #1E40AF;
+    --id-bg:      #F5F3FF; --id-bd:     #A78BFA; --id-tx:    #5B21B6;
+
+    --accent:     #4F46E5;
+    --accent-h:   #4338CA;
+    --danger:     #EF4444;
+    --success:    #10B981;
+
+    --font-ui:   'Inter', system-ui, sans-serif;
+    --font-doc:  'Lora', Georgia, serif;
+    --r:         6px;
+  }
+
+  body {
+    font-family: var(--font-ui);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ── Layout ── */
+  .shell { display: grid; grid-template-columns: 200px 1fr 260px; grid-template-rows: 48px 1fr; height: 100vh; }
+
+  /* ── Top bar ── */
+  .topbar {
+    grid-column: 1 / -1;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 12px;
+    padding: 0 20px;
+  }
+  .topbar-logo { font-weight: 600; font-size: 15px; letter-spacing: -0.3px; color: var(--text); }
+  .topbar-logo span { color: var(--accent); }
+  .topbar-sep { width: 1px; height: 20px; background: var(--border); }
+  .topbar-title { font-size: 13px; color: var(--muted); flex: 1; }
+  .topbar-actions { display: flex; gap: 8px; }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    padding: 12px 0;
+  }
+  .sidebar-section { padding: 0 12px; margin-bottom: 16px; }
+  .sidebar-label { font-size: 10px; font-weight: 600; color: var(--faint); text-transform: uppercase; letter-spacing: 0.08em; padding: 0 4px; margin-bottom: 6px; }
+  .sidebar-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 8px; border-radius: var(--r);
+    font-size: 12px; color: var(--muted); cursor: pointer;
+    border: none; background: none; width: 100%; text-align: left;
+  }
+  .sidebar-item:hover { background: var(--bg); color: var(--text); }
+  .sidebar-item.active { background: #EEF2FF; color: var(--accent); font-weight: 500; }
+  .sidebar-item .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ── Main editor ── */
+  .editor-col {
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .editor-toolbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 20px;
+    display: flex; align-items: center; gap: 6px;
+    flex-wrap: wrap;
+  }
+  .tb-group { display: flex; align-items: center; gap: 2px; }
+  .tb-sep { width: 1px; height: 20px; background: var(--border); margin: 0 4px; }
+  .tb-btn {
+    padding: 4px 8px; border-radius: 4px; border: none; background: none;
+    font-size: 12px; color: var(--muted); cursor: pointer;
+    display: flex; align-items: center; gap: 4px; font-family: var(--font-ui);
+    white-space: nowrap;
+  }
+  .tb-btn:hover { background: var(--bg); color: var(--text); }
+  .tb-btn.entity-btn {
+    border: 1px solid; font-weight: 500; font-size: 11px; padding: 3px 8px;
+  }
+  .tb-btn.e-name  { background: var(--name-bg); color: var(--name-tx); border-color: var(--name-bd); }
+  .tb-btn.e-org   { background: var(--org-bg);  color: var(--org-tx);  border-color: var(--org-bd);  }
+  .tb-btn.e-date  { background: var(--date-bg); color: var(--date-tx); border-color: var(--date-bd); }
+  .tb-btn.e-dr    { background: var(--dr-bg);   color: var(--dr-tx);   border-color: var(--dr-bd);   }
+  .tb-btn.e-loc   { background: var(--loc-bg);  color: var(--loc-tx);  border-color: var(--loc-bd);  }
+  .tb-btn.e-id    { background: var(--id-bg);   color: var(--id-tx);   border-color: var(--id-bd);   }
+  .tb-btn.e-name:hover  { filter: brightness(0.96); }
+  .tb-btn.e-org:hover   { filter: brightness(0.96); }
+  .tb-btn.e-date:hover  { filter: brightness(0.96); }
+  .tb-btn.e-dr:hover    { filter: brightness(0.96); }
+  .tb-btn.e-loc:hover   { filter: brightness(0.96); }
+  .tb-btn.e-id:hover    { filter: brightness(0.96); }
+
+  .hint-bar {
+    background: #EEF2FF;
+    border-bottom: 1px solid #C7D2FE;
+    padding: 6px 20px;
+    font-size: 11px; color: #4338CA;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .hint-bar.hidden { display: none; }
+
+  .editor-body { flex: 1; overflow-y: auto; padding: 32px 40px; }
+  .report-meta {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px; margin-bottom: 28px;
+    padding-bottom: 20px; border-bottom: 1px solid var(--border);
+  }
+  .meta-field label { font-size: 11px; color: var(--faint); display: block; margin-bottom: 4px; }
+  .meta-field input {
+    width: 100%; border: 1px solid var(--border); border-radius: var(--r);
+    padding: 6px 10px; font-size: 13px; font-family: var(--font-ui);
+    color: var(--text); background: var(--surface);
+    outline: none;
+  }
+  .meta-field input:focus { border-color: var(--accent); box-shadow: 0 0 0 2px #EEF2FF; }
+
+  /* ── Document editor ── */
+  .doc-editor {
+    font-family: var(--font-doc);
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text);
+    min-height: 400px;
+    outline: none;
+    caret-color: var(--accent);
+  }
+  .doc-editor:empty::before {
+    content: attr(data-placeholder);
+    color: var(--faint);
+    pointer-events: none;
+    font-style: italic;
+  }
+  .doc-editor p { margin-bottom: 14px; }
+
+  /* ── Entity spans ── */
+  .entity {
+    display: inline;
+    border-radius: 3px;
+    padding: 1px 4px;
+    cursor: default;
+    position: relative;
+  }
+  .entity[data-type="name"]  { background: var(--name-bg); color: var(--name-tx); box-shadow: inset 0 -2px 0 var(--name-bd); }
+  .entity[data-type="org"]   { background: var(--org-bg);  color: var(--org-tx);  box-shadow: inset 0 -2px 0 var(--org-bd);  }
+  .entity[data-type="date"]  { background: var(--date-bg); color: var(--date-tx); box-shadow: inset 0 -2px 0 var(--date-bd); }
+  .entity[data-type="dr"]    { background: var(--dr-bg);   color: var(--dr-tx);   box-shadow: inset 0 -2px 0 var(--dr-bd);   }
+  .entity[data-type="loc"]   { background: var(--loc-bg);  color: var(--loc-tx);  box-shadow: inset 0 -2px 0 var(--loc-bd);  }
+  .entity[data-type="id"]    { background: var(--id-bg);   color: var(--id-tx);   box-shadow: inset 0 -2px 0 var(--id-bd);   }
+
+  .entity-badge {
+    font-family: var(--font-ui);
+    font-size: 9px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    opacity: 0.65; margin-left: 3px;
+    vertical-align: middle;
+  }
+  .entity-remove {
+    font-size: 10px; margin-left: 2px; cursor: pointer; opacity: 0.5;
+    font-family: var(--font-ui); font-style: normal;
+    display: none;
+  }
+  .entity:hover .entity-remove { display: inline; }
+  .entity:hover .entity-remove:hover { opacity: 1; color: var(--danger); }
+
+  /* ── Placeholders (empty slots) ── */
+  .placeholder-slot {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0 6px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1.5px dashed;
+    vertical-align: baseline;
+  }
+  .placeholder-slot[data-type="name"]  { background: var(--name-bg); color: var(--name-tx); border-color: var(--name-bd); }
+  .placeholder-slot[data-type="org"]   { background: var(--org-bg);  color: var(--org-tx);  border-color: var(--org-bd);  }
+  .placeholder-slot[data-type="date"]  { background: var(--date-bg); color: var(--date-tx); border-color: var(--date-bd); }
+  .placeholder-slot[data-type="dr"]    { background: var(--dr-bg);   color: var(--dr-tx);   border-color: var(--dr-bd);   }
+  .placeholder-slot[data-type="loc"]   { background: var(--loc-bg);  color: var(--loc-tx);  border-color: var(--loc-bd);  }
+  .placeholder-slot[data-type="id"]    { background: var(--id-bg);   color: var(--id-tx);   border-color: var(--id-bd);   }
+  .placeholder-slot:hover { filter: brightness(0.95); }
+
+  /* ── Inline fill popup ── */
+  .fill-popup {
+    position: fixed; z-index: 100;
+    background: var(--surface); border: 1px solid var(--border2);
+    border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    padding: 12px;
+    width: 220px;
+    display: none;
+  }
+  .fill-popup.visible { display: block; }
+  .fill-popup label { font-size: 11px; color: var(--muted); display: block; margin-bottom: 6px; font-weight: 500; }
+  .fill-popup input {
+    width: 100%; border: 1px solid var(--border); border-radius: var(--r);
+    padding: 6px 10px; font-size: 13px; font-family: var(--font-ui);
+    color: var(--text); outline: none;
+  }
+  .fill-popup input:focus { border-color: var(--accent); }
+  .fill-popup-actions { display: flex; gap: 6px; margin-top: 8px; }
+  .fill-popup-actions button {
+    flex: 1; padding: 5px; border-radius: var(--r);
+    font-size: 12px; font-family: var(--font-ui); cursor: pointer; border: 1px solid var(--border);
+  }
+  .fp-confirm { background: var(--accent); color: white; border-color: var(--accent); }
+  .fp-confirm:hover { background: var(--accent-h); }
+  .fp-cancel { background: none; color: var(--muted); }
+  .fp-cancel:hover { background: var(--bg); }
+
+  /* ── Right panel ── */
+  .panel {
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .panel-tabs { display: flex; border-bottom: 1px solid var(--border); }
+  .panel-tab {
+    flex: 1; padding: 10px; font-size: 12px; font-weight: 500;
+    color: var(--muted); cursor: pointer; text-align: center;
+    border-bottom: 2px solid transparent; border: none; background: none;
+    font-family: var(--font-ui);
+  }
+  .panel-tab:hover { color: var(--text); }
+  .panel-tab.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+  .panel-body { flex: 1; overflow-y: auto; padding: 16px; }
+
+  /* ── Entity list ── */
+  .entity-count-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .entity-count-row span { font-size: 12px; color: var(--muted); }
+  .entity-count-row strong { font-size: 13px; }
+
+  .entity-group { margin-bottom: 14px; }
+  .entity-group-header {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .eg-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .eg-name  .eg-dot { background: var(--name-bd); }
+  .eg-org   .eg-dot { background: var(--org-bd); }
+  .eg-date  .eg-dot { background: var(--date-bd); }
+  .eg-dr    .eg-dot { background: var(--dr-bd); }
+  .eg-loc   .eg-dot { background: var(--loc-bd); }
+  .eg-id    .eg-dot { background: var(--id-bd); }
+
+  .entity-chip {
+    display: inline-flex; align-items: center; gap: 4px;
+    border-radius: 4px; padding: 3px 8px; font-size: 12px;
+    margin: 2px; border: 1px solid;
+  }
+  .entity-chip.filled { opacity: 1; }
+  .entity-chip.empty  { opacity: 0.55; font-style: italic; border-style: dashed; }
+  .ec-name  { background: var(--name-bg); color: var(--name-tx); border-color: var(--name-bd); }
+  .ec-org   { background: var(--org-bg);  color: var(--org-tx);  border-color: var(--org-bd);  }
+  .ec-date  { background: var(--date-bg); color: var(--date-tx); border-color: var(--date-bd); }
+  .ec-dr    { background: var(--dr-bg);   color: var(--dr-tx);   border-color: var(--dr-bd);   }
+  .ec-loc   { background: var(--loc-bg);  color: var(--loc-tx);  border-color: var(--loc-bd);  }
+  .ec-id    { background: var(--id-bg);   color: var(--id-tx);   border-color: var(--id-bd);   }
+
+  /* ── Anon panel ── */
+  .anon-mode { margin-bottom: 14px; }
+  .anon-mode-label { font-size: 11px; font-weight: 500; color: var(--muted); margin-bottom: 6px; display: block; }
+  .anon-modes { display: flex; flex-direction: column; gap: 4px; }
+  .anon-mode-opt {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 7px 10px; border-radius: var(--r); border: 1px solid var(--border);
+    font-size: 12px; cursor: pointer; background: var(--bg);
+  }
+  .anon-mode-opt.selected { border-color: var(--accent); background: #EEF2FF; color: var(--accent); }
+  .anon-mode-opt input { accent-color: var(--accent); }
+  .anon-mode-opt code { font-size: 11px; opacity: 0.7; }
+
+  .anon-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 10px; border-radius: var(--r); border: 1px solid var(--border);
+    margin-bottom: 5px; background: var(--bg);
+  }
+  .anon-row-info { display: flex; flex-direction: column; gap: 1px; }
+  .anon-row-type { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+  .anon-row-val  { font-size: 12px; color: var(--text); }
+  .anon-row-sub  { font-size: 10px; color: var(--faint); font-family: monospace; }
+
+  .toggle-switch { position: relative; width: 30px; height: 17px; }
+  .toggle-switch input { opacity: 0; width: 0; height: 0; }
+  .toggle-track {
+    position: absolute; inset: 0; background: var(--border2);
+    border-radius: 17px; cursor: pointer; transition: background 0.2s;
+  }
+  .toggle-track::before {
+    content: ''; position: absolute;
+    width: 13px; height: 13px; border-radius: 50%;
+    left: 2px; top: 2px; background: white; transition: left 0.2s;
+  }
+  .toggle-switch input:checked + .toggle-track { background: var(--accent); }
+  .toggle-switch input:checked + .toggle-track::before { left: 15px; }
+
+  .preview-block {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 12px; font-size: 12px;
+    line-height: 1.7; color: var(--text); font-family: var(--font-doc);
+    margin-top: 10px;
+  }
+  .anon-token { background: #1A1D23; color: #F3F4F6; border-radius: 3px; padding: 0 4px; font-family: monospace; font-size: 11px; }
+  .masked-token { background: var(--text); color: var(--text); border-radius: 2px; padding: 0 2px; user-select: none; }
+
+  /* ── Export actions ── */
+  .export-section { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; }
+
+  /* ── Buttons ── */
+  .btn {
+    padding: 6px 14px; border-radius: var(--r); font-size: 12px;
+    font-family: var(--font-ui); cursor: pointer; border: 1px solid var(--border);
+    background: none; color: var(--text); display: inline-flex; align-items: center; gap: 5px;
+  }
+  .btn:hover { background: var(--bg); }
+  .btn-primary { background: var(--accent); color: white; border-color: var(--accent); }
+  .btn-primary:hover { background: var(--accent-h); }
+  .btn-sm { padding: 4px 10px; font-size: 11px; }
+  .btn-full { width: 100%; justify-content: center; }
+  .btn-ghost { border-color: transparent; }
+
+  .progress-row { margin-bottom: 10px; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .progress-bar { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 2px; background: var(--accent); transition: width 0.3s; }
+
+  .toast {
+    position: fixed; bottom: 20px; right: 20px;
+    background: var(--text); color: white;
+    padding: 10px 16px; border-radius: var(--r);
+    font-size: 12px; display: none; z-index: 200;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .toast.visible { display: block; }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <span class="topbar-logo">Diag<span>Scribe</span></span>
+    <div class="topbar-sep"></div>
+    <span class="topbar-title">Chest CT · Ref #2847 · Draft</span>
+    <div class="topbar-actions">
+      <button class="btn btn-sm" onclick="insertTemplate()">Load template</button>
+      <button class="btn btn-sm btn-primary" onclick="showToast('Report saved')">Save</button>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Reports</div>
+      <button class="sidebar-item active">
+        <span class="dot" style="background:#4F46E5"></span> Chest CT #2847
+      </button>
+      <button class="sidebar-item">
+        <span class="dot" style="background:#10B981"></span> MRI Brain #2846
+      </button>
+      <button class="sidebar-item">
+        <span class="dot" style="background:#F59E0B"></span> PET-CT #2844
+      </button>
+      <button class="sidebar-item">
+        <span class="dot" style="background:#6B7280"></span> Echo #2841
+      </button>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Legend</div>
+      <div style="display:flex;flex-direction:column;gap:4px;padding:0 4px">
+        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)"><span style="width:10px;height:10px;border-radius:2px;background:var(--name-bg);border:1px solid var(--name-bd);flex-shrink:0"></span> Patient name</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)"><span style="width:10px;height:10px;border-radius:2px;background:var(--org-bg);border:1px solid var(--org-bd);flex-shrink:0"></span> Organisation</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)"><span style="width:10px;height:10px;border-radius:2px;background:var(--date-bg);border:1px solid var(--date-bd);flex-shrink:0"></span> Date</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)"><span style="width:10px;height:10px;border-radius:2px;background:var(--dr-bg);border:1px solid var(--dr-bd);flex-shrink:0"></span> Clinician</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)"><span style="width:10px;height:10px;border-radius:2px;background:var(--loc-bg);border:1px solid var(--loc-bd);flex-shrink:0"></span> Location</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)"><span style="width:10px;height:10px;border-radius:2px;background:var(--id-bg);border:1px solid var(--id-bd);flex-shrink:0"></span> ID / Reference</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Editor column -->
+  <main class="editor-col">
+    <!-- Toolbar -->
+    <div class="editor-toolbar">
+      <div class="tb-group">
+        <span style="font-size:11px;color:var(--muted);margin-right:4px;font-weight:500">Annotate selection:</span>
+        <button class="tb-btn entity-btn e-name" onclick="wrapSelection('name','NAME')">Name</button>
+        <button class="tb-btn entity-btn e-org"  onclick="wrapSelection('org','ORG')">Organisation</button>
+        <button class="tb-btn entity-btn e-date" onclick="wrapSelection('date','DATE')">Date</button>
+        <button class="tb-btn entity-btn e-dr"   onclick="wrapSelection('dr','DR')">Clinician</button>
+        <button class="tb-btn entity-btn e-loc"  onclick="wrapSelection('loc','LOC')">Location</button>
+        <button class="tb-btn entity-btn e-id"   onclick="wrapSelection('id','ID')">ID / Ref</button>
+      </div>
+      <div class="tb-sep"></div>
+      <div class="tb-group">
+        <span style="font-size:11px;color:var(--muted);margin-right:4px;font-weight:500">Insert empty slot:</span>
+        <button class="tb-btn entity-btn e-name" onclick="insertSlot('name','NAME')">+ Name</button>
+        <button class="tb-btn entity-btn e-org"  onclick="insertSlot('org','ORG')">+ Org</button>
+        <button class="tb-btn entity-btn e-date" onclick="insertSlot('date','DATE')">+ Date</button>
+        <button class="tb-btn entity-btn e-dr"   onclick="insertSlot('dr','DR')">+ Clinician</button>
+        <button class="tb-btn entity-btn e-loc"  onclick="insertSlot('loc','LOC')">+ Location</button>
+      </div>
+    </div>
+    <div class="hint-bar" id="hintBar">
+      Select any text in the report, then click an annotation button above to mark it as a personal identifier.
+    </div>
+
+    <!-- Editor body -->
+    <div class="editor-body">
+      <div class="report-meta">
+        <div class="meta-field"><label>Report type</label><input value="CT Chest with contrast"></div>
+        <div class="meta-field"><label>Reference number</label><input value="REF-2847"></div>
+        <div class="meta-field"><label>Modality</label><input value="CT"></div>
+      </div>
+
+      <div
+        class="doc-editor"
+        id="docEditor"
+        contenteditable="true"
+        data-placeholder="Begin writing the diagnostic report here. Select any text and use the toolbar above to annotate personal identifiers, or insert an empty slot where a value will be filled later."
+        spellcheck="true"
+      ></div>
+    </div>
+  </main>
+
+  <!-- Right panel -->
+  <aside class="panel">
+    <div class="panel-tabs">
+      <button class="panel-tab active" onclick="switchTab(this,'entities')">Entities</button>
+      <button class="panel-tab" onclick="switchTab(this,'anonymise')">Anonymise</button>
+    </div>
+
+    <div class="panel-body" id="tabEntities">
+      <div class="progress-row">
+        <div class="progress-label"><span>Completeness</span><span id="progressPct">0%</span></div>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      </div>
+
+      <div style="font-size:11px;color:var(--muted);margin-bottom:12px;">Detected identifiers in this report. Dashed = unfilled slot.</div>
+
+      <div class="entity-group eg-name" id="grp-name">
+        <div class="entity-group-header"><span class="eg-dot"></span> Patient name</div>
+        <div class="entity-chips" id="chips-name"><span style="font-size:11px;color:var(--faint);font-style:italic">None yet</span></div>
+      </div>
+      <div class="entity-group eg-org" id="grp-org">
+        <div class="entity-group-header"><span class="eg-dot"></span> Organisation</div>
+        <div class="entity-chips" id="chips-org"><span style="font-size:11px;color:var(--faint);font-style:italic">None yet</span></div>
+      </div>
+      <div class="entity-group eg-date" id="grp-date">
+        <div class="entity-group-header"><span class="eg-dot"></span> Dates</div>
+        <div class="entity-chips" id="chips-date"><span style="font-size:11px;color:var(--faint);font-style:italic">None yet</span></div>
+      </div>
+      <div class="entity-group eg-dr" id="grp-dr">
+        <div class="entity-group-header"><span class="eg-dot"></span> Clinicians</div>
+        <div class="entity-chips" id="chips-dr"><span style="font-size:11px;color:var(--faint);font-style:italic">None yet</span></div>
+      </div>
+      <div class="entity-group eg-loc" id="grp-loc">
+        <div class="entity-group-header"><span class="eg-dot"></span> Locations</div>
+        <div class="entity-chips" id="chips-loc"><span style="font-size:11px;color:var(--faint);font-style:italic">None yet</span></div>
+      </div>
+      <div class="entity-group eg-id" id="grp-id">
+        <div class="entity-group-header"><span class="eg-dot"></span> IDs / References</div>
+        <div class="entity-chips" id="chips-id"><span style="font-size:11px;color:var(--faint);font-style:italic">None yet</span></div>
+      </div>
+    </div>
+
+    <div class="panel-body" id="tabAnonymise" style="display:none">
+      <div class="anon-mode">
+        <span class="anon-mode-label">Export mode</span>
+        <div class="anon-modes">
+          <label class="anon-mode-opt selected" id="mode-pseudo" onclick="setMode('pseudo',this)">
+            <span>Pseudonymise</span><code>[P-001]</code>
+            <input type="radio" name="mode" checked>
+          </label>
+          <label class="anon-mode-opt" id="mode-redact" onclick="setMode('redact',this)">
+            <span>Redact</span><code>[NAME]</code>
+            <input type="radio" name="mode">
+          </label>
+          <label class="anon-mode-opt" id="mode-mask" onclick="setMode('mask',this)">
+            <span>Mask</span><code>████</code>
+            <input type="radio" name="mode">
+          </label>
+        </div>
+      </div>
+
+      <div id="anonRows"></div>
+
+      <div style="margin-top:10px;font-size:11px;color:var(--muted);margin-bottom:4px;font-weight:500">Preview</div>
+      <div class="preview-block" id="previewBlock" style="font-size:11px;line-height:1.6">Write and annotate the report to see an anonymised preview here.</div>
+
+      <div class="export-section">
+        <button class="btn btn-primary btn-full" onclick="showToast('Export ready — anonymised report copied to clipboard')">Export anonymised report</button>
+        <button class="btn btn-full" onclick="showToast('Report shared for second opinion')">Share for second opinion</button>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- Fill popup -->
+<div class="fill-popup" id="fillPopup">
+  <label id="fillLabel">Fill in value</label>
+  <input type="text" id="fillInput" placeholder="Type value here...">
+  <div class="fill-popup-actions">
+    <button class="fp-cancel" onclick="closeFillPopup()">Cancel</button>
+    <button class="fp-confirm" onclick="confirmFill()">Fill</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const editor = document.getElementById('docEditor');
+let currentMode = 'pseudo';
+let currentSlot = null;
+let entityId = 0;
+
+// ── Helpers ──
+function genId() { return 'ent-' + (++entityId); }
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('visible');
+  setTimeout(() => t.classList.remove('visible'), 2400);
+}
+
+function switchTab(btn, tab) {
+  document.querySelectorAll('.panel-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tabEntities').style.display = tab === 'entities' ? '' : 'none';
+  document.getElementById('tabAnonymise').style.display = tab === 'anonymise' ? '' : 'none';
+  if (tab === 'anonymise') refreshAnonymise();
+}
+
+function setMode(m, el) {
+  currentMode = m;
+  document.querySelectorAll('.anon-mode-opt').forEach(x => x.classList.remove('selected'));
+  el.classList.add('selected');
+  refreshAnonymise();
+}
+
+// ── Annotate selected text ──
+function wrapSelection(type, label) {
+  const sel = window.getSelection();
+  if (!sel || sel.rangeCount === 0 || sel.isCollapsed) {
+    showToast('Select some text first, then click an annotation button');
+    return;
+  }
+  const range = sel.getRangeAt(0);
+  if (!editor.contains(range.commonAncestorContainer)) {
+    showToast('Select text inside the report');
+    return;
+  }
+  const text = range.toString().trim();
+  if (!text) return;
+  const id = genId();
+  const span = document.createElement('span');
+  span.className = 'entity';
+  span.dataset.type = type;
+  span.dataset.id = id;
+  span.contentEditable = 'false';
+  span.innerHTML = `${text}<span class="entity-badge">${label}</span><span class="entity-remove" onclick="removeEntity('${id}')">✕</span>`;
+  range.deleteContents();
+  range.insertNode(span);
+  sel.collapseToEnd();
+  refreshPanel();
+}
+
+// ── Insert empty slot ──
+function insertSlot(type, label) {
+  const slot = document.createElement('span');
+  const id = genId();
+  slot.className = 'placeholder-slot';
+  slot.dataset.type = type;
+  slot.dataset.id = id;
+  slot.contentEditable = 'false';
+  slot.textContent = `[ ${label} ]`;
+  slot.onclick = () => openFillPopup(slot);
+
+  const sel = window.getSelection();
+  if (sel && sel.rangeCount > 0 && editor.contains(sel.anchorNode)) {
+    const range = sel.getRangeAt(0);
+    range.collapse(false);
+    range.insertNode(slot);
+    range.setStartAfter(slot);
+    range.collapse(true);
+    sel.removeAllRanges();
+    sel.addRange(range);
+  } else {
+    editor.appendChild(slot);
+  }
+  // insert a space after
+  const space = document.createTextNode('\u00A0');
+  slot.after(space);
+  refreshPanel();
+}
+
+// ── Fill popup ──
+function openFillPopup(slot) {
+  currentSlot = slot;
+  const type = slot.dataset.type;
+  const labels = { name:'Patient name', org:'Organisation', date:'Date', dr:'Clinician', loc:'Location', id:'ID / Reference' };
+  document.getElementById('fillLabel').textContent = 'Fill in: ' + (labels[type] || type);
+  document.getElementById('fillInput').value = '';
+  const popup = document.getElementById('fillPopup');
+  const rect = slot.getBoundingClientRect();
+  popup.style.top = (rect.bottom + 8) + 'px';
+  popup.style.left = Math.min(rect.left, window.innerWidth - 240) + 'px';
+  popup.classList.add('visible');
+  document.getElementById('fillInput').focus();
+}
+
+document.getElementById('fillInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') confirmFill();
+  if (e.key === 'Escape') closeFillPopup();
+});
+
+function confirmFill() {
+  const val = document.getElementById('fillInput').value.trim();
+  if (!val || !currentSlot) { closeFillPopup(); return; }
+  const type = currentSlot.dataset.type;
+  const id = currentSlot.dataset.id;
+  const labels = { name:'NAME', org:'ORG', date:'DATE', dr:'DR', loc:'LOC', id:'ID' };
+  const lbl = labels[type] || type.toUpperCase();
+  const span = document.createElement('span');
+  span.className = 'entity';
+  span.dataset.type = type;
+  span.dataset.id = id;
+  span.contentEditable = 'false';
+  span.innerHTML = `${val}<span class="entity-badge">${lbl}</span><span class="entity-remove" onclick="removeEntity('${id}')">✕</span>`;
+  currentSlot.replaceWith(span);
+  currentSlot = null;
+  closeFillPopup();
+  refreshPanel();
+}
+
+function closeFillPopup() {
+  document.getElementById('fillPopup').classList.remove('visible');
+  currentSlot = null;
+}
+
+document.addEventListener('click', e => {
+  const popup = document.getElementById('fillPopup');
+  if (!popup.contains(e.target) && !e.target.classList.contains('placeholder-slot')) {
+    closeFillPopup();
+  }
+});
+
+// ── Remove entity ──
+function removeEntity(id) {
+  const el = editor.querySelector(`[data-id="${id}"]`);
+  if (!el) return;
+  const text = el.childNodes[0]?.textContent || '';
+  el.replaceWith(document.createTextNode(text));
+  refreshPanel();
+}
+
+// ── Refresh sidebar panel ──
+function refreshPanel() {
+  const types = ['name','org','date','dr','loc','id'];
+  const found = {};
+  types.forEach(t => found[t] = []);
+
+  editor.querySelectorAll('.entity, .placeholder-slot').forEach(el => {
+    const t = el.dataset.type;
+    if (!t) return;
+    const isFilled = el.classList.contains('entity');
+    const text = isFilled ? el.childNodes[0]?.textContent || '' : null;
+    found[t].push({ filled: isFilled, text });
+  });
+
+  types.forEach(t => {
+    const container = document.getElementById('chips-' + t);
+    if (!container) return;
+    const items = found[t];
+    if (!items.length) {
+      container.innerHTML = '<span style="font-size:11px;color:var(--faint);font-style:italic">None yet</span>';
+      return;
+    }
+    container.innerHTML = items.map(item => {
+      const cls = item.filled ? 'filled' : 'empty';
+      const txt = item.filled ? item.text : '[ unfilled ]';
+      return `<span class="entity-chip ec-${t} ${cls}">${txt}</span>`;
+    }).join('');
+  });
+
+  // progress: filled / (filled + unfilled slots)
+  const filled = editor.querySelectorAll('.entity').length;
+  const slots  = editor.querySelectorAll('.placeholder-slot').length;
+  const total  = filled + slots;
+  const pct = total === 0 ? 0 : Math.round((filled / total) * 100);
+  document.getElementById('progressPct').textContent = pct + '%';
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+// ── Anonymise tab ──
+function refreshAnonymise() {
+  const rows = [];
+  const typeLabels = { name:'Patient name', org:'Organisation', date:'Date', dr:'Clinician', loc:'Location', id:'ID / Ref' };
+  const pseudoMap = {};
+  let counter = {};
+
+  editor.querySelectorAll('.entity').forEach(el => {
+    const t = el.dataset.type;
+    const val = el.childNodes[0]?.textContent || '';
+    if (!counter[t]) counter[t] = 1;
+    if (!pseudoMap[val]) {
+      const prefix = t.toUpperCase().slice(0,3);
+      pseudoMap[val] = `${prefix}-${String(counter[t]).padStart(3,'0')}`;
+      counter[t]++;
+    }
+    rows.push({ type: t, val, pseudo: pseudoMap[val] });
+  });
+
+  const anonContainer = document.getElementById('anonRows');
+  if (!rows.length) {
+    anonContainer.innerHTML = '<div style="font-size:12px;color:var(--faint);font-style:italic;text-align:center;padding:16px 0">Annotate identifiers in the report to configure anonymisation.</div>';
+    document.getElementById('previewBlock').innerHTML = 'Write and annotate the report to see an anonymised preview here.';
+    return;
+  }
+
+  function tokenFor(val, type) {
+    if (currentMode === 'pseudo') return `<span class="anon-token">${pseudoMap[val] || val}</span>`;
+    if (currentMode === 'redact') return `<span class="anon-token">[${type.toUpperCase()}]</span>`;
+    return `<span class="masked-token">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>`;
+  }
+
+  // Deduplicate for rows
+  const seen = new Set();
+  anonContainer.innerHTML = rows.filter(r => {
+    if (seen.has(r.val)) return false;
+    seen.add(r.val); return true;
+  }).map(r => `
+    <div class="anon-row">
+      <div class="anon-row-info">
+        <span class="anon-row-type">${typeLabels[r.type] || r.type}</span>
+        <span class="anon-row-val">${r.val}</span>
+        <span class="anon-row-sub">→ ${currentMode === 'pseudo' ? r.pseudo : currentMode === 'redact' ? '[' + r.type.toUpperCase() + ']' : '████'}</span>
+      </div>
+      <label class="toggle-switch">
+        <input type="checkbox" checked>
+        <div class="toggle-track"></div>
+      </label>
+    </div>
+  `).join('');
+
+  // Build preview text
+  let preview = editor.innerHTML;
+  // strip entity spans, replace with token
+  preview = preview.replace(/<span class="entity" data-type="([^"]+)"[^>]*>(.*?)<span class="entity-badge">[^<]*<\/span><span class="entity-remove"[^>]*>[^<]*<\/span><\/span>/g, (_, type, text) => {
+    return tokenFor(text.trim(), type);
+  });
+  // strip placeholder slots
+  preview = preview.replace(/<span class="placeholder-slot"[^>]*>\[.*?\]<\/span>/g, '<span class="anon-token">[ UNFILLED ]</span>');
+  // strip html tags but keep our tokens
+  preview = preview.replace(/<(?!span class="anon-token|span class="masked|\/span)[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 400);
+  document.getElementById('previewBlock').innerHTML = preview + (preview.length >= 400 ? '…' : '');
+}
+
+// ── Template ──
+function insertTemplate() {
+  editor.innerHTML = `<p>Referral received from <span class="entity" data-type="dr" data-id="t1" contenteditable="false">Dr. Sarah Patel<span class="entity-badge">DR</span><span class="entity-remove" onclick="removeEntity('t1')">✕</span></span> at <span class="entity" data-type="org" data-id="t2" contenteditable="false">St. Mary's Hospital, Manchester<span class="entity-badge">ORG</span><span class="entity-remove" onclick="removeEntity('t2')">✕</span></span> on <span class="entity" data-type="date" data-id="t3" contenteditable="false">14 March 2024<span class="entity-badge">DATE</span><span class="entity-remove" onclick="removeEntity('t3')">✕</span></span>. Patient <span class="placeholder-slot" data-type="name" data-id="t4" contenteditable="false">[ NAME ]</span>&nbsp;(DOB <span class="placeholder-slot" data-type="date" data-id="t5" contenteditable="false">[ DATE ]</span>)&nbsp;presented with progressive dyspnoea on exertion.</p><p>CT chest performed at <span class="entity" data-type="loc" data-id="t6" contenteditable="false">Royal Preston Hospital<span class="entity-badge">LOC</span><span class="entity-remove" onclick="removeEntity('t6')">✕</span></span>. Images demonstrate bilateral lower lobe consolidation with associated ground-glass opacification in the right middle lobe. No pleural effusion identified. Mediastinum is unremarkable.</p><p>Impression: Appearances are consistent with an atypical infective process. Clinical correlation with microbiological results recommended. Follow-up imaging in 6–8 weeks advised.</p><p>Prepared by <span class="placeholder-slot" data-type="dr" data-id="t7" contenteditable="false">[ CLINICIAN ]</span>,&nbsp;Consultant Radiologist. Reference: <span class="entity" data-type="id" data-id="t8" contenteditable="false">REF-2847<span class="entity-badge">ID</span><span class="entity-remove" onclick="removeEntity('t8')">✕</span></span>.</p>`;
+
+  // wire up placeholder slots
+  editor.querySelectorAll('.placeholder-slot').forEach(slot => {
+    slot.onclick = () => openFillPopup(slot);
+  });
+  refreshPanel();
+  showToast('Template loaded');
+}
+
+// Listen for mutations to keep panel in sync
+const observer = new MutationObserver(() => refreshPanel());
+observer.observe(editor, { childList: true, subtree: true, characterData: true });
+
+// Hide hint bar after first annotation
+editor.addEventListener('input', () => {
+  document.getElementById('hintBar').classList.add('hidden');
+});
+</script>
+</body>
+</html>
