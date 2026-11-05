@@ -20,6 +20,7 @@ I am also a member of the Athena Research Center team in [AIRIS](https://airis-a
 
 ## News
 
+- 📢 **October 2026**: Wrote an article (in Greek) on [Artificial Intelligence in Education](https://www.aueb.gr/el/opanews/tehniti-noimosyni-stin-ekpaideysi) for issue 64 of OPA News. See [publicity]({{ '/publicity/' | relative_url }}).
 - 📢 **September 2026**: Gave a talk (in Greek) on Artificial Intelligence in Education at the 2nd Model Junior High School of Athens. [Slides]({{ '/files/omilia_tn_ekpaidefsi.pdf' | relative_url }}), [interactive exercises]({{ '/diadrastikes_askiseis.html' | relative_url }}).
 - 🎓 **September 2026**: Our papers on benchmarking open-weight LLMs for Modern Greek and efficient Greek clinical text de-identification were part of [SETN 2026](https://www.setn2026.tuc.gr/en/program/schedule) in Chania. See [publications]({{ '/publications/' | relative_url }}).
 - 📢 **September 2026**: Co-coordinated WG2, Document or Handwriting Classification, with Maria Konstantinidou and Paraskevi Platanou at the [2nd SCOOP Exchange Meeting](https://indico.global/event/18380/timetable/?view=standard_numbered) in Vienna.

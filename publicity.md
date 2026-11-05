@@ -4,6 +4,9 @@ layout: default
 permalink: /publicity/
 ---
 
+* Artificial intelligence in education — OPA News, October 2026
+  > My article [«Τεχνητή νοημοσύνη στην εκπαίδευση: Αντικαταστάτης ή Βοηθός;» (in Greek)](https://www.aueb.gr/el/opanews/tehniti-noimosyni-stin-ekpaideysi), published in issue 64 of OPA News.
+
 * Machine learning and the humanities — OPA News, 28 June 2026
   > My article [«Όταν οι μηχανές “διαβάζουν” τον άνθρωπο» (in Greek)](https://www.tovima.gr/print/afieromata/opa/otan-oi-mixanes-diavazoun-ton-anthropo), originally published in the OPA News supplement of *To Vima tis Kyriakis*.
 
